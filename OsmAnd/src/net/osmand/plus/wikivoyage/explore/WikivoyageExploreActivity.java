@@ -66,7 +66,7 @@ public class WikivoyageExploreActivity extends TabActivity implements DownloadEv
 
 	@Override
 	public void onCreate(Bundle savedInstanceState) {
-		app = getMyApplication();
+		app = (OsmandApplication) getApplication();
 		OsmandSettings settings = app.getSettings();
 		nightMode = !settings.isLightContent();
 
@@ -165,7 +165,7 @@ public class WikivoyageExploreActivity extends TabActivity implements DownloadEv
 			}
 			setIntent(null);
 		}
-		getMyApplication().getDownloadThread().setUiActivity(this);
+		((OsmandApplication)getApplication()).getDownloadThread().setUiActivity(this);
 		app.getTravelHelper().getBookmarksHelper().addListener(this);
 	}
 
@@ -187,7 +187,7 @@ public class WikivoyageExploreActivity extends TabActivity implements DownloadEv
 	@Override
 	protected void onPause() {
 		super.onPause();
-		getMyApplication().getDownloadThread().resetUiActivity(this);
+		((OsmandApplication)getApplication()).getDownloadThread().resetUiActivity(this);
 		app.getTravelHelper().getBookmarksHelper().removeListener(this);
 	}
 
@@ -368,7 +368,7 @@ public class WikivoyageExploreActivity extends TabActivity implements DownloadEv
 		private final boolean resetData;
 
 		LoadWikivoyageData(WikivoyageExploreActivity activity, boolean resetData) {
-			travelHelper = activity.getMyApplication().getTravelHelper();
+			travelHelper = ((OsmandApplication)activity.getApplication()).getTravelHelper();
 			activityRef = new WeakReference<>(activity);
 			this.resetData = resetData;
 		}

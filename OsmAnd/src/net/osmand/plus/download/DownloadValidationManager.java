@@ -24,7 +24,7 @@ import androidx.fragment.app.FragmentActivity;
 
 public class DownloadValidationManager {
 
-	public static final int MAXIMUM_AVAILABLE_FREE_DOWNLOADS = 7;
+	public static final int MAXIMUM_AVAILABLE_FREE_DOWNLOADS = 99999;
 
 	private final OsmandApplication app;
 	private final OsmandSettings settings;

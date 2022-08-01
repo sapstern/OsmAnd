@@ -80,7 +80,7 @@ public class TestVoiceActivity extends OsmandActionBarActivity {
 	private void selectVoice(LinearLayout ll) {
 		String[] entries;
 		String[] entrieValues;
-		Set<String> voiceFiles = getMyApplication().getRoutingOptionsHelper().getVoiceFiles(this);
+		Set<String> voiceFiles = ((OsmandApplication)getApplication()).getRoutingOptionsHelper().getVoiceFiles(this);
 		entries = new String[voiceFiles.size() ];
 		entrieValues = new String[voiceFiles.size() ];
 		int k = 0;

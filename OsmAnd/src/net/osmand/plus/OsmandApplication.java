@@ -65,7 +65,7 @@ import net.osmand.plus.helpers.LockHelper;
 import net.osmand.plus.helpers.RateUsHelper;
 import net.osmand.plus.helpers.TargetPointsHelper;
 import net.osmand.plus.helpers.WaypointHelper;
-import net.osmand.plus.inapp.InAppPurchaseHelper;
+//import net.osmand.plus.inapp.InAppPurchaseHelper;
 import net.osmand.plus.mapmarkers.MapMarkersDbHelper;
 import net.osmand.plus.mapmarkers.MapMarkersHelper;
 import net.osmand.plus.measurementtool.MeasurementEditingContext;
@@ -181,7 +181,7 @@ public class OsmandApplication extends MultiDexApplication {
 	GeocodingLookupService geocodingLookupService;
 	QuickSearchHelper searchUICore;
 	TravelHelper travelHelper;
-	InAppPurchaseHelper inAppPurchaseHelper;
+	//InAppPurchaseHelper inAppPurchaseHelper;
 	MapViewTrackingUtilities mapViewTrackingUtilities;
 	OsmandMap osmandMap;
 	LockHelper lockHelper;
@@ -544,9 +544,9 @@ public class OsmandApplication extends MultiDexApplication {
 		return travelRendererHelper;
 	}
 
-	public InAppPurchaseHelper getInAppPurchaseHelper() {
-		return inAppPurchaseHelper;
-	}
+//	public InAppPurchaseHelper getInAppPurchaseHelper() {
+//		return inAppPurchaseHelper;
+//	}
 
 	public LauncherShortcutsHelper getLauncherShortcutsHelper() {
 		return launcherShortcutsHelper;

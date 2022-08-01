@@ -17,7 +17,7 @@ import net.osmand.plus.utils.UiUtilities;
 import net.osmand.plus.base.MenuBottomSheetDialogFragment;
 import net.osmand.plus.base.bottomsheetmenu.SimpleBottomSheetItem;
 import net.osmand.plus.base.bottomsheetmenu.simpleitems.TitleItem;
-import net.osmand.plus.inapp.InAppPurchaseHelper;
+
 
 public class PromoCodeBottomSheet extends MenuBottomSheetDialogFragment {
 
@@ -76,14 +76,8 @@ public class PromoCodeBottomSheet extends MenuBottomSheetDialogFragment {
 			String promoCode = editText.getText().toString();
 			app.getSettings().BACKUP_PROMOCODE.set(promoCode);
 
-			InAppPurchaseHelper purchaseHelper = app.getInAppPurchaseHelper();
-			if (purchaseHelper != null) {
-				CallbackWithObject<Boolean> listener = result -> {
-					app.runInUIThread(() -> app.getBackupHelper().prepareBackup());
-					return true;
-				};
-				purchaseHelper.checkPromoAsync(listener);
-			}
+
+
 		}
 		dismiss();
 	}

@@ -9,7 +9,7 @@ import net.osmand.plus.OsmandApplication;
 import net.osmand.plus.R;
 import net.osmand.plus.activities.MapActivity;
 import net.osmand.plus.helpers.AndroidUiHelper;
-import net.osmand.plus.inapp.InAppPurchaseHelper;
+//import net.osmand.plus.inapp.InAppPurchaseHelper;
 import net.osmand.plus.mapcontextmenu.MapContextMenu;
 import net.osmand.plus.mapcontextmenu.MapContextMenuFragment;
 import net.osmand.plus.mapcontextmenu.other.MapMultiSelectionMenu;
@@ -162,7 +162,7 @@ public class WidgetsVisibilityHelper {
 
 	public boolean shouldShowElevationProfileWidget() {
 		return settings.SHOW_ELEVATION_PROFILE_WIDGET.get() && isRouteCalculated()
-				&& InAppPurchaseHelper.isOsmAndProAvailable(app)
+				//&& InAppPurchaseHelper.isOsmAndProAvailable(app)
 				&& !isInChangeMarkerPositionMode()
 				&& !isInMeasurementToolMode()
 				&& !isInChoosingRoutesMode()

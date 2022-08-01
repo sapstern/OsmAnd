@@ -27,8 +27,8 @@ import net.osmand.data.LatLon;
 import net.osmand.osm.AbstractPoiType;
 import net.osmand.plus.OsmandApplication;
 import net.osmand.plus.R;
-import net.osmand.plus.chooseplan.ChoosePlanFragment;
-import net.osmand.plus.chooseplan.OsmAndFeature;
+//import net.osmand.plus.chooseplan.ChoosePlanFragment;
+//import net.osmand.plus.chooseplan.OsmAndFeature;
 import net.osmand.plus.download.DownloadIndexesThread;
 import net.osmand.plus.download.IndexItem;
 import net.osmand.plus.helpers.AndroidUiHelper;
@@ -292,10 +292,10 @@ public class QuickSearchListAdapter extends ArrayAdapter<QuickSearchListItem> {
 	private LinearLayout bindFreeVersionBannerItem(@Nullable View convertView) {
 		LinearLayout view = getLinearLayout(convertView, R.layout.read_wikipedia_ofline_banner);
 		View btnGet = view.findViewById(R.id.btn_get);
-		if (btnGet != null) {
-			btnGet.setOnClickListener(
-					v -> ChoosePlanFragment.showInstance(activity, OsmAndFeature.WIKIPEDIA));
-		}
+//		if (btnGet != null) {
+//			btnGet.setOnClickListener(
+//					v -> ChoosePlanFragment.showInstance(activity, OsmAndFeature.WIKIPEDIA));
+//		}
 		return view;
 	}
 

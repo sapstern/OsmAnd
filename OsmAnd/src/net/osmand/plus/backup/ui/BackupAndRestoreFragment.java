@@ -28,14 +28,12 @@ import net.osmand.plus.backup.ui.AuthorizeFragment.LoginDialogType;
 import net.osmand.plus.backup.ui.status.BackupStatusFragment;
 import net.osmand.plus.base.BaseOsmAndFragment;
 import net.osmand.plus.helpers.AndroidUiHelper;
-import net.osmand.plus.inapp.InAppPurchaseHelper.InAppPurchaseListener;
-import net.osmand.plus.inapp.InAppPurchaseHelper.InAppPurchaseTaskType;
 import net.osmand.plus.views.controls.PagerSlidingTabStrip;
 
 import java.util.ArrayList;
 import java.util.List;
 
-public class BackupAndRestoreFragment extends BaseOsmAndFragment implements InAppPurchaseListener {
+public class BackupAndRestoreFragment extends BaseOsmAndFragment  {
 
 	public static final String TAG = BackupAndRestoreFragment.class.getSimpleName();
 
@@ -146,32 +144,5 @@ public class BackupAndRestoreFragment extends BaseOsmAndFragment implements InAp
 		}
 	}
 
-	@Override
-	public void onError(InAppPurchaseTaskType taskType, String error) {
 
-	}
-
-	@Override
-	public void onGetItems() {
-
-	}
-
-	@Override
-	public void onItemPurchased(String sku, boolean active) {
-		for (Fragment fragment : getChildFragmentManager().getFragments()) {
-			if (fragment instanceof InAppPurchaseListener && fragment.isAdded()) {
-				((BackupStatusFragment) fragment).onItemPurchased(sku, active);
-			}
-		}
-	}
-
-	@Override
-	public void showProgress(InAppPurchaseTaskType taskType) {
-
-	}
-
-	@Override
-	public void dismissProgress(InAppPurchaseTaskType taskType) {
-
-	}
 }

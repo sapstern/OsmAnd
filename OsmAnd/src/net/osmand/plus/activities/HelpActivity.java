@@ -125,7 +125,7 @@ public class HelpActivity extends BaseLogcatActivity implements OnItemClickListe
 
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
-		app = getMyApplication();
+		app = (OsmandApplication) getApplication();
 		app.applyTheme(this);
 		super.onCreate(savedInstanceState);
 		setContentView(R.layout.fragment_help_screen);

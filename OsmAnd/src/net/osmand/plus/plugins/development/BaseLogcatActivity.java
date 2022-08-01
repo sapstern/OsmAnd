@@ -5,6 +5,7 @@ import android.os.AsyncTask;
 import androidx.annotation.NonNull;
 
 import net.osmand.PlatformUtil;
+import net.osmand.plus.OsmandApplication;
 import net.osmand.plus.activities.ActionBarProgressActivity;
 
 import org.apache.commons.logging.Log;
@@ -71,7 +72,7 @@ public abstract class BaseLogcatActivity extends ActionBarProgressActivity imple
 
 		@Override
 		protected File doInBackground(Void... voids) {
-			File file = activityRef.get().getMyApplication().getAppPath(LOGCAT_PATH);
+			File file = ((OsmandApplication)activityRef.get().getApplication()).getAppPath(LOGCAT_PATH);
 			try {
 				if (file.exists()) {
 					file.delete();
@@ -97,7 +98,7 @@ public abstract class BaseLogcatActivity extends ActionBarProgressActivity imple
 		protected void onPostExecute(File file) {
 			BaseLogcatActivity activity = this.activityRef.get();
 			activity.setSupportProgressBarIndeterminateVisibility(false);
-			activity.getMyApplication().sendCrashLog(file);
+			((OsmandApplication)activity.getApplication()).sendCrashLog(file);
 		}
 	}
 

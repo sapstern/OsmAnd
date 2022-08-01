@@ -235,7 +235,7 @@ public class OsmEditingFragment extends BaseSettingsFragment implements OnPrefer
 			FragmentActivity activity = getActivity();
 			if (activity != null) {
 				if (!isValidToken() && !isLoginExists()) {
-					MappersPromoFragment.showInstance(activity, this);
+		//			MappersPromoFragment.showInstance(activity, this);
 				} else {
 					MappersFragment.showInstance(activity);
 				}
@@ -267,10 +267,7 @@ public class OsmEditingFragment extends BaseSettingsFragment implements OnPrefer
 			updateAllSettings();
 
 			FragmentManager manager = activity.getSupportFragmentManager();
-			DialogFragment fragment = (DialogFragment) manager.findFragmentByTag(MappersPromoFragment.TAG);
-			if (fragment != null) {
-				fragment.dismissAllowingStateLoss();
-			}
+		
 		}
 	}
 

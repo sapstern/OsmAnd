@@ -14,7 +14,7 @@ import net.osmand.plus.OsmAndLocationProvider.OsmAndLocationListener;
 import net.osmand.plus.OsmandApplication;
 import net.osmand.plus.R;
 import net.osmand.plus.auto.RequestPermissionScreen.LocationPermissionCheckCallback;
-import net.osmand.plus.inapp.InAppPurchaseHelper;
+//import net.osmand.plus.inapp.InAppPurchaseHelper;
 import net.osmand.plus.routing.IRouteInformationListener;
 import net.osmand.plus.views.OsmandMapTileView;
 
@@ -140,11 +140,11 @@ public class NavigationSession extends Session implements NavigationScreen.Liste
 		}
 
 		OsmandApplication app = getApp();
-		if (!InAppPurchaseHelper.isAndroidAutoAvailable(app)) {
-			getCarContext().getCarService(ScreenManager.class).push(navigationScreen);
-			requestPurchaseScreen = new RequestPurchaseScreen(getCarContext());
-			return requestPurchaseScreen;
-		}
+//		if (!InAppPurchaseHelper.isAndroidAutoAvailable(app)) {
+//			getCarContext().getCarService(ScreenManager.class).push(navigationScreen);
+//			requestPurchaseScreen = new RequestPurchaseScreen(getCarContext());
+//			return requestPurchaseScreen;
+//		}
 
 		if (ActivityCompat.checkSelfPermission(getCarContext(), Manifest.permission.ACCESS_FINE_LOCATION)
 				!= PackageManager.PERMISSION_GRANTED) {
@@ -155,16 +155,16 @@ public class NavigationSession extends Session implements NavigationScreen.Liste
 		return navigationScreen;
 	}
 
-	public void onPurchaseDone() {
-		OsmandApplication app = getApp();
-		if (requestPurchaseScreen != null && InAppPurchaseHelper.isAndroidAutoAvailable(app)) {
-			requestPurchaseScreen.finish();
-			requestPurchaseScreen = null;
-			app.getOsmandMap().getMapView().setupOpenGLView();
-
-			requestLocationPermission();
-		}
-	}
+//	public void onPurchaseDone() {
+//		OsmandApplication app = getApp();
+//		if (requestPurchaseScreen != null && InAppPurchaseHelper.isAndroidAutoAvailable(app)) {
+//			requestPurchaseScreen.finish();
+//			requestPurchaseScreen = null;
+//			app.getOsmandMap().getMapView().setupOpenGLView();
+//
+//			requestLocationPermission();
+//		}
+//	}
 
 	private boolean requestLocationPermission() {
 		if (ActivityCompat.checkSelfPermission(getCarContext(), Manifest.permission.ACCESS_FINE_LOCATION)

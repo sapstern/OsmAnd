@@ -33,7 +33,7 @@ public class PrintDialogActivity extends ActionBarProgressActivity {
 	public void onCreate(Bundle icicle) {
 		//This has to be called before setContentView and you must use the
 		//class in com.actionbarsherlock.view and NOT android.view
-		app = getMyApplication();
+		app = (OsmandApplication) getApplication();
 		app.applyTheme(this);
 		getWindow().setUiOptions(ActivityInfo.UIOPTION_SPLIT_ACTION_BAR_WHEN_NARROW);
 

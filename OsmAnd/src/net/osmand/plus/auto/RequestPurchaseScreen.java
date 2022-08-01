@@ -15,8 +15,8 @@ import androidx.car.app.model.Template;
 import net.osmand.plus.OsmandApplication;
 import net.osmand.plus.R;
 import net.osmand.plus.activities.MapActivity;
-import net.osmand.plus.chooseplan.ChoosePlanFragment;
-import net.osmand.plus.chooseplan.OsmAndFeature;
+//import net.osmand.plus.chooseplan.ChoosePlanFragment;
+//import net.osmand.plus.chooseplan.OsmAndFeature;
 
 public class RequestPurchaseScreen extends Screen {
 
@@ -33,8 +33,8 @@ public class RequestPurchaseScreen extends Screen {
 		OnClickListener listener = ParkedOnlyOnClickListener.create(() -> {
 			OsmandApplication app = (OsmandApplication) getCarContext().getApplicationContext();
 			Bundle params = new Bundle();
-			params.putBoolean(ChoosePlanFragment.OPEN_CHOOSE_PLAN, true);
-			params.putString(ChoosePlanFragment.CHOOSE_PLAN_FEATURE, OsmAndFeature.ANDROID_AUTO.name());
+//			params.putBoolean(ChoosePlanFragment.OPEN_CHOOSE_PLAN, true);
+//			params.putString(ChoosePlanFragment.CHOOSE_PLAN_FEATURE, OsmAndFeature.ANDROID_AUTO.name());
 			MapActivity.launchMapActivityMoveToTop(app, null, null, params);
 		});
 		

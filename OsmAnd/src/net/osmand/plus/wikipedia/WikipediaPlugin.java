@@ -20,7 +20,7 @@ import net.osmand.plus.R;
 import net.osmand.plus.Version;
 import net.osmand.plus.activities.MapActivity;
 import net.osmand.plus.chooseplan.OsmAndFeature;
-import net.osmand.plus.chooseplan.button.PurchasingUtils;
+
 import net.osmand.plus.dashboard.DashboardOnMap;
 import net.osmand.plus.download.DownloadActivity;
 import net.osmand.plus.download.DownloadActivityType;
@@ -157,14 +157,9 @@ public class WikipediaPlugin extends OsmandPlugin {
 
 	@Override
 	protected void registerLayerContextMenuActions(@NonNull ContextMenuAdapter adapter, @NonNull MapActivity mapActivity, @NonNull List<RenderingRuleProperty> customRules) {
-		if (isLocked()) {
-			PurchasingUtils.createPromoItem(adapter, mapActivity, OsmAndFeature.WIKIPEDIA,
-					WIKIPEDIA_ID,
-					R.string.shared_string_wikipedia,
-					R.string.explore_wikipedia_offline);
-		} else {
+
 			createWikipediaItem(adapter, mapActivity);
-		}
+
 	}
 
 	private void createWikipediaItem(ContextMenuAdapter adapter,

@@ -40,7 +40,7 @@ import net.osmand.plus.backup.BackupListeners;
 import net.osmand.plus.backup.BackupListeners.OnRegisterDeviceListener;
 import net.osmand.plus.backup.BackupListeners.OnRegisterUserListener;
 import net.osmand.plus.base.BaseOsmAndFragment;
-import net.osmand.plus.chooseplan.ChoosePlanFragment;
+
 import net.osmand.plus.chooseplan.OsmAndFeature;
 import net.osmand.plus.helpers.AndroidUiHelper;
 import net.osmand.plus.settings.backend.OsmandSettings;
@@ -247,7 +247,7 @@ public class AuthorizeFragment extends BaseOsmAndFragment implements OnRegisterU
 		buttonChoosePlan.setOnClickListener(v -> {
 			FragmentActivity activity = getActivity();
 			if (activity != null) {
-				ChoosePlanFragment.showInstance(activity, OsmAndFeature.OSMAND_CLOUD);
+				//ChoosePlanFragment.showInstance(activity, OsmAndFeature.OSMAND_CLOUD);
 			}
 		});
 		AndroidUiHelper.updateVisibility(buttonChoosePlan, false);

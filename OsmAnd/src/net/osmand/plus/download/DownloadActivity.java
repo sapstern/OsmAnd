@@ -49,7 +49,7 @@ import net.osmand.plus.activities.RestartActivity;
 import net.osmand.plus.activities.TabActivity;
 import net.osmand.plus.base.BasicProgressAsyncTask;
 import net.osmand.plus.base.BottomSheetDialogFragment;
-import net.osmand.plus.chooseplan.ChoosePlanFragment;
+//import net.osmand.plus.chooseplan.ChoosePlanFragment;
 import net.osmand.plus.chooseplan.OsmAndFeature;
 import net.osmand.plus.download.DownloadIndexesThread.DownloadEvents;
 import net.osmand.plus.download.ui.ActiveDownloadsDialogFragment;
@@ -58,8 +58,8 @@ import net.osmand.plus.download.ui.LocalIndexesFragment;
 import net.osmand.plus.download.ui.SearchDialogFragment;
 import net.osmand.plus.download.ui.UpdatesIndexFragment;
 import net.osmand.plus.helpers.FileNameTranslationHelper;
-import net.osmand.plus.inapp.InAppPurchaseHelper;
-import net.osmand.plus.inapp.InAppPurchaseHelper.InAppPurchaseTaskType;
+//import net.osmand.plus.inapp.InAppPurchaseHelper;
+//import net.osmand.plus.inapp.InAppPurchaseHelper.InAppPurchaseTaskType;
 import net.osmand.plus.plugins.OsmandPlugin;
 import net.osmand.plus.plugins.accessibility.AccessibilityAssistant;
 import net.osmand.plus.plugins.openseamaps.NauticalMapsPlugin;
@@ -120,12 +120,15 @@ public class DownloadActivity extends AbstractDownloadActivity implements Downlo
 	private boolean srtmNeedsInstallation;
 	private boolean nauticalPluginDisabled;
 	private boolean freeVersion;
+	
+	public OsmandApplication appl;
 
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
-		getMyApplication().applyTheme(this);
+		appl = (OsmandApplication)getApplication();
+		appl.applyTheme(this);//appl.applyTheme(this);
 		super.onCreate(savedInstanceState);
-		downloadThread = getMyApplication().getDownloadThread();
+		downloadThread = appl.getDownloadThread();
 		DownloadResources indexes = getDownloadThread().getIndexes();
 		if (!indexes.isDownloadedFromInternet) {
 			getDownloadThread().runReloadIndexFiles();
@@ -184,7 +187,7 @@ public class DownloadActivity extends AbstractDownloadActivity implements Downlo
 		viewPager.setCurrentItem(currentTab);
 
 		visibleBanner = new BannerAndDownloadFreeVersion(findViewById(R.id.mainLayout), this, true);
-		if (shouldShowFreeVersionBanner(getMyApplication())) {
+		if (shouldShowFreeVersionBanner(appl)) {
 			visibleBanner.updateFreeVersionBanner();
 		}
 
@@ -211,30 +214,8 @@ public class DownloadActivity extends AbstractDownloadActivity implements Downlo
 		return true;
 	}
 
-	@Override
-	public void onInAppPurchaseError(InAppPurchaseTaskType taskType, String error) {
-		visibleBanner.updateFreeVersionBanner();
-	}
 
-	@Override
-	public void onInAppPurchaseGetItems() {
-		visibleBanner.updateFreeVersionBanner();
-		initAppStatusVariables();
-	}
 
-	@Override
-	public void onInAppPurchaseItemPurchased(String sku) {
-		visibleBanner.updateFreeVersionBanner();
-		initAppStatusVariables();
-	}
-
-	@Override
-	public void showInAppPurchaseProgress(InAppPurchaseTaskType taskType) {
-	}
-
-	@Override
-	public void dismissInAppPurchaseProgress(InAppPurchaseTaskType taskType) {
-	}
 
 	public DownloadIndexesThread getDownloadThread() {
 		return downloadThread;
@@ -288,13 +269,13 @@ public class DownloadActivity extends AbstractDownloadActivity implements Downlo
 	@UiThread
 	public void downloadHasFinished() {
 		visibleBanner.updateBannerInProgress();
-		if (downloadItem != null && downloadItem != getMyApplication().getRegions().getWorldRegion()
+		if (downloadItem != null && downloadItem != appl.getRegions().getWorldRegion()
 				&& !WorldRegion.WORLD_BASEMAP.equals(downloadItem.getRegionDownloadNameLC())) {
 
 			if (!Algorithms.isEmpty(downloadTargetFileName)) {
 				File f = new File(downloadTargetFileName);
 				if (f.exists() && f.lastModified() > System.currentTimeMillis() - 10000) {
-					getMyApplication().getDownloadThread().initSettingsFirstMap(downloadItem);
+					appl.getDownloadThread().initSettingsFirstMap(downloadItem);
 					showGoToMap(downloadItem);
 				}
 			}
@@ -308,7 +289,7 @@ public class DownloadActivity extends AbstractDownloadActivity implements Downlo
 				if (fileName.endsWith(IndexConstants.FONT_INDEX_EXT)) {
 					RestartActivity.doRestart(this);
 				} else if (fileName.startsWith(FileNameTranslationHelper.SEA_DEPTH)) {
-					getMyApplication().getSettings().getCustomRenderBooleanProperty("depthContours").set(true);
+					appl.getSettings().getCustomRenderBooleanProperty("depthContours").set(true);
 				}
 			}
 			downloadItem = null;
@@ -366,9 +347,10 @@ public class DownloadActivity extends AbstractDownloadActivity implements Downlo
 	}
 
 	public static boolean isDownlodingPermitted(OsmandSettings settings) {
-		Integer mapsDownloaded = settings.NUMBER_OF_FREE_DOWNLOADS.get();
-		int downloadsLeft = DownloadValidationManager.MAXIMUM_AVAILABLE_FREE_DOWNLOADS - mapsDownloaded;
-		return Math.max(downloadsLeft, 0) > 0;
+		return true; //MFRI
+//		Integer mapsDownloaded = settings.NUMBER_OF_FREE_DOWNLOADS.get();
+//		int downloadsLeft = DownloadValidationManager.MAXIMUM_AVAILABLE_FREE_DOWNLOADS - mapsDownloaded;
+//		return Math.max(downloadsLeft, 0) > 0;
 	}
 
 	public static boolean shouldShowFreeVersionBanner(OsmandApplication application) {
@@ -388,12 +370,8 @@ public class DownloadActivity extends AbstractDownloadActivity implements Downlo
 		private final OnClickListener onCollapseListener = new OnClickListener() {
 			@Override
 			public void onClick(View v) {
-				if (freeVersionDescriptionTextView.getVisibility() == View.VISIBLE
-						&& isDownlodingPermitted(ctx.getMyApplication().getSettings())) {
+				if (freeVersionDescriptionTextView.getVisibility() == View.VISIBLE) {
 					collapseBanner();
-				} else {
-					ctx.getMyApplication().logEvent("click_free_dialog");
-					ChoosePlanFragment.showInstance(ctx, OsmAndFeature.UNLIMITED_MAP_DOWNLOADS);
 				}
 			}
 		};
@@ -419,10 +397,7 @@ public class DownloadActivity extends AbstractDownloadActivity implements Downlo
 		}
 
 		public void initFreeVersionBanner() {
-			if (!shouldShowFreeVersionBanner(ctx.getMyApplication())) {
-				freeVersionBanner.setVisibility(View.GONE);
-				return;
-			}
+
 			freeVersionBanner.setVisibility(View.VISIBLE);
 			downloadsLeftProgressBar.setMax(DownloadValidationManager.MAXIMUM_AVAILABLE_FREE_DOWNLOADS);
 			freeVersionDescriptionTextView.setText(ctx.getString(R.string.free_version_message,
@@ -454,24 +429,24 @@ public class DownloadActivity extends AbstractDownloadActivity implements Downlo
 		}
 
 		public void updateFreeVersionBanner() {
-			if (!shouldShowFreeVersionBanner(ctx.getMyApplication())) {
+			if (!shouldShowFreeVersionBanner(ctx.appl)) {
 				if (freeVersionBanner.getVisibility() == View.VISIBLE) {
 					freeVersionBanner.setVisibility(View.GONE);
 				}
 				return;
 			}
 			setMinimizedFreeVersionBanner(false);
-			OsmandSettings settings = ctx.getMyApplication().getSettings();
-			Integer mapsDownloaded = settings.NUMBER_OF_FREE_DOWNLOADS.get();
-			downloadsLeftProgressBar.setProgress(mapsDownloaded);
-			int downloadsLeft = DownloadValidationManager.MAXIMUM_AVAILABLE_FREE_DOWNLOADS - mapsDownloaded;
+			//OsmandSettings settings = ctx.getSettings();
+			//Integer mapsDownloaded = settings.NUMBER_OF_FREE_DOWNLOADS.get();
+			//downloadsLeftProgressBar.setProgress(mapsDownloaded);
+			int downloadsLeft = DownloadValidationManager.MAXIMUM_AVAILABLE_FREE_DOWNLOADS;
 			downloadsLeft = Math.max(downloadsLeft, 0);
 			downloadsLeftTextView.setText(ctx.getString(R.string.downloads_left_template, downloadsLeft));
 			freeVersionBanner.findViewById(R.id.bannerTopLayout).setOnClickListener(onCollapseListener);
 		}
 		
 		private void setMinimizedFreeVersionBanner(boolean minimize) {
-			if (minimize && isDownlodingPermitted(ctx.getMyApplication().getSettings())) {
+			if (minimize ) {
 				collapseBanner();
 				freeVersionBannerTitle.setVisibility(View.GONE);
 			} else {
@@ -480,10 +455,7 @@ public class DownloadActivity extends AbstractDownloadActivity implements Downlo
 		}
 
 		private void updateAvailableDownloads() {
-			int activeTasks = ctx.getDownloadThread().getCountedDownloads();
-			OsmandSettings settings = ctx.getMyApplication().getSettings();
-			Integer mapsDownloaded = settings.NUMBER_OF_FREE_DOWNLOADS.get() + activeTasks;
-			downloadsLeftProgressBar.setProgress(mapsDownloaded);
+
 		}
 	}
 
@@ -557,7 +529,7 @@ public class DownloadActivity extends AbstractDownloadActivity implements Downlo
 	}
 
 	public void reloadLocalIndexes() {
-		OsmandApplication app = getMyApplication();
+		OsmandApplication app = appl;
 		app.getResourceManager().reloadIndexesAsync(IProgress.EMPTY_PROGRESS, new ReloadIndexesListener() {
 			@Override
 			public void reloadIndexesStarted() {
@@ -636,7 +608,7 @@ public class DownloadActivity extends AbstractDownloadActivity implements Downlo
 		TextView messageTextView = view.findViewById(R.id.leftTextView);
 		ProgressBar sizeProgress = view.findViewById(R.id.progressBar);
 
-		File dir = activity.getMyApplication().getAppPath(null);
+		File dir = activity.appl.getAppPath(null);
 		String size = "";
 		int percent = 0;
 		if (dir.canRead()) {
@@ -674,9 +646,9 @@ public class DownloadActivity extends AbstractDownloadActivity implements Downlo
 	}
 
 	public void initAppStatusVariables() {
-		OsmandApplication app = getMyApplication();
-		srtmDisabled = !OsmandPlugin.isActive(SRTMPlugin.class)
-				&& !InAppPurchaseHelper.isContourLinesPurchased(app);
+		OsmandApplication app = appl;
+		srtmDisabled = !OsmandPlugin.isActive(SRTMPlugin.class);
+
 		nauticalPluginDisabled = !OsmandPlugin.isActive(NauticalMapsPlugin.class);
 		freeVersion = Version.isFreeVersion(app);
 		SRTMPlugin srtmPlugin = OsmandPlugin.getPlugin(SRTMPlugin.class);

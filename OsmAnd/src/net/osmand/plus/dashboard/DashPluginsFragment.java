@@ -21,7 +21,7 @@ import net.osmand.plus.utils.AndroidUtils;
 import net.osmand.plus.plugins.OsmandPlugin;
 import net.osmand.plus.R;
 import net.osmand.plus.plugins.PluginsFragment;
-import net.osmand.plus.chooseplan.ChoosePlanFragment;
+//import net.osmand.plus.chooseplan.ChoosePlanFragment;
 import net.osmand.plus.chooseplan.OsmAndFeature;
 import net.osmand.plus.dashboard.tools.DashFragmentData;
 import net.osmand.plus.plugins.development.OsmandDevelopmentPlugin;
@@ -54,12 +54,10 @@ public class DashPluginsFragment extends DashBaseFragment {
 		return view -> {
 			FragmentActivity activity = getActivity();
 			if (activity != null) {
-				if (plugin instanceof SRTMPlugin) {
-					ChoosePlanFragment.showInstance(activity, OsmAndFeature.TERRAIN);
-				} else {
+
 					Intent intent = new Intent(Intent.ACTION_VIEW, Uri.parse(plugin.getInstallURL()));
 					AndroidUtils.startActivityIfSafe(activity, intent);
-				}
+
 			}
 			closeDashboard();
 		};

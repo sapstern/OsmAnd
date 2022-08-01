@@ -31,7 +31,7 @@ import net.osmand.plus.R;
 import net.osmand.plus.utils.ColorUtilities;
 import net.osmand.plus.utils.UiUtilities;
 import net.osmand.plus.base.BaseOsmAndFragment;
-import net.osmand.plus.chooseplan.ChoosePlanFragment;
+//import net.osmand.plus.chooseplan.ChoosePlanFragment;
 import net.osmand.plus.chooseplan.OsmAndFeature;
 import net.osmand.plus.plugins.PluginInstalledBottomSheetDialog.PluginStateListener;
 import net.osmand.plus.settings.fragments.BaseSettingsFragment;
@@ -166,9 +166,7 @@ public class PluginInfoFragment extends BaseOsmAndFragment implements PluginStat
 					Intent intent = new Intent(Intent.ACTION_VIEW, Uri.parse(plugin.getInstallURL()));
 					AndroidUtils.startActivityIfSafe(activity, intent);
 				}
-				if (feature != null) {
-					ChoosePlanFragment.showInstance(activity, feature);
-				}
+
 			}
 		});
 

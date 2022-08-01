@@ -144,7 +144,7 @@ public class DownloadItemFragment extends DialogFragment implements DownloadEven
 
 	private void reloadData() {
 		DownloadActivity activity = getDownloadActivity();
-		OsmandApplication app = activity.getMyApplication();
+		OsmandApplication app = (OsmandApplication) activity.getApplication();
 		DownloadResources indexes = activity.getDownloadThread().getIndexes();
 		group = indexes.getGroupById(regionId);
 		CustomIndexItem indexItem = (CustomIndexItem) group.getItemByIndex(itemIndex);

@@ -17,7 +17,7 @@ import net.osmand.plus.backup.BackupInfo;
 import net.osmand.plus.backup.NetworkSettingsHelper;
 import net.osmand.plus.backup.NetworkSettingsHelper.BackupExportListener;
 import net.osmand.plus.backup.PrepareBackupResult;
-import net.osmand.plus.chooseplan.OsmAndProPlanFragment;
+
 import net.osmand.plus.helpers.AndroidUiHelper;
 import net.osmand.plus.settings.backend.backup.items.SettingsItem;
 import net.osmand.plus.utils.UiUtilities;
@@ -71,11 +71,9 @@ public class ActionButtonViewHolder extends RecyclerView.ViewHolder {
 			UiUtilities.setupDialogButton(nightMode, actionButton, DialogButtonType.SECONDARY_ACTIVE, R.string.retry);
 		} else if (status == BackupStatus.SUBSCRIPTION_EXPIRED) {
 			actionButton.setOnClickListener(v -> {
-				if (Version.isInAppPurchaseSupported()) {
-					OsmAndProPlanFragment.showInstance(mapActivity);
-				} else {
+
 					PromoCodeBottomSheet.showInstance(mapActivity.getSupportFragmentManager());
-				}
+
 			});
 			UiUtilities.setupDialogButton(nightMode, actionButton, DialogButtonType.SECONDARY_ACTIVE, R.string.renew_subscription);
 		}

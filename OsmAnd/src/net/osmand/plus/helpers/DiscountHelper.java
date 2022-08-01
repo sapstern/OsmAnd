@@ -26,15 +26,8 @@ import net.osmand.plus.OsmandApplication;
 import net.osmand.plus.R;
 import net.osmand.plus.Version;
 import net.osmand.plus.activities.MapActivity;
-import net.osmand.plus.chooseplan.ChoosePlanFragment;
-import net.osmand.plus.chooseplan.MapsPlusPlanFragment;
+
 import net.osmand.plus.chooseplan.OsmAndFeature;
-import net.osmand.plus.chooseplan.OsmAndProPlanFragment;
-import net.osmand.plus.inapp.InAppPurchaseHelper;
-import net.osmand.plus.inapp.InAppPurchases;
-import net.osmand.plus.inapp.InAppPurchases.InAppPurchase;
-import net.osmand.plus.inapp.InAppPurchases.InAppSubscription;
-import net.osmand.plus.inapp.InAppPurchases.InAppSubscriptionList;
 import net.osmand.plus.plugins.OsmandPlugin;
 import net.osmand.plus.poi.PoiUIFilter;
 import net.osmand.plus.search.QuickSearchHelper;
@@ -205,11 +198,7 @@ public class DiscountHelper {
 						if (showChristmasDialog) {
 							mapActivity.showXMasDialog();
 						} else {
-							InAppPurchaseHelper purchaseHelper = mapActivity.getPurchaseHelper();
-							if (purchaseHelper != null) {
-								purchaseHelper.requestInventory(false);
-							}
-							showDiscountBanner(mapActivity, data);
+														showDiscountBanner(mapActivity, data);
 						}
 					}
 				}
@@ -220,11 +209,7 @@ public class DiscountHelper {
 	}
 
 	public static boolean validateUrl(OsmandApplication app, String url) {
-		if (url.startsWith(INAPP_PREFIX) && url.length() > INAPP_PREFIX.length()) {
-			String inAppSku = url.substring(INAPP_PREFIX.length());
-			InAppPurchaseHelper purchaseHelper = app.getInAppPurchaseHelper();
-			return purchaseHelper == null || !purchaseHelper.isPurchased(inAppSku);
-		}
+
 		return true;
 	}
 
@@ -300,35 +285,7 @@ public class DiscountHelper {
 	}
 
 	public static void openUrl(MapActivity mapActivity, String url) {
-		if (url.startsWith(INAPP_PREFIX)) {
-			OsmandApplication app = mapActivity.getMyApplication();
-			InAppPurchaseHelper purchaseHelper = app.getInAppPurchaseHelper();
-			if (purchaseHelper != null) {
-				InAppPurchase fullVersion = purchaseHelper.getFullVersion();
-				if (fullVersion != null && url.contains(fullVersion.getSku())) {
-					app.logEvent("in_app_purchase_redirect");
-					try {
-						purchaseHelper.purchaseFullVersion(mapActivity);
-					} catch (UnsupportedOperationException e) {
-						LOG.error("purchaseFullVersion is not supported", e);
-					}
-				} else {
-					InAppPurchases purchases = purchaseHelper.getInAppPurchases();
-					for (InAppPurchase p : purchaseHelper.getSubscriptions().getAllSubscriptions()) {
-						if (url.contains(p.getSku())) {
-							if (purchases.isMapsSubscription(p)) {
-								MapsPlusPlanFragment.showInstance(mapActivity, p.getSku());
-							} else if (purchases.isOsmAndProSubscription(p)) {
-								OsmAndProPlanFragment.showInstance(mapActivity, p.getSku());
-							} else {
-								ChoosePlanFragment.showDefaultInstance(mapActivity);
-							}
-							break;
-						}
-					}
-				}
-			}
-		} else if (url.startsWith(SEARCH_QUERY_PREFIX)) {
+		 if (url.startsWith(SEARCH_QUERY_PREFIX)) {
 			String query = url.substring(SEARCH_QUERY_PREFIX.length());
 			if (!query.isEmpty()) {
 				mapActivity.showQuickSearch(query);
@@ -381,50 +338,7 @@ public class DiscountHelper {
 		}
 		switch (planType) {
 			case CHOOSE_PLAN_TYPE_FREE:
-			case CHOOSE_PLAN_TYPE_MAPS_PLUS:
-				if (Algorithms.isEmpty(selectedButtonId)) {
-					MapsPlusPlanFragment.showInstance(mapActivity);
-				} else {
-					MapsPlusPlanFragment.showInstance(mapActivity, selectedButtonId);
-				}
-				break;
-			case CHOOSE_PLAN_TYPE_PRO:
-				if (Algorithms.isEmpty(selectedButtonId)) {
-					OsmAndProPlanFragment.showInstance(mapActivity);
-				} else {
-					OsmAndProPlanFragment.showInstance(mapActivity, selectedButtonId);
-				}
-				break;
-			case CHOOSE_PLAN_TYPE_SEA_DEPTH:
-				ChoosePlanFragment.showInstance(mapActivity, OsmAndFeature.NAUTICAL);
-				break;
-			case CHOOSE_PLAN_TYPE_HILLSHADE:
-				ChoosePlanFragment.showInstance(mapActivity, OsmAndFeature.TERRAIN);
-				break;
-			case CHOOSE_PLAN_TYPE_WIKIPEDIA:
-				ChoosePlanFragment.showInstance(mapActivity, OsmAndFeature.WIKIPEDIA);
-				break;
-			case CHOOSE_PLAN_TYPE_WIKIVOYAGE:
-				ChoosePlanFragment.showInstance(mapActivity, OsmAndFeature.WIKIVOYAGE);
-				break;
-			case CHOOSE_PLAN_TYPE_OSMAND_CLOUD:
-				ChoosePlanFragment.showInstance(mapActivity, OsmAndFeature.OSMAND_CLOUD);
-				break;
-			case CHOOSE_PLAN_TYPE_ADVANCED_WIDGETS:
-				ChoosePlanFragment.showInstance(mapActivity, OsmAndFeature.ADVANCED_WIDGETS);
-				break;
-			case CHOOSE_PLAN_TYPE_HOURLY_MAP_UPDATES:
-				ChoosePlanFragment.showInstance(mapActivity, OsmAndFeature.HOURLY_MAP_UPDATES);
-				break;
-			case CHOOSE_PLAN_TYPE_MONTHLY_MAP_UPDATES:
-				ChoosePlanFragment.showInstance(mapActivity, OsmAndFeature.MONTHLY_MAP_UPDATES);
-				break;
-			case CHOOSE_PLAN_TYPE_UNLIMITED_MAP_DOWNLOADS:
-				ChoosePlanFragment.showInstance(mapActivity, OsmAndFeature.UNLIMITED_MAP_DOWNLOADS);
-				break;
-			case CHOOSE_PLAN_TYPE_COMBINED_WIKI:
-				ChoosePlanFragment.showInstance(mapActivity, OsmAndFeature.COMBINED_WIKI);
-				break;
+
 		}
 	}
 
@@ -560,21 +474,18 @@ public class DiscountHelper {
 
 	private abstract static class InAppPurchaseCondition extends Condition {
 
-		InAppPurchases inAppPurchases;
+
 
 		InAppPurchaseCondition(OsmandApplication app) {
 			super(app);
-			inAppPurchases = app.getInAppPurchaseHelper().getInAppPurchases();
 		}
 	}
 
 	private abstract static class SubscriptionCondition extends Condition {
 
-		InAppSubscriptionList liveUpdates;
 
 		SubscriptionCondition(OsmandApplication app) {
 			super(app);
-			liveUpdates = app.getInAppPurchaseHelper().getSubscriptions();
 		}
 	}
 
@@ -591,8 +502,7 @@ public class DiscountHelper {
 
 		@Override
 		boolean matches(@NonNull String value) {
-			InAppSubscription subscription = liveUpdates.getSubscriptionBySku(value);
-			return subscription == null || !subscription.isPurchased();
+			return true;
 		}
 	}
 
@@ -609,8 +519,7 @@ public class DiscountHelper {
 
 		@Override
 		boolean matches(@NonNull String value) {
-			InAppSubscription subscription = liveUpdates.getSubscriptionBySku(value);
-			return subscription != null && subscription.isPurchased();
+			return true;
 		}
 	}
 
@@ -627,8 +536,7 @@ public class DiscountHelper {
 
 		@Override
 		boolean matches(@NonNull String value) {
-			InAppPurchase purchase = inAppPurchases.getInAppPurchaseBySku(value);
-			return purchase == null || !purchase.isPurchased();
+			return true;
 		}
 	}
 
@@ -645,8 +553,7 @@ public class DiscountHelper {
 
 		@Override
 		boolean matches(@NonNull String value) {
-			InAppPurchase purchase = inAppPurchases.getInAppPurchaseBySku(value);
-			return purchase != null && purchase.isPurchased();
+			return true;
 		}
 	}
 

@@ -1,5 +1,6 @@
 package net.osmand.plus.base;
 
+import android.annotation.SuppressLint;
 import android.app.Activity;
 import android.graphics.drawable.Drawable;
 import android.view.View;
@@ -19,7 +20,7 @@ import androidx.fragment.app.FragmentActivity;
 import net.osmand.plus.OsmandApplication;
 import net.osmand.plus.activities.MapActivity;
 import net.osmand.plus.activities.OsmandActionBarActivity;
-import net.osmand.plus.activities.OsmandInAppPurchaseActivity;
+//import net.osmand.plus.activities.OsmandInAppPurchaseActivity;
 import net.osmand.plus.settings.backend.OsmandSettings;
 import net.osmand.plus.utils.ColorUtilities;
 import net.osmand.plus.utils.UiUtilities;
@@ -132,15 +133,15 @@ public class BaseOsmAndFragment extends Fragment implements TransitionAnimator {
 		return (OsmandActionBarActivity) requireActivity();
 	}
 
-	@Nullable
-	protected OsmandInAppPurchaseActivity getInAppPurchaseActivity() {
-		Activity activity = getActivity();
-		if (activity instanceof OsmandInAppPurchaseActivity) {
-			return (OsmandInAppPurchaseActivity) getActivity();
-		} else {
-			return null;
-		}
-	}
+//	@Nullable
+//	protected OsmandInAppPurchaseActivity getInAppPurchaseActivity() {
+//		Activity activity = getActivity();
+//		if (activity instanceof OsmandInAppPurchaseActivity) {
+//			return (OsmandInAppPurchaseActivity) getActivity();
+//		} else {
+//			return null;
+//		}
+//	}
 
 	@Nullable
 	protected UiUtilities getIconsCache() {
@@ -171,6 +172,7 @@ public class BaseOsmAndFragment extends Fragment implements TransitionAnimator {
 		return cache != null ? cache.getThemedIcon(id) : null;
 	}
 
+	@SuppressLint("ResourceType")
 	@ColorInt
 	protected int getColor(@ColorInt int resId) {
 		return ColorUtilities.getColor(getContext(), resId);

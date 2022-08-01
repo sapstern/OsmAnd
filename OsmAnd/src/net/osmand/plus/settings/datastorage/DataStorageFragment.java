@@ -485,7 +485,7 @@ public class DataStorageFragment extends BaseSettingsFragment implements UpdateM
 				if (a == null) {
 					return;
 				}
-				OsmandApplication app = a.getMyApplication();
+				OsmandApplication app = (OsmandApplication) a.getApplication();
 				if (result) {
 					app.getResourceManager().resetStoreDirectory();
 					// immediately proceed with change (to not loose where maps are currently located)

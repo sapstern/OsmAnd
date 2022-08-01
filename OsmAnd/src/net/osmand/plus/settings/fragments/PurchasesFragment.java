@@ -19,29 +19,21 @@ import com.google.android.material.appbar.AppBarLayout;
 import net.osmand.plus.OsmandApplication;
 import net.osmand.plus.R;
 import net.osmand.plus.Version;
-import net.osmand.plus.activities.OsmandInAppPurchaseActivity;
 import net.osmand.plus.base.BaseOsmAndDialogFragment;
-import net.osmand.plus.chooseplan.ExploreOsmAndPlansCard;
-import net.osmand.plus.chooseplan.NoPurchasesCard;
-import net.osmand.plus.chooseplan.TroubleshootingCard;
-import net.osmand.plus.inapp.InAppPurchaseHelper;
-import net.osmand.plus.inapp.InAppPurchaseHelper.InAppPurchaseListener;
-import net.osmand.plus.inapp.InAppPurchaseHelper.InAppPurchaseTaskType;
-import net.osmand.plus.inapp.InAppPurchases.InAppPurchase;
 import net.osmand.plus.liveupdates.CountrySelectionFragment.CountryItem;
 import net.osmand.plus.liveupdates.CountrySelectionFragment.OnFragmentInteractionListener;
 import net.osmand.plus.utils.AndroidUtils;
 import net.osmand.plus.utils.UiUtilities;
 import net.osmand.util.Algorithms;
 
-import java.util.List;
 
-public class PurchasesFragment extends BaseOsmAndDialogFragment implements InAppPurchaseListener, OnFragmentInteractionListener {
+
+public class PurchasesFragment extends BaseOsmAndDialogFragment implements OnFragmentInteractionListener {
 
 	public static final String TAG = PurchasesFragment.class.getName();
 
 	private OsmandApplication app;
-	private InAppPurchaseHelper purchaseHelper;
+
 
 	private ViewGroup cardsContainer;
 	private LayoutInflater themedInflater;
@@ -69,49 +61,12 @@ public class PurchasesFragment extends BaseOsmAndDialogFragment implements InApp
 	@Override
 	public void onResume() {
 		super.onResume();
-		updateCards();
 
-		if (purchaseHelper != null) {
-			purchaseHelper.requestInventory(false);
-		}
+
+
 	}
 
-	private void updateCards() {
-		FragmentActivity activity = getActivity();
-		purchaseHelper = getInAppPurchaseHelper();
-		if (activity == null || purchaseHelper == null) {
-			return;
-		}
-		cardsContainer.removeAllViews();
 
-		List<InAppPurchase> mainPurchases = purchaseHelper.getEverMadeMainPurchases();
-		for (int i = 0; i < mainPurchases.size(); i++) {
-			InAppPurchase purchase = mainPurchases.get(i);
-			cardsContainer.addView(new InAppPurchaseCard(activity, purchaseHelper, purchase).build(activity));
-		}
-		boolean promoActive = app.getSettings().BACKUP_PROMOCODE_ACTIVE.get();
-		if (promoActive) {
-			cardsContainer.addView(new PromoPurchaseCard(activity).build(activity));
-		}
-
-		if (!Version.isPaidVersion(app) || Algorithms.isEmpty(mainPurchases)) {
-			cardsContainer.addView(new NoPurchasesCard(activity, this).build(activity));
-		} else {
-			themedInflater.inflate(R.layout.list_item_divider, cardsContainer);
-			cardsContainer.addView(new ExploreOsmAndPlansCard(activity, this).build(activity));
-		}
-		cardsContainer.addView(new TroubleshootingCard(activity, purchaseHelper, false).build(activity));
-	}
-
-	@Nullable
-	public InAppPurchaseHelper getInAppPurchaseHelper() {
-		Activity activity = getActivity();
-		if (activity instanceof OsmandInAppPurchaseActivity) {
-			return ((OsmandInAppPurchaseActivity) activity).getPurchaseHelper();
-		} else {
-			return null;
-		}
-	}
 
 	private void createToolbar(View mainView, boolean nightMode) {
 		AppBarLayout appbar = mainView.findViewById(R.id.appbar);
@@ -135,29 +90,6 @@ public class PurchasesFragment extends BaseOsmAndDialogFragment implements InApp
 		appbar.addView(toolbar);
 	}
 
-	@Override
-	public void onError(InAppPurchaseTaskType taskType, String error) {
-	}
-
-	@Override
-	public void onGetItems() {
-		updateCards();
-	}
-
-	@Override
-	public void onItemPurchased(String sku, boolean active) {
-		if (purchaseHelper != null) {
-			purchaseHelper.requestInventory(false);
-		}
-	}
-
-	@Override
-	public void showProgress(InAppPurchaseTaskType taskType) {
-	}
-
-	@Override
-	public void dismissProgress(InAppPurchaseTaskType taskType) {
-	}
 
 	@Override
 	public void onSearchResult(CountryItem name) {

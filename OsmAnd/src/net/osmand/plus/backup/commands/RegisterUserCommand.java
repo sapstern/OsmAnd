@@ -47,10 +47,6 @@ public class RegisterUserCommand extends BackupCommand {
 		Map<String, String> params = new HashMap<>();
 		params.put("email", email);
 		params.put("login", String.valueOf(login));
-		String orderId = Algorithms.isEmpty(promoCode) ? getHelper().getOrderId() : promoCode;
-		if (!Algorithms.isEmpty(orderId)) {
-			params.put("orderid", orderId);
-		}
 		String deviceId = getApp().getUserAndroidId();
 		params.put("deviceid", deviceId);
 		OperationLog operationLog = createOperationLog("registerUser");
@@ -60,7 +56,7 @@ public class RegisterUserCommand extends BackupCommand {
 			BackupError backupError = null;
 			if (!Algorithms.isEmpty(error)) {
 				backupError = new BackupError(error);
-				message = "User registration error: " + backupError + "\nEmail=" + email + "\nOrderId=" + orderId + "\nDeviceId=" + deviceId;
+				message = "User registration error: " + backupError + "\nEmail=" + email + "\n"+ "\nDeviceId=" + deviceId;
 				status = STATUS_SERVER_ERROR;
 			} else if (!Algorithms.isEmpty(resultJson)) {
 				try {

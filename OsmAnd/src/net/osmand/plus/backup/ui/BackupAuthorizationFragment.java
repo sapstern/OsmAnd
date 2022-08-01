@@ -15,16 +15,14 @@ import androidx.preference.Preference;
 import androidx.preference.PreferenceViewHolder;
 import androidx.recyclerview.widget.RecyclerView;
 
-import com.google.android.material.appbar.AppBarLayout;
+
 
 import net.osmand.plus.R;
 import net.osmand.plus.activities.MapActivity;
-import net.osmand.plus.chooseplan.ChoosePlanFragment;
+
 import net.osmand.plus.chooseplan.OsmAndFeature;
 import net.osmand.plus.helpers.AndroidUiHelper;
-import net.osmand.plus.inapp.InAppPurchaseHelper;
-import net.osmand.plus.inapp.InAppPurchaseHelper.InAppPurchaseListener;
-import net.osmand.plus.inapp.InAppPurchaseHelper.InAppPurchaseTaskType;
+
 import net.osmand.plus.settings.backend.ApplicationMode;
 import net.osmand.plus.settings.fragments.BaseSettingsFragment;
 import net.osmand.plus.settings.fragments.ExportSettingsFragment;
@@ -35,7 +33,7 @@ import net.osmand.plus.utils.UiUtilities.DialogButtonType;
 import static net.osmand.plus.importfiles.ImportHelper.ImportType.SETTINGS;
 import static net.osmand.plus.utils.UiUtilities.setupDialogButton;
 
-public class BackupAuthorizationFragment extends BaseSettingsFragment implements InAppPurchaseListener {
+public class BackupAuthorizationFragment extends BaseSettingsFragment  {
 
 	private static final String AUTHORIZE = "authorize";
 	private static final String LOCAL_BACKUP = "local_backup";
@@ -110,14 +108,14 @@ public class BackupAuthorizationFragment extends BaseSettingsFragment implements
 		View signUpButton = holder.itemView.findViewById(R.id.sign_up_button);
 		View signInButton = holder.itemView.findViewById(R.id.sign_in_button);
 
-		boolean subscribed = InAppPurchaseHelper.isOsmAndProAvailable(app);
+		boolean subscribed = true;
 		if (subscribed) {
 			setupAuthorizeButton(signUpButton, DialogButtonType.PRIMARY, R.string.register_opr_create_new_account, true);
 		} else {
 			signUpButton.setOnClickListener(v -> {
 				MapActivity mapActivity = getMapActivity();
 				if (mapActivity != null) {
-					ChoosePlanFragment.showInstance(mapActivity, OsmAndFeature.OSMAND_CLOUD);
+					//ChoosePlanFragment.showInstance(mapActivity, OsmAndFeature.OSMAND_CLOUD);
 				}
 			});
 			setupDialogButton(isNightMode(), signUpButton, DialogButtonType.PRIMARY, R.string.shared_string_get);
@@ -188,28 +186,4 @@ public class BackupAuthorizationFragment extends BaseSettingsFragment implements
 		}
 	}
 
-	@Override
-	public void onError(InAppPurchaseTaskType taskType, String error) {
-
-	}
-
-	@Override
-	public void onGetItems() {
-
-	}
-
-	@Override
-	public void onItemPurchased(String sku, boolean active) {
-		updatePreference(findPreference(AUTHORIZE));
-	}
-
-	@Override
-	public void showProgress(InAppPurchaseTaskType taskType) {
-
-	}
-
-	@Override
-	public void dismissProgress(InAppPurchaseTaskType taskType) {
-
-	}
 }

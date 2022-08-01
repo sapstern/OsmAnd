@@ -97,7 +97,7 @@ import net.osmand.plus.helpers.TargetPointsHelper;
 import net.osmand.plus.helpers.TargetPointsHelper.TargetPoint;
 import net.osmand.plus.importfiles.ImportHelper;
 import net.osmand.plus.importfiles.ui.ImportGpxBottomSheetDialogFragment;
-import net.osmand.plus.inapp.InAppPurchaseHelper;
+//import net.osmand.plus.inapp.InAppPurchaseHelper;
 import net.osmand.plus.mapcontextmenu.AdditionalActionsBottomSheetDialogFragment;
 import net.osmand.plus.mapcontextmenu.MapContextMenu;
 import net.osmand.plus.mapcontextmenu.builders.cards.dialogs.ContextMenuCardDialogFragment;
@@ -203,7 +203,7 @@ public class MapActivity extends OsmandActionBarActivity implements DownloadEven
 	private MapActivityActions mapActions;
 	private WidgetsVisibilityHelper mapWidgetsVisibilityHelper;
 
-	private ExtendedMapActivity extendedMapActivity;
+	//private ExtendedMapActivity extendedMapActivity;
 
 	// App variables
 	private OsmandApplication app;
@@ -286,7 +286,7 @@ public class MapActivity extends OsmandActionBarActivity implements DownloadEven
 		mapActions = new MapActivityActions(this);
 		mapWidgetsVisibilityHelper = new WidgetsVisibilityHelper(this);
 		dashboardOnMap.createDashboardView();
-		extendedMapActivity = new ExtendedMapActivity();
+		//extendedMapActivity = new ExtendedMapActivity();
 
 		getMapView().setMapActivity(this);
 		getMapLayers().setMapActivity(this);
@@ -350,7 +350,7 @@ public class MapActivity extends OsmandActionBarActivity implements DownloadEven
 		mapActivityKeyListener = new MapActivityKeyListener(this);
 		mIsDestroyed = false;
 
-		extendedMapActivity.onCreate(this, savedInstanceState);
+//		extendedMapActivity.onCreate(this, savedInstanceState);
 	}
 
 	private void setMapInitialLatLon(@NonNull OsmandMapTileView mapView, @Nullable Location location) {
@@ -379,7 +379,7 @@ public class MapActivity extends OsmandActionBarActivity implements DownloadEven
 		}
 		removeFragment(ImportGpxBottomSheetDialogFragment.TAG);
 		removeFragment(AdditionalActionsBottomSheetDialogFragment.TAG);
-		extendedMapActivity.onSaveInstanceState(this, outState);
+		//extendedMapActivity.onSaveInstanceState(this, outState);
 		super.onSaveInstanceState(outState);
 	}
 
@@ -458,8 +458,8 @@ public class MapActivity extends OsmandActionBarActivity implements DownloadEven
 		OsmandMapTileView mapView = getMapView();
 		NavigationSession carNavigationSession = app.getCarNavigationSession();
 		View androidAutoPlaceholder = findViewById(R.id.AndroidAutoPlaceholder);
-		boolean useAndroidAuto = carNavigationSession != null && carNavigationSession.hasStarted()
-				&& InAppPurchaseHelper.isAndroidAutoAvailable(app);
+		boolean useAndroidAuto = carNavigationSession != null && carNavigationSession.hasStarted();
+			//	&& InAppPurchaseHelper.isAndroidAutoAvailable(app);
 		if (settings.USE_OPENGL_RENDER.get() && NativeCoreContext.isInit()) {
 			ViewStub stub = findViewById(R.id.atlasMapRendererViewStub);
 			if (atlasMapRendererView == null) {
@@ -905,7 +905,7 @@ public class MapActivity extends OsmandActionBarActivity implements DownloadEven
 		settings.MAP_SCREEN_ORIENTATION.addListener(mapScreenOrientationSettingListener);
 		settings.USE_SYSTEM_SCREEN_TIMEOUT.addListener(useSystemScreenTimeoutListener);
 
-		extendedMapActivity.onResume(this);
+		//extendedMapActivity.onResume(this);
 	}
 
 	@Override
@@ -1184,7 +1184,7 @@ public class MapActivity extends OsmandActionBarActivity implements DownloadEven
 		lockHelper.onStart();
 		mapScrollHelper.setListener(this);
 		getMyApplication().getNotificationHelper().showNotifications();
-		extendedMapActivity.onStart(this);
+		//extendedMapActivity.onStart(this);
 	}
 
 	@Override
@@ -1196,7 +1196,7 @@ public class MapActivity extends OsmandActionBarActivity implements DownloadEven
 		stopped = true;
 		lockHelper.onStop(this);
 		mapScrollHelper.setListener(null);
-		extendedMapActivity.onStop(this);
+		//extendedMapActivity.onStop(this);
 		super.onStop();
 	}
 
@@ -1222,7 +1222,7 @@ public class MapActivity extends OsmandActionBarActivity implements DownloadEven
 			atlasMapRendererView.handleOnDestroy();
 		}
 		lockHelper.setLockUIAdapter(null);
-		extendedMapActivity.onDestroy(this);
+		//extendedMapActivity.onDestroy(this);
 
 		mIsDestroyed = true;
 	}
@@ -1257,7 +1257,7 @@ public class MapActivity extends OsmandActionBarActivity implements DownloadEven
 		} else {
 			onPauseActivity();
 		}
-		extendedMapActivity.onPause(this);
+		//extendedMapActivity.onPause(this);
 	}
 
 	private void onPauseActivity() {
@@ -1499,7 +1499,7 @@ public class MapActivity extends OsmandActionBarActivity implements DownloadEven
 			}
 		}
 		OsmandPlugin.onMapActivityResult(requestCode, resultCode, data);
-		extendedMapActivity.onActivityResult(this, requestCode, resultCode, data);
+		//extendedMapActivity.onActivityResult(this, requestCode, resultCode, data);
 		super.onActivityResult(requestCode, resultCode, data);
 	}
 
@@ -2175,10 +2175,10 @@ public class MapActivity extends OsmandActionBarActivity implements DownloadEven
 		}
 	}
 
-	@Override
-	public void onInAppPurchaseGetItems() {
-		DiscountHelper.checkAndDisplay(this);
-	}
+//	@Override
+//	public void onInAppPurchaseGetItems() {
+//		DiscountHelper.checkAndDisplay(this);
+//	}
 
 	public enum ShowQuickSearchMode {
 		NEW,

@@ -25,7 +25,7 @@ import net.osmand.plus.Version;
 import net.osmand.plus.activities.MapActivity;
 import net.osmand.plus.base.BaseOsmAndFragment;
 import net.osmand.plus.helpers.AndroidUiHelper;
-import net.osmand.plus.inapp.InAppPurchaseHelper;
+//import net.osmand.plus.inapp.InAppPurchaseHelper;
 
 public class SecondSplashScreenFragment extends BaseOsmAndFragment {
 
@@ -91,27 +91,27 @@ public class SecondSplashScreenFragment extends BaseOsmAndFragment {
 		ImageView text = new ImageView(activity);
 		text.setId(TEXT_ID);
 		int textColorId = ColorUtilities.getTertiaryTextColorId(systemDefaultNightMode);
-		if (Version.isFreeVersion(app)) {
-			if (InAppPurchaseHelper.isOsmAndProAvailable(app)) {
-				text.setImageDrawable(iconsCache.getIcon(R.drawable.image_text_osmand_pro, textColorId));
-			} else if (InAppPurchaseHelper.isSubscribedToMaps(app)) {
-				text.setImageDrawable(iconsCache.getIcon(R.drawable.image_text_osmand_maps_plus, textColorId));
-			} else if (InAppPurchaseHelper.isSubscribedToLiveUpdates(app)) {
-				text.setImageDrawable(iconsCache.getIcon(R.drawable.image_text_osmand_osmlive, textColorId));
-			} else if (InAppPurchaseHelper.isFullVersionPurchased(app)) {
-				text.setImageDrawable(iconsCache.getIcon(R.drawable.image_text_osmand_inapp, textColorId));
-			} else {
-				text.setImageDrawable(iconsCache.getIcon(R.drawable.image_text_osmand, textColorId));
-			}
-		} else if (Version.isPaidVersion(app) || Version.isDeveloperVersion(app)) {
-			if (InAppPurchaseHelper.isOsmAndProAvailable(app)) {
-				text.setImageDrawable(iconsCache.getIcon(R.drawable.image_text_osmand_plus_pro, textColorId));
-			} else if (InAppPurchaseHelper.isSubscribedToLiveUpdates(app)) {
-				text.setImageDrawable(iconsCache.getIcon(R.drawable.image_text_osmand_plus_osmlive, textColorId));
-			} else {
-				text.setImageDrawable(iconsCache.getIcon(R.drawable.image_text_osmand_plus, textColorId));
-			}
-		}
+//		if (Version.isFreeVersion(app)) { MFRI
+//			if (InAppPurchaseHelper.isOsmAndProAvailable(app)) {
+//				text.setImageDrawable(iconsCache.getIcon(R.drawable.image_text_osmand_pro, textColorId));
+//			} else if (InAppPurchaseHelper.isSubscribedToMaps(app)) {
+//				text.setImageDrawable(iconsCache.getIcon(R.drawable.image_text_osmand_maps_plus, textColorId));
+//			} else if (InAppPurchaseHelper.isSubscribedToLiveUpdates(app)) {
+//				text.setImageDrawable(iconsCache.getIcon(R.drawable.image_text_osmand_osmlive, textColorId));
+//			} else if (InAppPurchaseHelper.isFullVersionPurchased(app)) {
+//				text.setImageDrawable(iconsCache.getIcon(R.drawable.image_text_osmand_inapp, textColorId));
+//			} else {
+//				text.setImageDrawable(iconsCache.getIcon(R.drawable.image_text_osmand, textColorId));
+//			}
+//		} else if (Version.isPaidVersion(app) || Version.isDeveloperVersion(app)) {
+//			if (InAppPurchaseHelper.isOsmAndProAvailable(app)) {
+//				text.setImageDrawable(iconsCache.getIcon(R.drawable.image_text_osmand_plus_pro, textColorId));
+//			} else if (InAppPurchaseHelper.isSubscribedToLiveUpdates(app)) {
+//				text.setImageDrawable(iconsCache.getIcon(R.drawable.image_text_osmand_plus_osmlive, textColorId));
+//			} else {
+//				text.setImageDrawable(iconsCache.getIcon(R.drawable.image_text_osmand_plus, textColorId));
+//			}
+//		}
 		RelativeLayout.LayoutParams textLayoutParams = new RelativeLayout.LayoutParams(RelativeLayout.LayoutParams.WRAP_CONTENT, RelativeLayout.LayoutParams.WRAP_CONTENT);
 		textLayoutParams.addRule(RelativeLayout.ABOVE, OSM_TEXT_ID);
 		textLayoutParams.addRule(RelativeLayout.CENTER_HORIZONTAL);

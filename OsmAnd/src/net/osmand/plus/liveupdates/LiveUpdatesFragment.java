@@ -29,13 +29,13 @@ import net.osmand.plus.OsmandApplication;
 import net.osmand.plus.R;
 import net.osmand.plus.base.BaseOsmAndDialogFragment;
 import net.osmand.plus.base.OsmandBaseExpandableListAdapter;
-import net.osmand.plus.chooseplan.ChoosePlanFragment;
+//import net.osmand.plus.chooseplan.ChoosePlanFragment;
 import net.osmand.plus.chooseplan.OsmAndFeature;
 import net.osmand.plus.download.LocalIndexInfo;
 import net.osmand.plus.helpers.AndroidUiHelper;
 import net.osmand.plus.helpers.FontCache;
-import net.osmand.plus.inapp.InAppPurchaseHelper;
-import net.osmand.plus.inapp.InAppPurchases.InAppSubscription;
+//import net.osmand.plus.inapp.InAppPurchaseHelper;
+//import net.osmand.plus.inapp.InAppPurchases.InAppSubscription;
 import net.osmand.plus.liveupdates.LiveUpdatesClearBottomSheet.RefreshLiveUpdates;
 import net.osmand.plus.liveupdates.LiveUpdatesHelper.LiveUpdateListener;
 import net.osmand.plus.liveupdates.LiveUpdatesHelper.TimeOfDay;
@@ -166,16 +166,14 @@ public class LiveUpdatesFragment extends BaseOsmAndDialogFragment implements OnL
 		listView.setOnChildClickListener(new ExpandableListView.OnChildClickListener() {
 			@Override
 			public boolean onChildClick(ExpandableListView parent, View v, int groupPosition, int childPosition, long id) {
-				if (InAppPurchaseHelper.isSubscribedToLiveUpdates(app) && settings.IS_LIVE_UPDATES_ON.get()) {
+
 					if (getFragmentManager() != null) {
 						LiveUpdatesSettingsBottomSheet
 								.showInstance(getFragmentManager(), LiveUpdatesFragment.this,
 										adapter.getChild(groupPosition, childPosition).getFileName());
 					}
 					return true;
-				} else {
-					return false;
-				}
+
 			}
 		});
 
@@ -318,18 +316,11 @@ public class LiveUpdatesFragment extends BaseOsmAndDialogFragment implements OnL
 			public void onClick(View view) {
 				boolean visible = !isChecked;
 				if (visible) {
-					if (InAppPurchaseHelper.isSubscribedToLiveUpdates(app)) {
+
 						switchOnLiveUpdates();
 						updateToolbarSwitch(true);
-					} else {
-						updateToolbarSwitch(false);
-						app.showToastMessage(getString(R.string.osm_live_ask_for_purchase));
 
-						FragmentActivity activity = getActivity();
-						if (activity != null) {
-							ChoosePlanFragment.showInstance(activity, OsmAndFeature.HOURLY_MAP_UPDATES);
-						}
-					}
+
 				} else {
 					settings.IS_LIVE_UPDATES_ON.set(false);
 					enableLiveUpdates(false);
@@ -564,7 +555,7 @@ public class LiveUpdatesFragment extends BaseOsmAndDialogFragment implements OnL
 
 			description.setText(getFormattedLastSuccessfulCheck(item));
 
-			if (InAppPurchaseHelper.isSubscribedToLiveUpdates(app)) {
+
 				compoundButton.setEnabled(liveUpdateOn);
 				compoundButton.setOnCheckedChangeListener(new SwitchCompat.OnCheckedChangeListener() {
 					@Override
@@ -577,10 +568,7 @@ public class LiveUpdatesFragment extends BaseOsmAndDialogFragment implements OnL
 						});
 					}
 				});
-			} else {
-				compoundButton.setEnabled(false);
 			}
-		}
 	}
 
 	public static class GetLastUpdateDateTask extends AsyncTask<Void, Void, String> {
@@ -689,32 +677,10 @@ public class LiveUpdatesFragment extends BaseOsmAndDialogFragment implements OnL
 		}
 	}
 
-	public static String getSupportRegionName(OsmandApplication app, InAppPurchaseHelper purchaseHelper) {
+	public static <InAppPurchaseHelper> String getSupportRegionName(OsmandApplication app, InAppPurchaseHelper purchaseHelper) {
 		OsmandSettings settings = app.getSettings();
 		String countryName = settings.BILLING_USER_COUNTRY.get();
-		if (purchaseHelper != null) {
-			List<InAppSubscription> subscriptions = purchaseHelper.getSubscriptions().getVisibleSubscriptions();
-			boolean donationSupported = false;
-			for (InAppSubscription s : subscriptions) {
-				if (s.isDonationSupported()) {
-					donationSupported = true;
-					break;
-				}
-			}
-			if (donationSupported) {
-				if (Algorithms.isEmpty(countryName)) {
-					if (OsmandSettings.BILLING_USER_DONATION_NONE_PARAMETER.equals(settings.BILLING_USER_COUNTRY_DOWNLOAD_NAME.get())) {
-						countryName = app.getString(R.string.osmand_team);
-					} else {
-						countryName = app.getString(R.string.shared_string_world);
-					}
-				}
-			} else {
-				countryName = app.getString(R.string.osmand_team);
-			}
-		} else {
-			countryName = app.getString(R.string.osmand_team);
-		}
+
 		return countryName;
 	}
 

@@ -323,7 +323,7 @@ public class SearchDialogFragment extends DialogFragment implements DownloadEven
 
 		public SearchListAdapter(DownloadActivity ctx) {
 			this.ctx = ctx;
-			this.osmandRegions = ctx.getMyApplication().getRegions();
+			this.osmandRegions = ((OsmandApplication) ctx.getApplication()).getRegions();
 			TypedArray ta = ctx.getTheme().obtainStyledAttributes(new int[]{android.R.attr.textColorPrimary});
 			ta.recycle();
 		}
@@ -474,7 +474,7 @@ public class SearchDialogFragment extends DialogFragment implements DownloadEven
 			private SearchRequest<Amenity> searchCityRequest;
 
 			public SearchIndexFilter() {
-				this.osmandRegions = ctx.getMyApplication().getRegions();
+				this.osmandRegions = ((OsmandApplication)ctx.getApplication()).getRegions();
 			}
 
 			public void cancelFilter() {

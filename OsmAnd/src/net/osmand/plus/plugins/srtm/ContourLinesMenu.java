@@ -8,7 +8,7 @@ import net.osmand.PlatformUtil;
 import net.osmand.plus.OsmandApplication;
 import net.osmand.plus.R;
 import net.osmand.plus.activities.MapActivity;
-import net.osmand.plus.chooseplan.ChoosePlanFragment;
+//import net.osmand.plus.chooseplan.ChoosePlanFragment;
 import net.osmand.plus.chooseplan.OsmAndFeature;
 import net.osmand.plus.download.DownloadActivityType;
 import net.osmand.plus.download.DownloadIndexesThread;
@@ -18,7 +18,7 @@ import net.osmand.plus.download.DownloadValidationManager;
 import net.osmand.plus.download.IndexItem;
 import net.osmand.plus.download.SelectIndexesHelper;
 import net.osmand.plus.download.SrtmDownloadItem;
-import net.osmand.plus.inapp.InAppPurchaseHelper;
+//import net.osmand.plus.inapp.InAppPurchaseHelper;
 import net.osmand.plus.plugins.OsmandPlugin;
 import net.osmand.plus.settings.backend.OsmandSettings;
 import net.osmand.plus.settings.backend.preferences.CommonPreference;
@@ -64,7 +64,7 @@ public class ContourLinesMenu {
 		OsmandApplication app = mapActivity.getMyApplication();
 		OsmandSettings settings = app.getSettings();
 		SRTMPlugin plugin = OsmandPlugin.getPlugin(SRTMPlugin.class);
-		boolean srtmEnabled = OsmandPlugin.isActive(SRTMPlugin.class) || InAppPurchaseHelper.isContourLinesPurchased(app);
+		boolean srtmEnabled = OsmandPlugin.isActive(SRTMPlugin.class);
 
 		RenderingRuleProperty contourLinesProp = app.getRendererRegistry().getCustomRenderingRuleProperty(CONTOUR_LINES_ATTR);
 		RenderingRuleProperty colorSchemeProp = app.getRendererRegistry().getCustomRenderingRuleProperty(CONTOUR_LINES_SCHEME_ATTR);
@@ -141,10 +141,8 @@ public class ContourLinesMenu {
 							mapActivity.refreshMapComplete();
 						}
 					});
-				} else if (itemId == R.string.srtm_plugin_name) {
-					ChoosePlanFragment.showInstance(mapActivity, OsmAndFeature.TERRAIN);
-					closeDashboard(mapActivity);
-				} else if (contourWidthProp != null && itemId == contourWidthName.hashCode()) {
+				}
+					else if (contourWidthProp != null && itemId == contourWidthName.hashCode()) {
 					plugin.selectPropertyValue(mapActivity, contourWidthProp, widthPref, new Runnable() {
 						@Override
 						public void run() {

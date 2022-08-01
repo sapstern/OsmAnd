@@ -48,7 +48,7 @@ import net.osmand.plus.download.LocalIndexHelper.LocalIndexType;
 import net.osmand.plus.download.LocalIndexInfo;
 import net.osmand.plus.download.SrtmDownloadItem;
 import net.osmand.plus.helpers.FileNameTranslationHelper;
-import net.osmand.plus.inapp.InAppPurchaseHelper;
+//import net.osmand.plus.inapp.InAppPurchaseHelper;
 import net.osmand.plus.mapsource.EditMapSourceDialogFragment.OnMapSourceUpdateListener;
 import net.osmand.plus.plugins.OsmandPlugin;
 import net.osmand.plus.plugins.development.OsmandDevelopmentPlugin;
@@ -356,13 +356,13 @@ public class LocalIndexesFragment extends OsmandExpandableListFragment implement
 						File f = new File(info.getPathToData());
 						successfull = Algorithms.removeAllFiles(f);
 
-						if (InAppPurchaseHelper.isSubscribedToLiveUpdates(getMyApplication())) {
+						//if (InAppPurchaseHelper.isSubscribedToLiveUpdates(getMyApplication())) {
 							String fileNameWithoutExtension =
 									Algorithms.getFileNameWithoutExtension(f);
 							IncrementalChangesManager changesManager =
 									getMyApplication().getResourceManager().getChangesManager();
 							changesManager.deleteUpdates(fileNameWithoutExtension);
-						}
+						//}
 						if (successfull) {
 							getMyApplication().getResourceManager().closeFile(info.getFileName());
 							File tShm = new File(f.getParentFile(), f.getName() + "-shm");
@@ -749,7 +749,7 @@ public class LocalIndexesFragment extends OsmandExpandableListFragment implement
 		public LocalIndexesAdapter(DownloadActivity ctx) {
 			this.ctx = ctx;
 			warningColor = ContextCompat.getColor(ctx, R.color.color_warning);
-			boolean light = ctx.getMyApplication().getSettings().isLightContent();
+			boolean light = ctx.appl.getSettings().isLightContent();
 			okColor = ColorUtilities.getPrimaryTextColor(ctx, !light);
 			corruptedColor = ContextCompat.getColor(ctx, R.color.color_invalid);
 		}
@@ -898,7 +898,7 @@ public class LocalIndexesFragment extends OsmandExpandableListFragment implement
 			return child.getType() == LocalIndexType.VOICE_DATA
 					? FileNameTranslationHelper.getVoiceName(ctx, child.getFileName())
 					: FileNameTranslationHelper.getFileName(ctx,
-					ctx.getMyApplication().getResourceManager().getOsmandRegions(),
+					ctx.appl.getResourceManager().getOsmandRegions(),
 					child.getFileName());
 		}
 
@@ -1006,7 +1006,7 @@ public class LocalIndexesFragment extends OsmandExpandableListFragment implement
 			}
 
 			public void bindLocalIndexInfo(LocalIndexInfo child) {
-				options.setImageDrawable(ctx.getMyApplication().getUIUtilities()
+				options.setImageDrawable(ctx.appl.getUIUtilities()
 						.getThemedIcon(R.drawable.ic_overflow_menu_white));
 				options.setContentDescription(ctx.getString(R.string.shared_string_more));
 				options.setOnClickListener(v -> openPopUpMenu(v, child));
@@ -1075,7 +1075,7 @@ public class LocalIndexesFragment extends OsmandExpandableListFragment implement
 			}
 
 			private Drawable getContentIcon(DownloadActivity context, int resourceId, int colorId) {
-				return context.getMyApplication().getUIUtilities().getIcon(resourceId, colorId);
+				return context.appl.getUIUtilities().getIcon(resourceId, colorId);
 			}
 		}
 	}

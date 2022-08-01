@@ -28,7 +28,6 @@ import net.osmand.plus.download.DownloadIndexesThread;
 import net.osmand.plus.download.DownloadValidationManager;
 import net.osmand.plus.download.IndexItem;
 import net.osmand.plus.helpers.FileNameTranslationHelper;
-import net.osmand.plus.inapp.InAppPurchaseHelper;
 import net.osmand.plus.liveupdates.LiveUpdatesHelper;
 import net.osmand.plus.mapcontextmenu.MenuController;
 import net.osmand.plus.mapcontextmenu.builders.MapDataMenuBuilder;
@@ -84,8 +83,8 @@ public class MapDataMenuController extends MenuController {
 			}
 		}
 
-		srtmDisabled = !OsmandPlugin.isActive(SRTMPlugin.class)
-				&& !InAppPurchaseHelper.isContourLinesPurchased(app);
+		srtmDisabled = !OsmandPlugin.isActive(SRTMPlugin.class);
+
 		OsmandPlugin srtmPlugin = OsmandPlugin.getPlugin(SRTMPlugin.class);
 		srtmNeedsInstallation = srtmPlugin == null || srtmPlugin.needsInstallation();
 

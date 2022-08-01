@@ -48,8 +48,8 @@ import net.osmand.osm.PoiType;
 import net.osmand.plus.OsmandApplication;
 import net.osmand.plus.R;
 import net.osmand.plus.activities.MapActivity;
-import net.osmand.plus.chooseplan.ChoosePlanFragment;
-import net.osmand.plus.chooseplan.OsmAndFeature;
+//import net.osmand.plus.chooseplan.ChoosePlanFragment;
+//import net.osmand.plus.chooseplan.OsmAndFeature;
 import net.osmand.plus.helpers.AndroidUiHelper;
 import net.osmand.plus.helpers.FontCache;
 import net.osmand.plus.mapcontextmenu.builders.cards.AbstractCard;
@@ -1372,21 +1372,21 @@ public class MenuBuilder {
 	}
 
 	private void buildGetWikipediaBanner(ViewGroup viewGroup) {
-		OsmAndFeature feature = OsmAndFeature.WIKIPEDIA;
+		//OsmAndFeature feature = OsmAndFeature.WIKIPEDIA;
 		LinearLayout view = buildCollapsableContentView(app, false, true);
 
 		View banner = UiUtilities.getInflater(app, !light)
 				.inflate(R.layout.get_wikipedia_context_menu_banner, view, false);
 
 		ImageView ivIcon = banner.findViewById(R.id.icon);
-		ivIcon.setImageResource(feature.getIconId(!light));
+		//ivIcon.setImageResource(feature.getIconId(!light));
 
 		View btnGet = banner.findViewById(R.id.button_get);
 		UiUtilities.setupDialogButton(!light, btnGet, DialogButtonType.PRIMARY, R.string.shared_string_get);
 		btnGet.setOnClickListener(v -> {
-			if (mapActivity != null) {
-				ChoosePlanFragment.showInstance(mapActivity, feature);
-			}
+//			if (mapActivity != null) {
+//				ChoosePlanFragment.showInstance(mapActivity, feature);
+//			}
 		});
 
 		View row = createRowContainer(app, NEAREST_WIKI_KEY);
@@ -1433,7 +1433,7 @@ public class MenuBuilder {
 
 	@ColorInt
 	protected int getColor(@ColorInt int resId) {
-		return ColorUtilities.getColor(mapActivity, resId);
+		return ColorUtilities.getColor(mapActivity, R.color.osmand_orange);
 	}
 
 	private class SearchAmenitiesTask extends AsyncTask<Void, Void, List<Amenity>> {

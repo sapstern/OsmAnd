@@ -1,6 +1,7 @@
 package net.osmand.plus.download.ui;
 
 import android.annotation.SuppressLint;
+import android.content.Context;
 import android.content.DialogInterface;
 import android.content.Intent;
 import android.content.res.Resources;
@@ -34,7 +35,7 @@ import net.osmand.plus.download.LocalIndexHelper.LocalIndexType;
 import net.osmand.plus.download.LocalIndexInfo;
 import net.osmand.plus.activities.MapActivity;
 import net.osmand.plus.plugins.PluginsFragment;
-import net.osmand.plus.chooseplan.ChoosePlanFragment;
+//import net.osmand.plus.chooseplan.ChoosePlanFragment;
 import net.osmand.plus.chooseplan.OsmAndFeature;
 import net.osmand.plus.download.CityItem;
 import net.osmand.plus.download.CustomIndexItem;
@@ -49,7 +50,7 @@ import net.osmand.plus.download.SelectIndexesHelper;
 import net.osmand.plus.download.SelectIndexesHelper.ItemsToDownloadSelectedListener;
 import net.osmand.plus.download.ui.LocalIndexesFragment.LocalIndexOperationTask;
 import net.osmand.plus.helpers.FileNameTranslationHelper;
-import net.osmand.plus.inapp.InAppPurchaseHelper;
+//import net.osmand.plus.inapp.InAppPurchaseHelper;
 import net.osmand.util.Algorithms;
 
 import java.io.File;
@@ -94,6 +95,7 @@ public class ItemViewHolder {
 		ASK_FOR_DEPTH_CONTOURS_PURCHASE
 	}
 
+	private OsmandApplication appl;
 
 	public ItemViewHolder(View view, DownloadActivity context) {
 		this.context = context;
@@ -114,6 +116,7 @@ public class ItemViewHolder {
 		textColorPrimary = typedValue.data;
 		theme.resolveAttribute(android.R.attr.textColorSecondary, typedValue, true);
 		textColorSecondary = typedValue.data;
+		appl = (OsmandApplication) context.getApplication();
 	}
 
 	public void setShowRemoteDate(boolean showRemoteDate) {
@@ -145,7 +148,7 @@ public class ItemViewHolder {
 		srtmDisabled = context.isSrtmDisabled();
 		nauticalPluginDisabled = context.isNauticalPluginDisabled();
 		srtmNeedsInstallation = context.isSrtmNeedsInstallation();
-		depthContoursPurchased = InAppPurchaseHelper.isDepthContoursPurchased(context.getMyApplication());
+		depthContoursPurchased = true;
 	}
 
 	public void bindDownloadItem(DownloadItem downloadItem) {
@@ -165,7 +168,7 @@ public class ItemViewHolder {
 		if (showTypeInName) {
 			name = downloadItem.getType().getString(context);
 		} else {
-			name = downloadItem.getVisibleName(context, context.getMyApplication().getRegions(), showParentRegionName);
+			name = downloadItem.getVisibleName(context, context.appl.getRegions(), showParentRegionName);
 		}
 		String text = (!Algorithms.isEmpty(cityName) && !cityName.equals(name) ? cityName + "\n" : "") + name;
 		nameTextView.setText(text);
@@ -359,7 +362,7 @@ public class ItemViewHolder {
 
 		} else if ((item.getType() == DownloadActivityType.WIKIPEDIA_FILE
 				|| item.getType() == DownloadActivityType.TRAVEL_FILE)
-				&& !Version.isPaidVersion(context.getMyApplication())) {
+				&& !Version.isPaidVersion(context.appl)) {
 			clickAction = RightButtonAction.ASK_FOR_FULL_VERSION_PURCHASE;
 		} else if (item.getType() == DownloadActivityType.DEPTH_CONTOUR_FILE && !depthContoursPurchased) {
 			clickAction = RightButtonAction.ASK_FOR_DEPTH_CONTOURS_PURCHASE;
@@ -374,11 +377,11 @@ public class ItemViewHolder {
 				public void onClick(View v) {
 					switch (clickAction) {
 						case ASK_FOR_FULL_VERSION_PURCHASE:
-							context.getMyApplication().logEvent("in_app_purchase_show_from_wiki_context_menu");
-							ChoosePlanFragment.showInstance(context, OsmAndFeature.WIKIPEDIA);
+							context.appl.logEvent("in_app_purchase_show_from_wiki_context_menu");
+							//ChoosePlanFragment.showInstance(context, OsmAndFeature.WIKIPEDIA);
 							break;
 						case ASK_FOR_DEPTH_CONTOURS_PURCHASE:
-							ChoosePlanFragment.showInstance(context, OsmAndFeature.NAUTICAL);
+							//ChoosePlanFragment.showInstance(context, OsmAndFeature.NAUTICAL);
 							break;
 						case ASK_FOR_SEAMARKS_PLUGIN:
 							showPluginsScreen();
@@ -386,7 +389,7 @@ public class ItemViewHolder {
 									context.getString(R.string.activate_seamarks_plugin), Toast.LENGTH_SHORT).show();
 							break;
 						case ASK_FOR_SRTM_PLUGIN_PURCHASE:
-							ChoosePlanFragment.showInstance(context, OsmAndFeature.TERRAIN);
+							//ChoosePlanFragment.showInstance(context, OsmAndFeature.TERRAIN);
 							break;
 						case ASK_FOR_SRTM_PLUGIN_ENABLE:
 							showPluginsScreen();
@@ -429,7 +432,7 @@ public class ItemViewHolder {
 	protected void showContextMenu(View v,
 								   DownloadItem downloadItem,
 								   DownloadResourceGroup parentOptional) {
-		OsmandApplication app = context.getMyApplication();
+		OsmandApplication app = context.appl;
 		PopupMenu optionsMenu = new PopupMenu(context, v);
 		MenuItem item;
 
@@ -446,7 +449,7 @@ public class ItemViewHolder {
 			});
 		}
 		item = optionsMenu.getMenu().add(R.string.shared_string_download)
-				.setIcon(context.getMyApplication().getUIUtilities().getThemedIcon(R.drawable.ic_action_import));
+				.setIcon(context.appl.getUIUtilities().getThemedIcon(R.drawable.ic_action_import));
 		item.setOnMenuItemClickListener(new MenuItem.OnMenuItemClickListener() {
 			@Override
 			public boolean onMenuItemClick(MenuItem item) {
@@ -463,7 +466,7 @@ public class ItemViewHolder {
 		if (parentOptional != null && item instanceof IndexItem) {
 			IndexItem indexItem = (IndexItem) item;
 			WorldRegion region = DownloadResourceGroup.getRegion(parentOptional);
-			context.setDownloadItem(region, indexItem.getTargetFile(context.getMyApplication()).getAbsolutePath());
+			context.setDownloadItem(region, indexItem.getTargetFile(context.appl).getAbsolutePath());
 		}
 		if (item.getType() == DownloadActivityType.ROADS_FILE && parentOptional != null) {
 			for (IndexItem ii : parentOptional.getIndividualResources()) {
@@ -520,7 +523,7 @@ public class ItemViewHolder {
 
 	private void confirmRemove(@NonNull DownloadItem downloadItem,
 							   @NonNull List<File> downloadedFiles) {
-		OsmandApplication app = context.getMyApplication();
+		OsmandApplication app = context.appl;
 		AlertDialog.Builder confirm = new AlertDialog.Builder(context);
 
 		String message;
@@ -548,7 +551,7 @@ public class ItemViewHolder {
 
 	private void remove(@NonNull LocalIndexType type,
 						@NonNull List<File> filesToDelete) {
-		OsmandApplication app = context.getMyApplication();
+		OsmandApplication app = context.appl;
 		LocalIndexOperationTask removeTask = new LocalIndexOperationTask(
 				context,
 				null,
@@ -588,10 +591,10 @@ public class ItemViewHolder {
 	}
 
 	private Drawable getContentIcon(DownloadActivity context, int resourceId) {
-		return context.getMyApplication().getUIUtilities().getThemedIcon(resourceId);
+		return context.appl.getUIUtilities().getThemedIcon(resourceId);
 	}
 
 	private Drawable getContentIcon(DownloadActivity context, int resourceId, int color) {
-		return context.getMyApplication().getUIUtilities().getPaintedIcon(resourceId, color);
+		return context.appl.getUIUtilities().getPaintedIcon(resourceId, color);
 	}
 }

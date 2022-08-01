@@ -31,17 +31,17 @@ import net.osmand.plus.R;
 import net.osmand.plus.utils.UiUtilities;
 import net.osmand.plus.activities.MapActivity;
 import net.osmand.plus.base.BaseOsmAndDialogFragment;
-import net.osmand.plus.inapp.InAppPurchaseHelper;
-import net.osmand.plus.inapp.InAppPurchaseHelper.InAppPurchaseListener;
-import net.osmand.plus.inapp.InAppPurchaseHelper.InAppPurchaseTaskType;
+//import net.osmand.plus.inapp.InAppPurchaseHelper;
+//import net.osmand.plus.inapp.InAppPurchaseHelper.InAppPurchaseListener;
+//import net.osmand.plus.inapp.InAppPurchaseHelper.InAppPurchaseTaskType;
 
 public abstract class BasePurchaseDialogFragment extends BaseOsmAndDialogFragment
-		implements InAppPurchaseListener, OnOffsetChangedListener, OnScrollChangedListener {
+		implements  OnOffsetChangedListener, OnScrollChangedListener {
 
 	public static final String SCROLL_POSITION = "scroll_position";
 
 	protected OsmandApplication app;
-	protected InAppPurchaseHelper purchaseHelper;
+	//protected InAppPurchaseHelper purchaseHelper;
 
 	protected View mainView;
 	protected AppBarLayout appBar;
@@ -86,7 +86,7 @@ public abstract class BasePurchaseDialogFragment extends BaseOsmAndDialogFragmen
 	public void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
 		app = getMyApplication();
-		purchaseHelper = app.getInAppPurchaseHelper();
+		//purchaseHelper = app.getInAppPurchaseHelper();
 		usedOnMap = getMapActivity() != null;
 		nightMode = isNightMode(usedOnMap);
 		themedInflater = UiUtilities.getInflater(getMyActivity(), nightMode);
@@ -176,7 +176,7 @@ public abstract class BasePurchaseDialogFragment extends BaseOsmAndDialogFragmen
 	}
 
 	protected boolean isRequestingInventory() {
-		return purchaseHelper != null && purchaseHelper.getActiveTask() == InAppPurchaseTaskType.REQUEST_INVENTORY;
+		return false; // != null && purchaseHelper.getActiveTask() == InAppPurchaseTaskType.REQUEST_INVENTORY;
 	}
 
 	@Nullable
@@ -188,39 +188,11 @@ public abstract class BasePurchaseDialogFragment extends BaseOsmAndDialogFragmen
 		return null;
 	}
 
-	@Override
-	public void onError(InAppPurchaseTaskType taskType, String error) {
-		if (taskType == InAppPurchaseTaskType.REQUEST_INVENTORY) {
-			updateContent(false);
-		}
-	}
 
-	@Override
-	public void onGetItems() {
-		OsmandApplication app = getMyApplication();
-		if (app != null && InAppPurchaseHelper.isSubscribedToAny(app)) {
-			updateContent(false);
-		}
-	}
 
-	@Override
-	public void onItemPurchased(String sku, boolean active) {
-		dismissAllowingStateLoss();
-	}
 
-	@Override
-	public void showProgress(InAppPurchaseTaskType taskType) {
-		if (taskType == InAppPurchaseTaskType.REQUEST_INVENTORY) {
-			updateContent(true);
-		}
-	}
 
-	@Override
-	public void dismissProgress(InAppPurchaseTaskType taskType) {
-		if (taskType == InAppPurchaseTaskType.REQUEST_INVENTORY) {
-			updateContent(false);
-		}
-	}
+
 
 	@Override
 	public void onScrollChanged() {

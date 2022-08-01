@@ -34,7 +34,7 @@ import net.osmand.map.OsmandRegions;
 import net.osmand.plus.OsmandApplication;
 import net.osmand.plus.R;
 import net.osmand.plus.base.OsmAndListFragment;
-import net.osmand.plus.chooseplan.ChoosePlanFragment;
+//import net.osmand.plus.chooseplan.ChoosePlanFragment;
 import net.osmand.plus.chooseplan.OsmAndFeature;
 import net.osmand.plus.download.DownloadActivity;
 import net.osmand.plus.download.DownloadIndexesThread.DownloadEvents;
@@ -42,9 +42,6 @@ import net.osmand.plus.download.DownloadResources;
 import net.osmand.plus.download.IndexItem;
 import net.osmand.plus.download.LocalIndexInfo;
 import net.osmand.plus.helpers.AndroidUiHelper;
-import net.osmand.plus.inapp.InAppPurchaseHelper;
-import net.osmand.plus.inapp.InAppPurchaseHelper.InAppPurchaseListener;
-import net.osmand.plus.inapp.InAppPurchaseHelper.InAppPurchaseTaskType;
 import net.osmand.plus.liveupdates.LiveUpdatesClearBottomSheet.RefreshLiveUpdates;
 import net.osmand.plus.liveupdates.LiveUpdatesFragment;
 import net.osmand.plus.liveupdates.LiveUpdatesHelper.LiveUpdateListener;
@@ -58,7 +55,7 @@ import net.osmand.util.Algorithms;
 import java.util.ArrayList;
 import java.util.List;
 
-public class UpdatesIndexFragment extends OsmAndListFragment implements DownloadEvents, RefreshLiveUpdates, LiveUpdateListener, InAppPurchaseListener {
+public class UpdatesIndexFragment extends OsmAndListFragment implements DownloadEvents, RefreshLiveUpdates, LiveUpdateListener {
 	private static final int RELOAD_ID = 5;
 	private UpdateIndexAdapter listAdapter;
 	private String errorMessage;
@@ -124,7 +121,7 @@ public class UpdatesIndexFragment extends OsmAndListFragment implements Download
 
 		OsmandRegions osmandRegions = app.getResourceManager().getOsmandRegions();
 		listAdapter = new UpdateIndexAdapter(context, R.layout.download_index_list_item, indexItems,
-				!InAppPurchaseHelper.isSubscribedToLiveUpdates(app) || settings.SHOULD_SHOW_FREE_VERSION_BANNER.get());
+				 settings.SHOULD_SHOW_FREE_VERSION_BANNER.get());
 		Collator collator = OsmAndCollator.primaryCollator();
 		listAdapter.sort((indexItem, indexItem2) -> collator.compare(indexItem.getVisibleName(app, osmandRegions),
 				indexItem2.getVisibleName(app, osmandRegions)));
@@ -271,32 +268,6 @@ public class UpdatesIndexFragment extends OsmAndListFragment implements Download
 		}
 	}
 
-	@Override
-	public void onError(InAppPurchaseTaskType taskType, String error) {
-
-	}
-
-	@Override
-	public void onGetItems() {
-
-	}
-
-	@Override
-	public void onItemPurchased(String sku, boolean active) {
-		invalidateListView(getMyActivity());
-		updateUpdateAllButton();
-		startLoadLiveMapsAsyncTask(getMyApplication());
-	}
-
-	@Override
-	public void showProgress(InAppPurchaseTaskType taskType) {
-
-	}
-
-	@Override
-	public void dismissProgress(InAppPurchaseTaskType taskType) {
-
-	}
 
 	private class UpdateIndexAdapter extends ArrayAdapter<IndexItem> implements LocalIndexInfoAdapter {
 
@@ -384,7 +355,7 @@ public class UpdatesIndexFragment extends OsmAndListFragment implements Download
 						cardView.setOnClickListener(v -> {
 							FragmentActivity activity = getMyActivity();
 							if (activity != null) {
-								ChoosePlanFragment.showInstance(activity, OsmAndFeature.HOURLY_MAP_UPDATES);
+								//ChoosePlanFragment.showInstance(activity, OsmAndFeature.HOURLY_MAP_UPDATES);
 							}
 						});
 					} else {

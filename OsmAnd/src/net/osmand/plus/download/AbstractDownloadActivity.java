@@ -2,6 +2,7 @@ package net.osmand.plus.download;
 
 import android.os.Bundle;
 
+import net.osmand.plus.OsmandApplication;
 import net.osmand.plus.activities.ActionBarProgressActivity;
 
 public class AbstractDownloadActivity extends ActionBarProgressActivity {
@@ -10,7 +11,7 @@ public class AbstractDownloadActivity extends ActionBarProgressActivity {
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
-		downloadValidationManager = new DownloadValidationManager(getMyApplication());
+		downloadValidationManager = new DownloadValidationManager((OsmandApplication) getApplication());
 	}
 
 	public void startDownload(IndexItem... indexItem) {

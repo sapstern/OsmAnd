@@ -17,7 +17,7 @@ import net.osmand.plus.base.bottomsheetmenu.BottomSheetItemWithDescription;
 import net.osmand.plus.base.bottomsheetmenu.simpleitems.DividerHalfItem;
 import net.osmand.plus.base.bottomsheetmenu.simpleitems.TitleDividerItem;
 import net.osmand.plus.chooseplan.OsmAndFeature;
-import net.osmand.plus.chooseplan.ChoosePlanFragment;
+
 import net.osmand.plus.utils.AndroidUtils;
 import net.osmand.plus.wikivoyage.article.WikivoyageArticleWikiLinkFragment;
 
@@ -79,7 +79,7 @@ public class WikipediaArticleWikiLinkFragment extends MenuBottomSheetDialogFragm
 				.setOnClickListener(v -> {
 					FragmentActivity activity = getActivity();
 					if (activity != null) {
-						ChoosePlanFragment.showInstance(activity, OsmAndFeature.WIKIVOYAGE);
+						//ChoosePlanFragment.showInstance(activity, OsmAndFeature.WIKIVOYAGE);
 					}
 					dismiss();
 				})

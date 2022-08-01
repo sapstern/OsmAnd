@@ -43,15 +43,12 @@ public class RegisterDeviceCommand extends BackupCommand {
 		BackupHelper helper = getHelper();
 		// Update order id on login
 		if (Algorithms.isEmpty(token)) {
-			helper.updateOrderId(null);
+			//helper.updateOrderId(null);
 		}
 
 		Map<String, String> params = new HashMap<>();
 		params.put("email", helper.getEmail());
-		String orderId = helper.getOrderId();
-		if (orderId != null) {
-			params.put("orderid", orderId);
-		}
+
 		String androidId = helper.getAndroidId();
 		if (!Algorithms.isEmpty(androidId)) {
 			params.put("deviceid", androidId);

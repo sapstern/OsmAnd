@@ -16,13 +16,13 @@ import net.osmand.plus.DialogListItemAdapter;
 import net.osmand.plus.OsmandApplication;
 import net.osmand.plus.R;
 import net.osmand.plus.activities.MapActivity;
-import net.osmand.plus.chooseplan.OsmAndFeature;
-import net.osmand.plus.chooseplan.button.PurchasingUtils;
+//import net.osmand.plus.chooseplan.OsmAndFeature;
+//import net.osmand.plus.chooseplan.button.PurchasingUtils;
 import net.osmand.plus.dashboard.DashboardOnMap;
 import net.osmand.plus.download.DownloadActivityType;
 import net.osmand.plus.download.DownloadIndexesThread;
 import net.osmand.plus.download.IndexItem;
-import net.osmand.plus.inapp.InAppPurchaseHelper;
+//import net.osmand.plus.inapp.InAppPurchaseHelper;
 import net.osmand.plus.plugins.OsmandPlugin;
 import net.osmand.plus.quickaction.QuickActionType;
 import net.osmand.plus.settings.backend.ApplicationMode;
@@ -115,14 +115,16 @@ public class SRTMPlugin extends OsmandPlugin {
 
 	@Override
 	public boolean needsInstallation() {
-		return super.needsInstallation()
-				&& !InAppPurchaseHelper.isContourLinesPurchased(app);
+		return false;
+//		return super.needsInstallation();
+//				&& !InAppPurchaseHelper.isContourLinesPurchased(app);
 	}
 
 	@Override
 	protected boolean isAvailable(OsmandApplication app) {
-		return super.isAvailable(app)
-				|| InAppPurchaseHelper.isContourLinesPurchased(app);
+		return true;
+//		return super.isAvailable(app)
+//				|| InAppPurchaseHelper.isContourLinesPurchased(app);
 	}
 
 	@Override
@@ -297,14 +299,14 @@ public class SRTMPlugin extends OsmandPlugin {
 
 	@Override
 	protected void registerLayerContextMenuActions(@NonNull ContextMenuAdapter adapter, @NonNull MapActivity mapActivity, @NonNull List<RenderingRuleProperty> customRules) {
-		if (isLocked()) {
-			PurchasingUtils.createPromoItem(adapter, mapActivity, OsmAndFeature.TERRAIN,
-					TERRAIN_ID,
-					R.string.shared_string_terrain,
-					R.string.contour_lines_hillshades_slope);
-		} else {
+//		if (isLocked()) {
+//			PurchasingUtils.createPromoItem(adapter, mapActivity, OsmAndFeature.TERRAIN,
+//					TERRAIN_ID,
+//					R.string.shared_string_terrain,
+//					R.string.contour_lines_hillshades_slope);
+//		} else {
 			createContextMenuItems(adapter, mapActivity);
-		}
+//		}
 	}
 
 	private void createContextMenuItems(@NonNull ContextMenuAdapter adapter, @NonNull MapActivity mapActivity) {

@@ -30,8 +30,8 @@ import net.osmand.plus.backup.commands.DeleteFilesCommand;
 import net.osmand.plus.backup.commands.DeleteOldFilesCommand;
 import net.osmand.plus.backup.commands.RegisterDeviceCommand;
 import net.osmand.plus.backup.commands.RegisterUserCommand;
-import net.osmand.plus.inapp.InAppPurchaseHelper;
-import net.osmand.plus.inapp.InAppPurchases.InAppSubscription;
+//import net.osmand.plus.inapp.InAppPurchaseHelper;
+//import net.osmand.plus.inapp.InAppPurchases.InAppSubscription;
 import net.osmand.plus.resources.SQLiteTileSource;
 import net.osmand.plus.settings.backend.ExportSettingsType;
 import net.osmand.plus.settings.backend.OsmandSettings;
@@ -193,12 +193,12 @@ public class BackupHelper {
 		return token.matches("[0-9]+");
 	}
 
-	@Nullable
-	public String getOrderId() {
-		InAppPurchaseHelper purchaseHelper = app.getInAppPurchaseHelper();
-		InAppSubscription purchasedSubscription = purchaseHelper.getAnyPurchasedOsmAndProSubscription();
-		return purchasedSubscription != null ? purchasedSubscription.getOrderId() : null;
-	}
+//	@Nullable MFRI
+//	public String getOrderId() {
+//		InAppPurchaseHelper purchaseHelper = app.getInAppPurchaseHelper();
+//		InAppSubscription purchasedSubscription = purchaseHelper.getAnyPurchasedOsmAndProSubscription();
+//		return purchasedSubscription != null ? purchasedSubscription.getOrderId() : null;
+//	}
 
 	public String getDeviceId() {
 		return settings.BACKUP_DEVICE_ID.get();
@@ -340,78 +340,78 @@ public class BackupHelper {
 		executor.runCommand(new RegisterDeviceCommand(this, token));
 	}
 
-	void checkSubscriptions(@Nullable OnUpdateSubscriptionListener listener) {
-		boolean subscriptionActive = false;
-		InAppPurchaseHelper purchaseHelper = app.getInAppPurchaseHelper();
-		if (purchaseHelper != null) {
-			OperationLog operationLog = new OperationLog("checkSubscriptions", DEBUG);
-			String error = "";
-			try {
-				subscriptionActive = purchaseHelper.checkBackupSubscriptions();
-			} catch (Exception e) {
-				error = e.getMessage();
-			}
-			operationLog.finishOperation(subscriptionActive + " " + error);
-		}
-		if (subscriptionActive) {
-			if (listener != null) {
-				listener.onUpdateSubscription(STATUS_SUCCESS, "Subscriptions have been checked successfully", null);
-			}
-		} else {
-			updateOrderId(listener);
-		}
-	}
+//	void checkSubscriptions(@Nullable OnUpdateSubscriptionListener listener) {
+//		boolean subscriptionActive = false;
+//		InAppPurchaseHelper purchaseHelper = app.getInAppPurchaseHelper();
+//		if (purchaseHelper != null) {
+//			OperationLog operationLog = new OperationLog("checkSubscriptions", DEBUG);
+//			String error = "";
+//			try {
+//				subscriptionActive = purchaseHelper.checkBackupSubscriptions();
+//			} catch (Exception e) {
+//				error = e.getMessage();
+//			}
+//			operationLog.finishOperation(subscriptionActive + " " + error);
+//		}
+//		if (subscriptionActive) {
+//			if (listener != null) {
+//				listener.onUpdateSubscription(STATUS_SUCCESS, "Subscriptions have been checked successfully", null);
+//			}
+//		} else {
+//			updateOrderId(listener);
+//		}
+//	}
 
-	public void updateOrderId(@Nullable OnUpdateSubscriptionListener listener) {
-		Map<String, String> params = new HashMap<>();
-		params.put("email", getEmail());
-
-		String orderId = getOrderId();
-		if (Algorithms.isEmpty(orderId)) {
-			if (listener != null) {
-				String message = "Order id is empty";
-				String error = "{\"error\":{\"errorCode\":" + STATUS_NO_ORDER_ID_ERROR + ",\"message\":\"" + message + "\"}}";
-				listener.onUpdateSubscription(STATUS_NO_ORDER_ID_ERROR, message, error);
-			}
-			return;
-		} else {
-			params.put("orderid", orderId);
-		}
-		String androidId = getAndroidId();
-		if (!Algorithms.isEmpty(androidId)) {
-			params.put("deviceid", androidId);
-		}
-		OperationLog operationLog = new OperationLog("updateOrderId", DEBUG);
-		AndroidNetworkUtils.sendRequest(app, UPDATE_ORDER_ID_URL, params, "Update order id", false, true, (resultJson, error, resultCode) -> {
-			int status;
-			String message;
-			if (!Algorithms.isEmpty(error)) {
-				message = "Update order id error: " + new BackupError(error);
-				status = STATUS_SERVER_ERROR;
-			} else if (!Algorithms.isEmpty(resultJson)) {
-				try {
-					JSONObject result = new JSONObject(resultJson);
-					if (result.has("status") && "ok".equals(result.getString("status"))) {
-						message = "Order id have been updated successfully";
-						status = STATUS_SUCCESS;
-					} else {
-						message = "Update order id error: unknown";
-						status = STATUS_SERVER_ERROR;
-					}
-				} catch (JSONException e) {
-					message = "Update order id error: json parsing";
-					status = STATUS_PARSE_JSON_ERROR;
-				}
-			} else {
-				message = "Update order id error: empty response";
-				status = STATUS_EMPTY_RESPONSE_ERROR;
-			}
-			if (listener != null) {
-				listener.onUpdateSubscription(status, message, error);
-			}
-			operationLog.finishOperation(status + " " + message);
-		});
-	}
+//	public void updateOrderId(@Nullable OnUpdateSubscriptionListener listener) {
+//		Map<String, String> params = new HashMap<>();
+//		params.put("email", getEmail());
+//
+//		String orderId = getOrderId();
+//		if (Algorithms.isEmpty(orderId)) {
+//			if (listener != null) {
+//				String message = "Order id is empty";
+//				String error = "{\"error\":{\"errorCode\":" + STATUS_NO_ORDER_ID_ERROR + ",\"message\":\"" + message + "\"}}";
+//				listener.onUpdateSubscription(STATUS_NO_ORDER_ID_ERROR, message, error);
+//			}
+//			return;
+//		} else {
+//			params.put("orderid", orderId);
+//		}
+//		String androidId = getAndroidId();
+//		if (!Algorithms.isEmpty(androidId)) {
+//			params.put("deviceid", androidId);
+//		}
+//		OperationLog operationLog = new OperationLog("updateOrderId", DEBUG);
+//		AndroidNetworkUtils.sendRequest(app, UPDATE_ORDER_ID_URL, params, "Update order id", false, true, (resultJson, error, resultCode) -> {
+//			int status;
+//			String message;
+//			if (!Algorithms.isEmpty(error)) {
+//				message = "Update order id error: " + new BackupError(error);
+//				status = STATUS_SERVER_ERROR;
+//			} else if (!Algorithms.isEmpty(resultJson)) {
+//				try {
+//					JSONObject result = new JSONObject(resultJson);
+//					if (result.has("status") && "ok".equals(result.getString("status"))) {
+//						message = "Order id have been updated successfully";
+//						status = STATUS_SUCCESS;
+//					} else {
+//						message = "Update order id error: unknown";
+//						status = STATUS_SERVER_ERROR;
+//					}
+//				} catch (JSONException e) {
+//					message = "Update order id error: json parsing";
+//					status = STATUS_PARSE_JSON_ERROR;
+//				}
+//			} else {
+//				message = "Update order id error: empty response";
+//				status = STATUS_EMPTY_RESPONSE_ERROR;
+//			}
+//			if (listener != null) {
+//				listener.onUpdateSubscription(status, message, error);
+//			}
+//			operationLog.finishOperation(status + " " + message);
+//		});
+//	}
 
 	public boolean isBackupPreparing() {
 		return prepareBackupTask != null;

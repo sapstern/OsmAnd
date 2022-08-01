@@ -45,7 +45,7 @@ import net.osmand.plus.helpers.ColorDialogs;
 import net.osmand.plus.helpers.OsmandBackupAgent;
 import net.osmand.plus.helpers.RateUsHelper.RateUsState;
 import net.osmand.plus.helpers.SearchHistoryHelper;
-import net.osmand.plus.inapp.InAppPurchases.InAppSubscription.SubscriptionState;
+//import net.osmand.plus.inapp.InAppPurchases.InAppSubscription.SubscriptionState;
 import net.osmand.plus.mapmarkers.CoordinateInputFormats.Format;
 import net.osmand.plus.plugins.accessibility.AccessibilityMode;
 import net.osmand.plus.plugins.accessibility.RelativeDirectionStyle;
@@ -1293,7 +1293,7 @@ public class OsmandSettings {
 	public final OsmandPreference<Boolean> BACKUP_PROMOCODE_ACTIVE = new BooleanPreference(this, "backup_promocode_active", false).makeGlobal();
 	public final OsmandPreference<Long> BACKUP_PROMOCODE_START_TIME = new LongPreference(this, "promo_website_start_time", 0L).makeGlobal();
 	public final OsmandPreference<Long> BACKUP_PROMOCODE_EXPIRE_TIME = new LongPreference(this, "promo_website_expire_time", 0L).makeGlobal();
-	public final CommonPreference<SubscriptionState> BACKUP_PROMOCODE_STATE = new EnumStringPreference<>(this, "promo_website_state", SubscriptionState.UNDEFINED, SubscriptionState.values()).makeGlobal();
+	//public final CommonPreference<SubscriptionState> BACKUP_PROMOCODE_STATE = new EnumStringPreference<>(this, "promo_website_state", SubscriptionState.UNDEFINED, SubscriptionState.values()).makeGlobal();
 
 	public final OsmandPreference<Long> FAVORITES_LAST_UPLOADED_TIME = new LongPreference(this, "favorites_last_uploaded_time", 0L).makeGlobal();
 	public final OsmandPreference<Long> BACKUP_LAST_UPLOADED_TIME = new LongPreference(this, "backup_last_uploaded_time", 0L).makeGlobal();

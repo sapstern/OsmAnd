@@ -3,7 +3,7 @@ package net.osmand.plus.configmap;
 import net.osmand.plus.OsmandApplication;
 import net.osmand.plus.R;
 import net.osmand.plus.activities.MapActivity;
-import net.osmand.plus.inapp.InAppPurchaseHelper;
+//import net.osmand.plus.inapp.InAppPurchaseHelper;
 import net.osmand.plus.render.RendererRegistry;
 import net.osmand.plus.settings.backend.OsmandSettings;
 import net.osmand.plus.settings.backend.preferences.CommonPreference;
@@ -71,8 +71,8 @@ public class ConfigureMapUtils {
 			return new ArrayList<>();
 		}
 		List<RenderingRuleProperty> customRules = new ArrayList<>();
-		boolean useDepthContours = InAppPurchaseHelper.isSubscribedToAny(app)
-				|| InAppPurchaseHelper.isDepthContoursPurchased(app);
+		boolean useDepthContours = true;
+
 		for (RenderingRuleProperty p : renderer.PROPS.getCustomRules()) {
 			if (useDepthContours || !"depthContours".equals(p.getAttrName())) {
 				boolean skip = false;

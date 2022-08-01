@@ -5,13 +5,14 @@ import android.view.View;
 import android.view.ViewGroup;
 
 import androidx.appcompat.app.ActionBar;
+import androidx.appcompat.app.AppCompatActivity;
 
 import net.osmand.plus.utils.AndroidUtils;
 import net.osmand.plus.utils.ColorUtilities;
 import net.osmand.plus.OsmandApplication;
 
 @SuppressLint("Registered")
-public class OsmandActionBarActivity extends OsmandInAppPurchaseActivity {
+public class OsmandActionBarActivity extends AppCompatActivity {
 
 	protected boolean haveHomeButton = true;
 
@@ -19,7 +20,7 @@ public class OsmandActionBarActivity extends OsmandInAppPurchaseActivity {
 	protected void setupHomeButton() {
 		ActionBar supportActionBar = getSupportActionBar();
 		if (supportActionBar != null) {
-			OsmandApplication app = getMyApplication();
+			OsmandApplication app = (OsmandApplication) getApplication();
 			boolean nightMode = !app.getSettings().isLightContent();
 			int iconId = AndroidUtils.getNavigationIconResId(app);
 			int colorId = ColorUtilities.getActiveButtonsAndLinksTextColorId(nightMode);

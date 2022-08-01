@@ -36,7 +36,7 @@ import net.osmand.plus.R;
 import net.osmand.plus.activities.MapActivity;
 import net.osmand.plus.base.ContextMenuFragment;
 import net.osmand.plus.base.ContextMenuScrollFragment;
-import net.osmand.plus.chooseplan.PromoBannerCard;
+//import net.osmand.plus.chooseplan.PromoBannerCard;
 import net.osmand.plus.helpers.AndroidUiHelper;
 import net.osmand.plus.plugins.monitoring.TripRecordingBottomSheet;
 import net.osmand.plus.plugins.monitoring.TripRecordingStartingBottomSheet;
@@ -105,7 +105,7 @@ public class TrackAppearanceFragment extends ContextMenuScrollFragment implement
 	private TrackColoringCard trackColoringCard;
 	private ColorsCard colorsCard;
 	private ColoringTypeCard coloringTypeCard;
-	private PromoBannerCard promoCard;
+	//private PromoBannerCard promoCard;
 	private boolean showStartFinishIconsInitialValue;
 
 	private final List<BaseCard> cards = new ArrayList<>();
@@ -425,7 +425,7 @@ public class TrackAppearanceFragment extends ContextMenuScrollFragment implement
 				if (colorsCard != null) {
 					AndroidUiHelper.updateVisibility(colorsCard.getView(), currentColoringType.isTrackSolid());
 				}
-				updatePromoCardVisibility();
+				//updatePromoCardVisibility();
 			} else if (card instanceof ColorsCard) {
 				int color = ((ColorsCard) card).getSelectedColor();
 				trackDrawInfo.setColor(color);
@@ -569,18 +569,18 @@ public class TrackAppearanceFragment extends ContextMenuScrollFragment implement
 		}
 	}
 
-	private void updatePromoCardVisibility() {
-		boolean available = isAvailableColoringType();
-		if (!available) {
-			promoCard.updateVisibility(true);
-			coloringTypeCard.updateVisibility(false);
-			colorsCard.updateVisibility(false);
-		} else {
-			promoCard.updateVisibility(false);
-		}
-		View saveButton = view.findViewById(R.id.right_bottom_button);
-		saveButton.setEnabled(available);
-	}
+//	private void updatePromoCardVisibility() {
+//		boolean available = isAvailableColoringType();
+//		if (!available) {
+//			promoCard.updateVisibility(true);
+//			coloringTypeCard.updateVisibility(false);
+//			colorsCard.updateVisibility(false);
+//		} else {
+//			promoCard.updateVisibility(false);
+//		}
+//		View saveButton = view.findViewById(R.id.right_bottom_button);
+//		saveButton.setEnabled(available);
+//	}
 
 	private boolean isAvailableColoringType() {
 		if (trackColoringCard != null) {
@@ -780,8 +780,8 @@ public class TrackAppearanceFragment extends ContextMenuScrollFragment implement
 			coloringTypeCard = new ColoringTypeCard(mapActivity, analysis, coloringType);
 			addCard(container, coloringTypeCard);
 
-			promoCard = new PromoBannerCard(mapActivity, true);
-			addCard(container, promoCard);
+//			promoCard = new PromoBannerCard(mapActivity, true);
+//			addCard(container, promoCard);
 
 			trackWidthCard = new TrackWidthCard(mapActivity, trackDrawInfo, new OnNeedScrollListener() {
 
@@ -801,7 +801,7 @@ public class TrackAppearanceFragment extends ContextMenuScrollFragment implement
 			addCard(container, trackWidthCard);
 			addCard(container, new ActionsCard(mapActivity));
 
-			updatePromoCardVisibility();
+			//updatePromoCardVisibility();
 		}
 	}
 

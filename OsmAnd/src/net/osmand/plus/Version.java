@@ -7,7 +7,6 @@ import android.content.pm.PackageManager.NameNotFoundException;
 import androidx.annotation.NonNull;
 
 import net.osmand.PlatformUtil;
-import net.osmand.plus.inapp.InAppPurchaseHelper;
 
 import org.apache.commons.logging.Log;
 
@@ -131,11 +130,7 @@ public class Version {
 	}
 
 	public static boolean isPaidVersion(OsmandApplication ctx) {
-		return !isFreeVersion(ctx)
-				|| InAppPurchaseHelper.isFullVersionPurchased(ctx)
-				|| InAppPurchaseHelper.isSubscribedToLiveUpdates(ctx)
-				|| InAppPurchaseHelper.isSubscribedToMaps(ctx)
-				|| InAppPurchaseHelper.isOsmAndProAvailable(ctx);
+		return true;
 	}
 	
 	public static boolean isDeveloperVersion(OsmandApplication ctx){

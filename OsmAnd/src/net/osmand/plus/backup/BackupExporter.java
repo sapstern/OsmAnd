@@ -85,15 +85,8 @@ public class BackupExporter extends Exporter {
 		OperationLog log = new OperationLog("writeItems", true);
 		log.startOperation();
 
-		StringBuilder subscriptionError = new StringBuilder();
-		backupHelper.checkSubscriptions((status, message, err) -> {
-			if (err != null) {
-				subscriptionError.append(err);
-			}
-		});
-		if (subscriptionError.length() > 0) {
-			throw new IOException(subscriptionError.toString());
-		}
+
+
 
 		List<ItemWriterTask> lightTasks = new ArrayList<>();
 		List<ItemWriterTask> heavyTasks = new ArrayList<>();

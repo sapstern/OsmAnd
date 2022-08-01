@@ -19,7 +19,7 @@ import androidx.recyclerview.widget.RecyclerView;
 
 import net.osmand.plus.R;
 import net.osmand.plus.activities.MapActivity;
-import net.osmand.plus.chooseplan.PromoBannerCard;
+//import net.osmand.plus.chooseplan.PromoBannerCard;
 import net.osmand.plus.helpers.AndroidUiHelper;
 import net.osmand.plus.helpers.ColorDialogs;
 import net.osmand.plus.helpers.DayNightHelper;
@@ -64,7 +64,7 @@ public class RouteLineColorCard extends MapBaseCard implements CardListener, Col
 
 	private ColorsCard colorsCard;
 	private ColoringTypeCard coloringTypeCard;
-	private PromoBannerCard promoCard;
+	//private PromoBannerCard promoCard;
 	private ColorTypeAdapter colorAdapter;
 	private RecyclerView groupRecyclerView;
 	private TextView tvDescription;
@@ -147,11 +147,11 @@ public class RouteLineColorCard extends MapBaseCard implements CardListener, Col
 	private void updatePromoCardVisibility() {
 		boolean available = isSelectedModeAvailable();
 		if (!available) {
-			promoCard.updateVisibility(true);
+		//	promoCard.updateVisibility(true);
 			coloringTypeCard.updateVisibility(false);
 			colorsCard.updateVisibility(false);
-		} else {
-			promoCard.updateVisibility(false);
+//		} else {
+//			promoCard.updateVisibility(false);
 		}
 	}
 
@@ -209,8 +209,8 @@ public class RouteLineColorCard extends MapBaseCard implements CardListener, Col
 			coloringTypeCard = new ColoringTypeCard(mapActivity, previewRouteLineInfo.getRouteColoringType());
 			container.addView(coloringTypeCard.build(mapActivity));
 
-			promoCard = new PromoBannerCard(mapActivity, true);
-			container.addView(promoCard.build(mapActivity));
+		//	promoCard = new PromoBannerCard(mapActivity, true);
+		//	container.addView(promoCard.build(mapActivity));
 		}
 	}
 

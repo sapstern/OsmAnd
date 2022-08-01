@@ -16,19 +16,20 @@ import androidx.fragment.app.FragmentManager;
 
 import net.osmand.plus.OsmandApplication;
 import net.osmand.plus.R;
+import net.osmand.plus.base.BaseOsmAndDialogFragment;
 import net.osmand.plus.base.MenuBottomSheetDialogFragment;
 import net.osmand.plus.base.bottomsheetmenu.BaseBottomSheetItem;
 import net.osmand.plus.base.bottomsheetmenu.BottomSheetItemWithDescription;
 import net.osmand.plus.base.bottomsheetmenu.simpleitems.DividerItem;
 import net.osmand.plus.base.bottomsheetmenu.simpleitems.TitleItem;
-import net.osmand.plus.chooseplan.OsmAndProPlanFragment;
-import net.osmand.plus.inapp.InAppPurchaseHelper;
-import net.osmand.plus.inapp.InAppPurchaseHelper.InAppPurchaseListener;
-import net.osmand.plus.inapp.InAppPurchaseHelper.InAppPurchaseTaskType;
+//import net.osmand.plus.chooseplan.OsmAndProPlanFragment;
+//import net.osmand.plus.inapp.InAppPurchaseHelper;
+//import net.osmand.plus.inapp.InAppPurchaseHelper.InAppPurchaseListener;
+//import net.osmand.plus.inapp.InAppPurchaseHelper.InAppPurchaseTaskType;
 import net.osmand.plus.utils.AndroidUtils;
 import net.osmand.plus.utils.UiUtilities;
 
-public class TrackAltitudeBottomSheet extends MenuBottomSheetDialogFragment implements InAppPurchaseListener {
+public class TrackAltitudeBottomSheet extends MenuBottomSheetDialogFragment {
 
 	public static final String TAG = TrackAltitudeBottomSheet.class.getSimpleName();
 
@@ -51,16 +52,16 @@ public class TrackAltitudeBottomSheet extends MenuBottomSheetDialogFragment impl
 	public void createMenuItems(Bundle savedInstanceState) {
 		items.add(new TitleItem(getString(R.string.get_altitude_data)));
 		createAttachToRoadsItem();
-		if (InAppPurchaseHelper.isOsmAndProAvailable(app)) {
-			int margin = getResources().getDimensionPixelSize(R.dimen.settings_divider_margin_start);
-			DividerItem dividerItem = new DividerItem(app);
-			dividerItem.setMargins(margin, 0, 0, 0);
-			items.add(dividerItem);
-
-			createOnlineItem();
-		} else {
+//		if (InAppPurchaseHelper.isOsmAndProAvailable(app)) {
+//			int margin = getResources().getDimensionPixelSize(R.dimen.settings_divider_margin_start);
+//			DividerItem dividerItem = new DividerItem(app);
+//			dividerItem.setMargins(margin, 0, 0, 0);
+//			items.add(dividerItem);
+//
+//			createOnlineItem();
+//		} else {
 			createOsmAndProItem();
-		}
+//		}
 	}
 
 	private void createAttachToRoadsItem() {
@@ -119,7 +120,7 @@ public class TrackAltitudeBottomSheet extends MenuBottomSheetDialogFragment impl
 				.setOnClickListener(v -> {
 					FragmentActivity activity = getActivity();
 					if (activity != null) {
-						OsmAndProPlanFragment.showInstance(activity);
+						 //OsmAndProPlanFragment.showInstance(activity);
 					}
 				})
 				.create();
@@ -137,30 +138,30 @@ public class TrackAltitudeBottomSheet extends MenuBottomSheetDialogFragment impl
 		return R.string.shared_string_cancel;
 	}
 
-	@Override
-	public void onError(InAppPurchaseTaskType taskType, String error) {
-
-	}
-
-	@Override
-	public void onGetItems() {
-
-	}
-
-	@Override
-	public void onItemPurchased(String sku, boolean active) {
-		updateMenuItems();
-	}
-
-	@Override
-	public void showProgress(InAppPurchaseTaskType taskType) {
-
-	}
-
-	@Override
-	public void dismissProgress(InAppPurchaseTaskType taskType) {
-
-	}
+//	@Override
+//	public void onError(InAppPurchaseTaskType taskType, String error) {
+//
+//	}
+//
+//	@Override
+//	public void onGetItems() {
+//
+//	}
+//
+//	@Override
+//	public void onItemPurchased(String sku, boolean active) {
+//		updateMenuItems();
+//	}
+//
+//	@Override
+//	public void showProgress(InAppPurchaseTaskType taskType) {
+//
+//	}
+//
+//	@Override
+//	public void dismissProgress(InAppPurchaseTaskType taskType) {
+//
+//	}
 
 	public static void showInstance(@NonNull FragmentManager manager, @Nullable Fragment target, int segmentIndex) {
 		if (AndroidUtils.isFragmentCanBeAdded(manager, TAG)) {

@@ -37,7 +37,7 @@ public class LogcatActivity extends BaseLogcatActivity {
 
 	@Override
 	public void onCreate(Bundle savedInstanceState) {
-		OsmandApplication app = getMyApplication();
+		OsmandApplication app = (OsmandApplication)getApplication();
 		app.applyTheme(this);
 		super.onCreate(savedInstanceState);
 		setContentView(R.layout.recyclerview);
@@ -68,7 +68,7 @@ public class LogcatActivity extends BaseLogcatActivity {
 
 	@Override
 	public boolean onCreateOptionsMenu(Menu menu) {
-		OsmandApplication app = getMyApplication();
+		OsmandApplication app = (OsmandApplication)getApplication();
 		Drawable shareIcon = app.getUIUtilities().getIcon(R.drawable.ic_action_gshare_dark);
 		MenuItem share = menu.add(0, SHARE_ID, 0, R.string.shared_string_export);
 		share.setIcon(AndroidUtils.getDrawableForDirection(app, shareIcon));

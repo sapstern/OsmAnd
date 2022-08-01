@@ -20,7 +20,7 @@ import net.osmand.plus.R;
 import net.osmand.plus.Version;
 import net.osmand.plus.base.BaseOsmAndFragment;
 import net.osmand.plus.chooseplan.OsmAndFeature;
-import net.osmand.plus.chooseplan.ChoosePlanFragment;
+//import net.osmand.plus.chooseplan.ChoosePlanFragment;
 import net.osmand.plus.download.DownloadActivityType;
 import net.osmand.plus.download.DownloadIndexesThread;
 import net.osmand.plus.download.DownloadIndexesThread.DownloadEvents;
@@ -302,7 +302,7 @@ public class ExploreTabFragment extends BaseOsmAndFragment implements DownloadEv
 							|| item.getType() == DownloadActivityType.TRAVEL_FILE) && !Version.isPaidVersion(app)) {
 						FragmentActivity activity = getActivity();
 						if (activity != null) {
-							ChoosePlanFragment.showInstance(activity, OsmAndFeature.WIKIPEDIA);
+							//ChoosePlanFragment.showInstance(activity, OsmAndFeature.WIKIPEDIA);
 						}
 					} else {
 						DownloadIndexesThread downloadThread = app.getDownloadThread();
@@ -358,7 +358,7 @@ public class ExploreTabFragment extends BaseOsmAndFragment implements DownloadEv
 							|| item.getType() == DownloadActivityType.TRAVEL_FILE) && !Version.isPaidVersion(app)) {
 						FragmentActivity activity = getActivity();
 						if (activity != null) {
-							ChoosePlanFragment.showInstance(activity, OsmAndFeature.WIKIPEDIA);
+							//ChoosePlanFragment.showInstance(activity, OsmAndFeature.WIKIPEDIA);
 						}
 					} else {
 						DownloadIndexesThread downloadThread = app.getDownloadThread();

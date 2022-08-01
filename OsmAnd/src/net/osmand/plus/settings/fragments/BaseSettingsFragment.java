@@ -55,7 +55,7 @@ import net.osmand.plus.OsmandApplication;
 import net.osmand.plus.R;
 import net.osmand.plus.activities.MapActivity;
 import net.osmand.plus.activities.OsmandActionBarActivity;
-import net.osmand.plus.activities.OsmandInAppPurchaseActivity;
+//import net.osmand.plus.activities.OsmandInAppPurchaseActivity;
 import net.osmand.plus.backup.ui.BackupAuthorizationFragment;
 import net.osmand.plus.helpers.AndroidUiHelper;
 import net.osmand.plus.plugins.accessibility.AccessibilitySettingsFragment;
@@ -784,15 +784,15 @@ public abstract class BaseSettingsFragment extends PreferenceFragmentCompat impl
 		return (OsmandActionBarActivity) requireActivity();
 	}
 
-	@Nullable
-	protected OsmandInAppPurchaseActivity getInAppPurchaseActivity() {
-		Activity activity = getActivity();
-		if (activity instanceof OsmandInAppPurchaseActivity) {
-			return (OsmandInAppPurchaseActivity) getActivity();
-		} else {
-			return null;
-		}
-	}
+//	@Nullable
+//	protected OsmandInAppPurchaseActivity getInAppPurchaseActivity() {
+//		Activity activity = getActivity();
+//		if (activity instanceof OsmandInAppPurchaseActivity) {
+//			return (OsmandInAppPurchaseActivity) getActivity();
+//		} else {
+//			return null;
+//		}
+//	}
 
 	@Nullable
 	protected UiUtilities getIconsCache() {

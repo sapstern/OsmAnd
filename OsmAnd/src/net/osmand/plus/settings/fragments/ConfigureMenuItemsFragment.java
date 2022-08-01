@@ -31,7 +31,7 @@ import net.osmand.plus.OsmandApplication;
 import net.osmand.plus.R;
 import net.osmand.plus.activities.MapActivity;
 import net.osmand.plus.base.BaseOsmAndFragment;
-import net.osmand.plus.chooseplan.button.PurchasingUtils;
+//import net.osmand.plus.chooseplan.button.PurchasingUtils;
 import net.osmand.plus.configmap.ConfigureMapMenu;
 import net.osmand.plus.mapcontextmenu.MapContextMenu;
 import net.osmand.plus.profiles.SelectCopyAppModeBottomSheet;
@@ -209,7 +209,7 @@ public class ConfigureMenuItemsFragment extends BaseOsmAndFragment
 					contextMenuAdapter = menu.getActionsContextMenuAdapter(true);
 					break;
 			}
-			PurchasingUtils.removePromoItems(contextMenuAdapter);
+			//PurchasingUtils.removePromoItems(contextMenuAdapter);
 		}
 	}
 

@@ -29,10 +29,10 @@ import net.osmand.plus.AppInitializer.InitEvents;
 import net.osmand.plus.OsmandApplication;
 import net.osmand.plus.R;
 import net.osmand.plus.activities.MapActivity;
-import net.osmand.plus.chooseplan.ChoosePlanFragment;
-import net.osmand.plus.chooseplan.OsmAndFeature;
+//import net.osmand.plus.chooseplan.ChoosePlanFragment;
+//import net.osmand.plus.chooseplan.OsmAndFeature;
 import net.osmand.plus.dashboard.DashboardOnMap.DashboardType;
-import net.osmand.plus.inapp.InAppPurchaseHelper;
+//import net.osmand.plus.inapp.InAppPurchaseHelper;
 import net.osmand.plus.mapcontextmenu.editors.FavouriteGroupEditorFragment;
 import net.osmand.plus.mapmarkers.MapMarkersDialogFragment;
 import net.osmand.plus.mapmarkers.MapMarkersGroup;
@@ -434,23 +434,23 @@ public class IntentHelper {
 			}
 			if (intent.getExtras() != null) {
 				Bundle extras = intent.getExtras();
-				if (extras.containsKey(ChoosePlanFragment.OPEN_CHOOSE_PLAN)) {
-					String featureValue = extras.getString(ChoosePlanFragment.CHOOSE_PLAN_FEATURE);
-					if (!Algorithms.isEmpty(featureValue)) {
-						try {
-							OsmAndFeature feature = OsmAndFeature.valueOf(featureValue);
-							if (feature == OsmAndFeature.ANDROID_AUTO) {
-								if (!InAppPurchaseHelper.isAndroidAutoAvailable(app)) {
-									ChoosePlanFragment.showInstance(mapActivity, feature);
-								}
-							} else {
-								ChoosePlanFragment.showInstance(mapActivity, feature);
-							}
-						} catch (Exception e) {
-							LOG.error(e.getMessage(), e);
-						}
-					}
-				}
+//				if (extras.containsKey(ChoosePlanFragment.OPEN_CHOOSE_PLAN)) {
+//					String featureValue = extras.getString(ChoosePlanFragment.CHOOSE_PLAN_FEATURE);
+//					if (!Algorithms.isEmpty(featureValue)) {
+//						try {
+//							OsmAndFeature feature = OsmAndFeature.valueOf(featureValue);
+////							if (feature == OsmAndFeature.ANDROID_AUTO) {
+////								if (!InAppPurchaseHelper.isAndroidAutoAvailable(app)) {
+////									ChoosePlanFragment.showInstance(mapActivity, feature);
+////								}
+////							} else {
+//								ChoosePlanFragment.showInstance(mapActivity, feature);
+////							}
+//						} catch (Exception e) {
+//							LOG.error(e.getMessage(), e);
+//						}
+//					}
+//				}
 				clearIntent(intent);
 			}
 		}
