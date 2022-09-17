@@ -199,10 +199,11 @@ public class RendererRegistry {
 
 	@Nullable
 	public InputStream getInputStream(String name) throws FileNotFoundException {
+		
 		InputStream is = null;
 		if("default".equalsIgnoreCase(name)) {
 			name = DEFAULT_RENDER;
-		} 
+		}
 		if(externalRenderers.containsKey(name)){
 			is = new FileInputStream(externalRenderers.get(name));
 		} else {

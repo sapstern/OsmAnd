@@ -994,22 +994,23 @@ public class OsmandApplication extends MultiDexApplication {
 			getNavigationService().stopSelf();
 		}
 		serviceIntent.putExtra(NavigationService.USAGE_INTENT, intent);
-		if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.O) {
-			startForegroundService(serviceIntent);
-		} else {
+		//MFRI20220825
+		//if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.O) {
+		//	startForegroundService(serviceIntent);
+		//} else {
 			startService(serviceIntent);
-		}
+		//}
 		//getNotificationHelper().showNotifications();
 	}
 
 	public void startDownloadService() {
 		Intent serviceIntent = new Intent(this, DownloadService.class);
-
-		if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.O) {
-			startForegroundService(serviceIntent);
-		} else {
+        //MFRI20220825
+		//if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.O) {
+		//	startForegroundService(serviceIntent);
+		//} else {
 			startService(serviceIntent);
-		}
+		//}
 	}
 
 	public String getLangTranslation(String l) {
