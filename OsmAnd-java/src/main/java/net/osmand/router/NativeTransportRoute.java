@@ -7,7 +7,6 @@ public class NativeTransportRoute {
 	public double routeLon = -1;
 	public String name = "";
 	public String enName = "";
-	//to HashMap <string, string> names
 	public String[] namesLng;
 	public String[] namesNames;
 	public int fileOffset;
