@@ -147,38 +147,31 @@ public class Version {
 	}
 
 	public static boolean isFreeVersion(@NonNull OsmandApplication app) {
-		return CollectionUtils.equalsToAny(app.getPackageName(), FREE_VERSION_NAME, FREE_DEV_VERSION_NAME) || isHuawei();
+		return false;
 	}
 
 	public static boolean isFullVersion(@NonNull OsmandApplication app) {
-		return app.getPackageName().equals(FULL_VERSION_NAME);
+		return true;
 	}
 
 	public static boolean isPaidVersion(@NonNull OsmandApplication app) {
-		return !isFreeVersion(app)
-				|| InAppPurchaseUtils.isFullVersionAvailable(app)
-				|| InAppPurchaseUtils.isLiveUpdatesAvailable(app)
-				|| InAppPurchaseUtils.isMapsPlusAvailable(app)
-				|| InAppPurchaseUtils.isOsmAndProAvailable(app)
-				|| InAppPurchaseUtils.isTripltekPromoAvailable(app)
-				|| InAppPurchaseUtils.isHugerockPromoAvailable(app);
+		return true;
 	}
 
 	public static boolean isDeveloperVersion(@NonNull OsmandApplication app) {
-		return getAppName(app).contains("~") || app.getPackageName().equals(FREE_DEV_VERSION_NAME);
+		return true;
 	}
 
 	public static boolean isDeveloperBuild(@NonNull OsmandApplication app) {
-		return getAppName(app).contains("~");
+		return true;
 	}
 
 	public static boolean isTripltekBuild() {
-		return TRIPLTEK_NAME.equalsIgnoreCase(Build.BRAND) || TRIPLTEK_NAME.equalsIgnoreCase(Build.MANUFACTURER);
+		return false;
 	}
 
 	public static boolean isHugerockBuild() {
-		return HUGEROCK_NAME.equalsIgnoreCase(Build.BRAND) || HUGEROCK_NAME.equalsIgnoreCase(Build.MANUFACTURER)
-				|| "alps".equalsIgnoreCase(Build.BRAND) && "SOTEN".equalsIgnoreCase(Build.MANUFACTURER);
+		return false;
 	}
 
 	public static String getVersionForTracker(@NonNull OsmandApplication app) {

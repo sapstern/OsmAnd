@@ -244,7 +244,7 @@ public abstract class InAppPurchaseHelper {
 	}
 
 	public boolean isPurchased(String sku) {
-		List<InAppPurchase> allPurchases = purchases.getAllInAppPurchases(true);
+		/* MFRI List<InAppPurchase> allPurchases = purchases.getAllInAppPurchases(true);
 		for (InAppPurchase p : allPurchases) {
 			if (p.getSku().equals(sku) && p.isPurchased()) {
 				return true;
@@ -276,8 +276,8 @@ public abstract class InAppPurchaseHelper {
 					}
 				}
 			}
-		}
-		return false;
+		} */
+		return true;
 	}
 
 	protected void exec(@NonNull InAppPurchaseTaskType taskType, @NonNull InAppCommand command) {

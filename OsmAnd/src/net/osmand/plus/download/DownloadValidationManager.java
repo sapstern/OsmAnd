@@ -27,7 +27,7 @@ import java.text.MessageFormat;
 
 public class DownloadValidationManager {
 
-	public static final int MAXIMUM_AVAILABLE_FREE_DOWNLOADS = 7;
+	public static final int MAXIMUM_AVAILABLE_FREE_DOWNLOADS = 7777; //MFRI
 	private static boolean DOWNLOAD_MOBILE_INTERNET_CONFIRMED;
 
 	private final OsmandApplication app;
@@ -108,15 +108,15 @@ public class DownloadValidationManager {
 	}
 
 	private boolean downloadFilesCheck_1_FreeVersion(@NonNull FragmentActivity context, IndexItem... items) {
-		if (!Version.isPaidVersion(app) && shouldShowChoosePlan(items)) {
-			ChoosePlanFragment.showInstance(context, OsmAndFeature.UNLIMITED_MAP_DOWNLOADS);
-			return false;
-		}
+		//if (!Version.isPaidVersion(app) && shouldShowChoosePlan(items)) {
+		//	ChoosePlanFragment.showInstance(context, OsmAndFeature.UNLIMITED_MAP_DOWNLOADS);
+		//	return false;
+		//}
 		return true;
 	}
 
 	private boolean shouldShowChoosePlan(IndexItem... items) {
-		boolean isAnyItemCountedInDownload = false;
+		/* boolean isAnyItemCountedInDownload = false;
 		for (IndexItem indexItem : items) {
 			if (DownloadActivityType.isCountedInDownloads(indexItem)) {
 				isAnyItemCountedInDownload = true;
@@ -124,8 +124,9 @@ public class DownloadValidationManager {
 			}
 		}
 		int total = settings.NUMBER_OF_FREE_DOWNLOADS.get();
-		return total >= MAXIMUM_AVAILABLE_FREE_DOWNLOADS && isAnyItemCountedInDownload;
-	}
+		return total >= MAXIMUM_AVAILABLE_FREE_DOWNLOADS && isAnyItemCountedInDownload;*/
+		return false;
+		}
 
 	private void downloadFilesCheck_2_Internet(@NonNull FragmentActivity context, IndexItem[] items) {
 		if (settings.isWifiConnected()) {

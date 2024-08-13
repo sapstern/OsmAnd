@@ -17,35 +17,35 @@ public class InAppPurchaseUtils {
 
 
 	protected static boolean isFullVersionPurchased(@NonNull OsmandApplication app) {
-		return app.getSettings().FULL_VERSION_PURCHASED.get();
+		return true;
 	}
 
 	protected static boolean isLiveUpdatesPurchased(@NonNull OsmandApplication app) {
-		return app.getSettings().LIVE_UPDATES_PURCHASED.get();
+		return true;
 	}
 
 	protected static boolean isMapsPlusPurchased(@NonNull OsmandApplication app) {
-		return app.getSettings().OSMAND_MAPS_PURCHASED.get();
+		return true;
 	}
 
 	protected static boolean isOsmAndProPurchased(@NonNull OsmandApplication app) {
-		return app.getSettings().OSMAND_PRO_PURCHASED.get();
+		return true;
 	}
 
 	protected static boolean isContourLinesPurchased(@NonNull OsmandApplication app) {
-		return app.getSettings().CONTOUR_LINES_PURCHASED.get();
+		return true;
 	}
 
 	protected static boolean isDepthContoursPurchased(@NonNull OsmandApplication app) {
-		return app.getSettings().DEPTH_CONTOURS_PURCHASED.get();
+		return true;
 	}
 
 	protected static boolean isPromoSubscribed(@NonNull OsmandApplication app) {
-		return app.getSettings().BACKUP_PURCHASE_ACTIVE.get();
+		return true;
 	}
 
 	protected static boolean isMapperUpdatesSubscribed(@NonNull OsmandApplication app) {
-		return app.getSettings().MAPPER_LIVE_UPDATES_EXPIRE_TIME.get() > System.currentTimeMillis();
+		return true;
 	}
 
 
@@ -78,26 +78,15 @@ public class InAppPurchaseUtils {
 	}
 
 	public static boolean isSubscribedToAny(@NonNull OsmandApplication app) {
-		return isSubscribedToAny(app, true);
+		return true;
 	}
 
 	public static boolean isSubscribedToAny(@NonNull OsmandApplication app, boolean checkDevBuild) {
-		return checkDeveloperBuildIfNeeded(app, checkDevBuild)
-				|| isMapsPlusAvailable(app, checkDevBuild)
-				|| isOsmAndProAvailable(app, checkDevBuild)
-				|| isMapperUpdatesSubscribed(app)
-				|| isLiveUpdatesPurchased(app)
-				|| isTripltekPromoAvailable(app)
-				|| isHugerockPromoAvailable(app);
+		return true;
 	}
 
 	public static boolean isLiveUpdatesAvailable(@NonNull OsmandApplication app) {
-		return isLiveUpdatesPurchased(app)
-				|| isOsmAndProAvailable(app)
-				|| isMapperUpdatesSubscribed(app)
-				|| checkDeveloperBuildIfNeeded(app, true)
-				|| isHugerockPromoAvailable(app)
-				|| isTripltekPromoAvailable(app);
+		return true;
 	}
 
 	public static boolean isWidgetPurchased(@NonNull OsmandApplication app, @NonNull WidgetType wt) {
@@ -112,55 +101,44 @@ public class InAppPurchaseUtils {
 	}
 
 	public static boolean isProWidgetsAvailable(@NonNull OsmandApplication app) {
-		return isOsmAndProAvailable(app) || isTripltekPromoAvailable(app) || isHugerockPromoAvailable(app);
+		return true;
 	}
 
 	public static boolean is3dMapsAvailable(@NonNull OsmandApplication app) {
-		return isOsmAndProAvailable(app) || isTripltekPromoAvailable(app) || isHugerockPromoAvailable(app);
+		return true;
 	}
 
 	public static boolean isExportTypeAvailable(@NonNull OsmandApplication app,
 	                                            @NonNull ExportType exportType) {
-		return isBackupAvailable(app) || exportType.isAvailableInFreeVersion();
+		return true;
 	}
 
 	public static boolean isBackupAvailable(@NonNull OsmandApplication app) {
-		return isOsmAndProAvailable(app);
+		return true;
 	}
 
 	public static boolean isWeatherAvailable(@NonNull OsmandApplication app) {
-		return isOsmAndProAvailable(app) || isTripltekPromoAvailable(app) || isHugerockPromoAvailable(app);
+		return true;
 	}
 
 	public static boolean isColoringTypeAvailable(@NonNull OsmandApplication app) {
-		return isOsmAndProAvailable(app) || isTripltekPromoAvailable(app) || isHugerockPromoAvailable(app);
+		return true;
 	}
 
 	public static boolean isDepthContoursAvailable(@NonNull OsmandApplication app) {
-		return isDepthContoursPurchased(app) || Version.isPaidVersion(app) ||
-				checkDeveloperBuildIfNeeded(app, true);
+		return true;
 	}
 
 	public static boolean isContourLinesAvailable(@NonNull OsmandApplication app) {
-		return isContourLinesPurchased(app) || Version.isPaidVersion(app) ||
-				checkDeveloperBuildIfNeeded(app, true);
+		return true;
 	}
 
 	public static boolean isAndroidAutoAvailable(@NonNull OsmandApplication app) {
-		long time = System.currentTimeMillis();
-		long installTime = Math.max(Version.getUpdateTime(app), Version.getInstallTime(app));
-		if (time >= installTime + ANDROID_AUTO_START_DATE_MS) {
-			return checkDeveloperBuildIfNeeded(app, true) || Version.isPaidVersion(app);
-		}
 		return true;
 	}
 
 	public static boolean isTripltekPromoAvailable(@NonNull OsmandApplication app) {
-		if (Version.isTripltekBuild()) {
-			long expirationTime = getTripltekPromoExpirationTime(app);
-			return expirationTime >= System.currentTimeMillis();
-		}
-		return false;
+		return true;
 	}
 
 	public static long getTripltekPromoExpirationTime(@NonNull OsmandApplication app) {
@@ -175,11 +153,7 @@ public class InAppPurchaseUtils {
 	}
 
 	public static boolean isHugerockPromoAvailable(@NonNull OsmandApplication app) {
-		if (Version.isHugerockBuild()) {
-			long expirationTime = getHugerockPromoExpirationTime(app);
-			return expirationTime >= System.currentTimeMillis();
-		}
-		return false;
+		return true;
 	}
 
 	public static long getHugerockPromoExpirationTime(@NonNull OsmandApplication app) {
