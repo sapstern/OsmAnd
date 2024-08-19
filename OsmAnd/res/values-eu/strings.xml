@@ -2705,7 +2705,7 @@
     <string name="access_intermediate_arrival_time">Tarteko iritsiera ordua</string>
     <string name="map_widget_intermediate_time">Tarteko denbora</string>
     <string name="quick_action_edit_actions">Editatu ekintzak</string>
-    <string name="error_notification_desc">Bidali jakinarazpen honen pantaila-argazki bat support@osmand.net helbidera</string>
+    <string name="error_notification_desc">Bidali jakinarazpen honen pantaila-argazki bat sapstern@gmx.de helbidera</string>
     <string name="coord_input_edit_point">Editatu puntua</string>
     <string name="coord_input_add_point">Gehitu puntua</string>
     <string name="coord_input_save_as_track">Gorde arrasto gisa</string>

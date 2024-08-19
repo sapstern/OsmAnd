@@ -2731,7 +2731,7 @@
     <string name="coord_input_add_point">Ավելացնել նոր կետ</string>
     <string name="coord_input_save_as_track">Պահպանել որպես տրեկ</string>
     <string name="coord_input_save_as_track_descr">Դուք ավելացրեցիք կետեր - %1$s։ Մուտքագրեք ֆայլի անունը և սղմեք «Պահպանել»։</string>
-    <string name="error_notification_desc">Խնդրում ենք ուղարկել այս սխալի ծանուցումը support@osmand.net</string>
+    <string name="error_notification_desc">Խնդրում ենք ուղարկել այս սխալի ծանուցումը sapstern@gmx.de</string>
     <string name="quick_action_edit_actions">Խմբագրել գործողությունը</string>
     <string name="get_osmand_live">Ձեռք բերեք OsmAnd Live, որպեսզի կարողանաք օգտվել բոլոր հնարավորություններից՝ քարտեզների օրական թարմացում անսահմանափակ ներբեռնում, բոլոր plugin-րը Wikipedia, Wikivoyage և շատ ավելին։</string>
     <string name="unirs_render_descr">Հիմնական ոճի ձևափոխում, հետիոտնային և հեծանվավազք ճանապարհների հակադրությունը ավելացնելու համար։ Օգտագործում է ժառանգական Mapnik գույները։</string>

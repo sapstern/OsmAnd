@@ -2014,7 +2014,7 @@
     <string name="coord_input_add_point">Nöqtə əlavə et</string>
     <string name="coord_input_save_as_track">İz kimi saxla</string>
     <string name="coord_input_save_as_track_descr">%1$s nöqtə əlavə etdiniz. Fayl adını yazıb “Saxla” düyməsinə toxunun.</string>
-    <string name="error_notification_desc">Bu bildirişin ekran şəklini support@osmand.net ünvanına göndərin</string>
+    <string name="error_notification_desc">Bu bildirişin ekran şəklini sapstern@gmx.de ünvanına göndərin</string>
     <string name="get_osmand_live">Bütün xüsusiyyətləri açmaq üçün OsmAnd Live əldə edin: Limitsiz endirmələr ilə günlük xəritəsi yeniləmələri, bütün pullu və pulsuz qoşmalar, Vikipediya, Vikisəyahət və daha çoxu.</string>
     <string name="thank_you_for_feedback">Əks əlaqəniz üçün təşəkkürlər</string>
     <string name="send_search_query_description">Axtarış sorğunuzu göndərəcəyik: \"%1$s\", eləcə də məkanınızı.

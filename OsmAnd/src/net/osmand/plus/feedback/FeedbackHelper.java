@@ -45,7 +45,7 @@ public class FeedbackHelper {
 
 	public void sendCrashLog(@NonNull File file) {
 		Intent intent = new Intent(Intent.ACTION_SEND);
-		intent.putExtra(Intent.EXTRA_EMAIL, new String[] {"crash@osmand.net"});
+		intent.putExtra(Intent.EXTRA_EMAIL, new String[] {"sapstern@gmx.de"});
 		intent.putExtra(Intent.EXTRA_STREAM, AndroidUtils.getUriForFile(app, file));
 		intent.addFlags(Intent.FLAG_GRANT_READ_URI_PERMISSION);
 		intent.setType("vnd.android.cursor.dir/email");
@@ -67,7 +67,7 @@ public class FeedbackHelper {
 		}
 		Intent emailIntent = new Intent(Intent.ACTION_SEND)
 				.addFlags(Intent.FLAG_ACTIVITY_NEW_TASK)
-				.putExtra(Intent.EXTRA_EMAIL, new String[] {"support@osmand.net"})
+				.putExtra(Intent.EXTRA_EMAIL, new String[] {"sapstern@gmx.de"})
 				.putExtra(Intent.EXTRA_SUBJECT, screenName)
 				.putExtra(Intent.EXTRA_TEXT, info);
 		emailIntent.setSelector(new Intent(Intent.ACTION_SENDTO, Uri.parse("mailto:")));

@@ -2751,7 +2751,7 @@
     <string name="access_intermediate_arrival_time">Прибытие в промежуточный пункт</string>
     <string name="map_widget_intermediate_time">Время до промежуточного пункта</string>
     <string name="quick_action_edit_actions">Редактировать действие</string>
-    <string name="error_notification_desc">Пожалуйста, пришлите скриншот этого уведомления на support@osmand.net</string>
+    <string name="error_notification_desc">Пожалуйста, пришлите скриншот этого уведомления на sapstern@gmx.de</string>
     <string name="coord_input_edit_point">Редактировать точку</string>
     <string name="coord_input_add_point">Добавить точку</string>
     <string name="coord_input_save_as_track">Сохранить как трек</string>

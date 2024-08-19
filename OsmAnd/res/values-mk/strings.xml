@@ -1756,7 +1756,7 @@
     <string name="coord_input_add_point">Dodadi tocka</string>
     <string name="coord_input_save_as_track">Začuvaj kako zapis</string>
     <string name="coord_input_save_as_track_descr">Dodadovte %1$s poeni. Vnesete ime na datoteka i doprete „Začuvaj“.</string>
-    <string name="error_notification_desc">Ve molime ispratete slika od ekranot na ova izvestuvanje na support@osmand.net</string>
+    <string name="error_notification_desc">Ve molime ispratete slika od ekranot na ova izvestuvanje na sapstern@gmx.de</string>
     <string name="quick_action_edit_actions">Uredi gi dejstvata</string>
     <string name="get_osmand_live">Dobijte OsmAnd Live za da gi otklučite site funkcii: dnevni ažuriranja na karti so neograničeni prezemanja, site plateni i besplatni priklučoci, Vikipedija, Vikipatuvanje i mnogu poveḱe.</string>
     <string name="hide_full_description">Sokrij go celosniot opis</string>

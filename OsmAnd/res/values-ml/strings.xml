@@ -1792,7 +1792,7 @@
     <string name="coord_input_add_point">"പോയിന്റ്  ചേര്‍ക്കു"</string>
     <string name="coord_input_save_as_track">"പാതയായ്  സൂക്ഷിക്കുക "</string>
     <string name="coord_input_save_as_track_descr">"നിങ്ങള്‍ %1$s പോയിന്റുകള്‍ ചേര്‍ത്തിരിക്കുന്നു.  ഒരു ഫയല്‍ നാമം എഴുതി  \"സൂക്ഷിക്കുക\"  ഞെക്കുക "</string>
-    <string name="error_notification_desc">"ദയവായ്  ഈ അറിയിപ്പിന്റെ ഒരു സ്ക്രീന്‍ഷോട്ട് എടുത്ത്  support@osmand.net ലേക്ക് അയക്കു"</string>
+    <string name="error_notification_desc">"ദയവായ്  ഈ അറിയിപ്പിന്റെ ഒരു സ്ക്രീന്‍ഷോട്ട് എടുത്ത്  sapstern@gmx.de ലേക്ക് അയക്കു"</string>
     <string name="quick_action_edit_actions">"പ്രവര്‍ത്തനരീതികള്‍ ക്രമീകരിക്കുക "</string>
     <string name="get_osmand_live">"എല്ലാ പ്ളഗ്ഗിനുകളും, വിക്കിപ്പീഡിയ, വിക്കിവൊയേജ്, എല്ലാദിവസവും പുതുക്കുന്ന ഭൂപടങ്ങള്‍  നിയന്ത്രണങ്ങളില്ലാതെ ഡൗണ്ലോഡ്  ചെയ്യുക തുടങ്ങിയ   സവിശേഷകള്‍ക്ക്    ഓഎസ്എംആന്‍ഡ്  ലൈവ് നേടുക. "</string>
     <string name="unirs_render_descr">"ഡീഫാള്‍ട്ട് സ്ടൈല്‍ നവീകരിച്ച്  നടപ്പാതകളൂം സൈക്കിള്‍ പാതകളൂം എടുത്ത് കാണിച്ചിരിക്കുന്നു. മാപ്നിക് കളറൂകളാണ് ഉപയോഗിച്ചിരിക്കുന്നത്. "</string>

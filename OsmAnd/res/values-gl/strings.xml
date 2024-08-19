@@ -2424,7 +2424,7 @@
     <string name="point_deleted">Punto %1$s eliminado</string>
     <string name="coord_input_edit_point">Editar punto</string>
     <string name="coord_input_add_point">Engadir punto</string>
-    <string name="error_notification_desc">Por favor, envía unha captura da pantalla desta notificación ó enderezo support@osmand.net</string>
+    <string name="error_notification_desc">Por favor, envía unha captura da pantalla desta notificación ó enderezo sapstern@gmx.de</string>
     <string name="quick_action_edit_actions">Editar accións</string>
     <string name="unirs_render_descr">Modificación do estilo predefinido para un maior contraste nos camiños peonís e para bicicletas. Emprega as cores clásicas do Mapnik.</string>
     <string name="shared_string_bookmark">Marcador</string>

@@ -2704,7 +2704,7 @@
     <string name="unirs_render_descr">Modification du style par défaut pour augmenter le contraste des voies piétonnes et cyclables. Utilise les couleurs héritées de Mapnik.</string>
     <string name="get_osmand_live">Souscrivez à OsmAnd Live et vous pourrez utiliser toutes les fonctionnalités : Mise à jour quotidienne des cartes (avec un nombre illimité de téléchargements), Extensions, Wikipédia, Guides de voyage et bien plus encore ...</string>
     <string name="quick_action_edit_actions">Modifier les actions</string>
-    <string name="error_notification_desc">Merci d\'envoyer une capture écran de cette notification à support@osmand.net</string>
+    <string name="error_notification_desc">Merci d\'envoyer une capture écran de cette notification à sapstern@gmx.de</string>
     <string name="coord_input_edit_point">Modifier le point</string>
     <string name="coord_input_add_point">Ajouter un point</string>
     <string name="coord_input_save_as_track">Enregistrer comme trace</string>

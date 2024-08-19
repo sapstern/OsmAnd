@@ -2713,7 +2713,7 @@
     <string name="unirs_render_descr">Ændring af standard stil for at øge kontrasten på fodgænger- og cykelveje. Bruger Mapniks oprindelige farver.</string>
     <string name="get_osmand_live">Abonnér på OsmAnd Live og få adgang til alle funktioner: daglige opdateringer af kort, alle gratis og betalte udvidelser, Wikipedia, Wikivoyage og meget mere.</string>
     <string name="quick_action_edit_actions">Rediger genveje</string>
-    <string name="error_notification_desc">Send et skærmbillede af meddelelsen til support@osmand.net</string>
+    <string name="error_notification_desc">Send et skærmbillede af meddelelsen til sapstern@gmx.de</string>
     <string name="coord_input_edit_point">Rediger punkt</string>
     <string name="coord_input_add_point">Tilføj punkt</string>
     <string name="coord_input_save_as_track">Gem som spor</string>

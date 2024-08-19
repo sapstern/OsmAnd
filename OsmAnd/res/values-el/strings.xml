@@ -2706,7 +2706,7 @@
     <string name="unirs_render_descr">Τροποποίηση της τυπικής μορφής για αύξηση της αντίθεσης των πεζόδρομων και ποδηλάτου. Χρήση χρωμάτων παλιών Mapnik.</string>
     <string name="get_osmand_live">Εγγραφείτε στο OsmAnd Live για να ξεκλειδώσετε όλα τα χαρακτηριστικά: Ημερήσιες ενημερώσεις χαρτών με απεριόριστες λήψεις, όλα πληρωμένα και χωρίς πρόσθετα, βικιπαίδεια, βικιταξίδια και πολλά άλλα.</string>
     <string name="quick_action_edit_actions">Επεξεργασία ενεργειών</string>
-    <string name="error_notification_desc">Παρακαλούμε, στείλτε στιγμιότυπο αυτής της ειδοποίησης στο support@osmand.net</string>
+    <string name="error_notification_desc">Παρακαλούμε, στείλτε στιγμιότυπο αυτής της ειδοποίησης στο sapstern@gmx.de</string>
     <string name="coord_input_edit_point">Επεξεργασία σημείου</string>
     <string name="coord_input_add_point">Προσθήκη σημείου</string>
     <string name="coord_input_save_as_track">Αποθήκευση ως ίχνος</string>

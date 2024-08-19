@@ -174,7 +174,7 @@
     <string name="coord_input_add_point">Lisa punkt</string>
     <string name="coord_input_save_as_track">Salvesta jäljena</string>
     <string name="coord_input_save_as_track_descr">Lisasid %1$s punkti. Sisesta faili nimi ja vajuta \"Salvesta\".</string>
-    <string name="error_notification_desc">Palun saada ekraanipilt sellest teatest aadressil support@osmand.net</string>
+    <string name="error_notification_desc">Palun saada ekraanipilt sellest teatest aadressil sapstern@gmx.de</string>
     <string name="quick_action_edit_actions">Muuda tegevusi</string>
     <string name="shared_string_bookmark">Järjehoidja</string>
     <string name="hide_full_description">Peida täielik kirjeldus</string>
