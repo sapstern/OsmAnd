@@ -5448,7 +5448,7 @@
     <string name="terrain_maps">Cartes de terrain</string>
     <string name="sort_country_name_descending">Nom de pays : Z – A</string>
     <string name="delete_map_description">Effacer la carte %1$s ?</string>
-    <string name="maps_and_resources">Cartes et Téléchargements</string>
+    <string name="maps_and_resources">Cartes et téléchargements</string>
     <string name="shared_string_show_icon">Afficher l\'icône</string>
     <string name="smart_folder_name_present">Ce dossier intelligent existe déjà</string>
     <string name="smart_folder_saved">Dossier intelligent enregistré</string>
@@ -5847,9 +5847,12 @@
     <string name="route_roundabout_exit">Prendre la sortie %1$d</string>
     <string name="help_article_map_routes_name">Itinéraires</string>
     <string name="help_article_map_tracks_name">Traces</string>
-    <string name="height_cache">Cache d\'altitude</string>
+    <string name="height_cache">Cache des altitudes</string>
     <string name="add_widget_to_the_left">Ajouter le gadget à gauche</string>
     <string name="add_widget_above">Ajouter le gadget au dessus</string>
     <string name="add_widget_below">Ajouter le gadget en dessous</string>
     <string name="add_widget_to_the_right">Ajouter le gadget à droite</string>
+    <string name="delete_widget_description">Ce gadget va être supprimé. Plus tard, vous pourrez le restaurer depuis \"Configurer l\'écran\".</string>
+    <string name="delete_widget">Supprimer le gadget ?</string>
+    <string name="battery_saving_mode">Mode économie de batterie</string>
 </resources>
