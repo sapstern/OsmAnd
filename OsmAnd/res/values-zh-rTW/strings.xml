@@ -2607,7 +2607,7 @@
     <string name="unirs_render_descr">修改預設樣式增加行人和自行車道的對比度。使用傳統的 Mapnik 配色。</string>
     <string name="get_osmand_live">獲得 OsmAnd Live 解鎖全部功能：每日地圖更新與無限下載、所有付費和免費的外掛元件、維基百科、維基導遊和更多。</string>
     <string name="quick_action_edit_actions">編輯動作</string>
-    <string name="error_notification_desc">請將此通知的螢幕快照傳送到 support@osmand.net</string>
+    <string name="error_notification_desc">請將此通知的螢幕快照傳送到 sapstern@gmx.de</string>
     <string name="coord_input_edit_point">編輯標點</string>
     <string name="coord_input_add_point">新增標點</string>
     <string name="coord_input_save_as_track">儲存為軌跡</string>

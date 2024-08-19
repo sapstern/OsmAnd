@@ -2718,7 +2718,7 @@
     <string name="unirs_render_descr">Мадыфікацыя прадвызначанага стылю для павялічэння кантрастнасці пешаходных і роварных дарог. Выкарыстоўвае старыя Mapnik-колеры.</string>
     <string name="get_osmand_live">Атрымайце OsmAnd Live, каб разблакаваць усе функцыі: штодзённыя абнаўленні мапаў з неабмежаванымі спампоўваннямі, усе платныя і бясплатныя ўбудовы, Вікіпедыю, Вікігід і шмат іншага.</string>
     <string name="quick_action_edit_actions">Рэдагаваць дзеянні</string>
-    <string name="error_notification_desc">Калі ласка, адпраўце здымак экрана з гэтым апавяшчэннем на support@osmand.net</string>
+    <string name="error_notification_desc">Калі ласка, адпраўце здымак экрана з гэтым апавяшчэннем на sapstern@gmx.de</string>
     <string name="coord_input_edit_point">Рэдагаваць пункт</string>
     <string name="coord_input_add_point">Дадаць пункт</string>
     <string name="coord_input_save_as_track">Захаваць як след</string>

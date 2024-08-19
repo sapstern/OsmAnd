@@ -2079,7 +2079,7 @@
     <string name="coord_input_add_point">Adicionar ponto</string>
     <string name="coord_input_save_as_track">Guardar como trilho</string>
     <string name="coord_input_save_as_track_descr">Adicionou %1$s pontos. Introduza um nome do ficheiro e toque no botão \"Guardar\".</string>
-    <string name="error_notification_desc">Por favor envie uma captura de ecrã desta notificação para support@osmand.net</string>
+    <string name="error_notification_desc">Por favor envie uma captura de ecrã desta notificação para sapstern@gmx.de</string>
     <string name="quick_action_edit_actions">Editar ações</string>
     <string name="get_osmand_live">Adquira o OsmAnd Live para desbloquear todas as funcionalidades: atualizações diárias de mapas com descarregamentos ilimitados, todos os complementos pagos e gratuitos, Wikipédia, Wikivoyage e muito mais.</string>
     <string name="unirs_render_descr">Alteração do estilo padrão para aumentar o contraste de caminhos pedestres e ciclovias. Usa cores clássicas do Mapnik.</string>

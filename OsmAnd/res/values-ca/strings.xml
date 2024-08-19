@@ -2700,7 +2700,7 @@
     <string name="unirs_render_descr">Modificació de l\'estil predefinit per incrementar el contrast a les vies per vianants i bicicletes. Utilitza els colors del llegat Mapnik.</string>
     <string name="get_osmand_live">Obteniu OsmAnd Live per disposar de totes les funcionalitats:Actualitzacions diàries de mapes sense límit de baixades, tots els connectors tant els de pagament, Viquipèdia, ViquiViatges i molt més.</string>
     <string name="quick_action_edit_actions">Edita les accions</string>
-    <string name="error_notification_desc">Us agrairem que envieu una captura de pantalla d\'aquesta notificació a support@osmand.net</string>
+    <string name="error_notification_desc">Us agrairem que envieu una captura de pantalla d\'aquesta notificació a sapstern@gmx.de</string>
     <string name="coord_input_edit_point">Edita punt</string>
     <string name="coord_input_add_point">Afegeix un punt</string>
     <string name="coord_input_save_as_track">Desa com una traça</string>

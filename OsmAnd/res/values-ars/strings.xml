@@ -323,7 +323,7 @@
     <string name="select_map_icon_descr">تظهر الأيقونة الخريطة في الجميع.</string>
     <string name="shared_string_swap">تبديل</string>
     <string name="parking_widget_desc">ويدجت عرض المسافة من مركز الشاشة إلى مكان وقوف السيارات.</string>
-    <string name="error_notification_desc">يرجى إرسال لقطة شاشة من هذا الإشعار إلى support@osmand.net</string>
+    <string name="error_notification_desc">يرجى إرسال لقطة شاشة من هذا الإشعار إلى sapstern@gmx.de</string>
     <string name="marker_save_as_track">حفظ كمسار</string>
     <string name="voice">صوت مسج</string>
     <string name="routing_attr_prefer_tactile_paving_description">تفضيل رصيف المكفوفين</string>

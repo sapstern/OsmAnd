@@ -2828,7 +2828,7 @@
     <string name="wikivoyage_travel_guide_descr">İnternete bağlantısı olmadan, OsmAnd\'ın içinde, gezegendeki en ilgi çekici yerlere ait rehberler.</string>
     <string name="get_osmand_live">Tüm özelliklerin kilidini açmak için OsmAnd Live\'ı edinin: Sınırsız indirilebilen günlük harita güncellemeleri, tüm ücretli ve ücretsiz eklentiler, Wikipedia, Wikivoyage ve daha fazlası.</string>
     <string name="quick_action_edit_actions">Eylemleri düzenle</string>
-    <string name="error_notification_desc">Lütfen bu bildirimin ekran görüntüsünü support@osmand.net adresine gönderin</string>
+    <string name="error_notification_desc">Lütfen bu bildirimin ekran görüntüsünü sapstern@gmx.de adresine gönderin</string>
     <string name="coord_input_save_as_track">İzlenen yol olarak kaydet</string>
     <string name="coord_input_save_as_track_descr">%1$s nokta eklediniz. Bir dosya adı yazın ve \"Kaydet\"e dokunun.</string>
     <string name="send_search_query_description">Arama sorgunuz, konumunuzla birlikte \"%1$s\" adresine gönderilecektir.

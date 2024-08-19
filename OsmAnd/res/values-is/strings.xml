@@ -2614,7 +2614,7 @@
     <string name="map_widget_intermediate_time">Millitími</string>
     <string name="unirs_render_descr">Aðlögun á sjálfgefna stílnum til að auka birtuskil leiða fyrir fótgangandi og hjólreiðafólk. Notar eldri liti úr Mapnik.</string>
     <string name="get_osmand_live">Náðu í OsmAnd Live til að aflæsa öllum eiginleikum: Fáðu ótakmörkuð niðurhöl korta og daglegar kortauppfærslur, allar greiddar og ókeypis viðbætur, Wikipedia, Wikivoyage og margt fleira.</string>
-    <string name="error_notification_desc">Sendu skjámynd af þessari tilkynningu til support@osmand.net</string>
+    <string name="error_notification_desc">Sendu skjámynd af þessari tilkynningu til sapstern@gmx.de</string>
     <string name="quick_action_edit_actions">Breyta aðgerðum</string>
     <string name="coord_input_edit_point">Breyta punkti</string>
     <string name="coord_input_add_point">Bæta við punkti</string>

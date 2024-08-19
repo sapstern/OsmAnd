@@ -2657,7 +2657,7 @@
     <string name="read_wikipedia_offline_description">Zasubskrybuj OsmAnd Live, by czytać artykuły Wikipedii i Wikipodróży w trybie offline.</string>
     <string name="read_wikipedia_offline">Czytaj Wikipedię w trybie offline</string>
     <string name="quick_action_edit_actions">Edycja działań</string>
-    <string name="error_notification_desc">Wyślij zrzut ekranu z tego powiadomienia na adres support@osmand.net</string>
+    <string name="error_notification_desc">Wyślij zrzut ekranu z tego powiadomienia na adres sapstern@gmx.de</string>
     <string name="coord_input_edit_point">Edytuj punkt</string>
     <string name="coord_input_add_point">Dodaj punkt</string>
     <string name="coord_input_save_as_track_descr">Dodano %1$s punktów. Proszę wprowadzić nazwę pliku i nacisnąć „Zapisz”.</string>

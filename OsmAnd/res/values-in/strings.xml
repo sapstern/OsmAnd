@@ -659,7 +659,7 @@
     <string name="shared_string_travel_guides">Panduan perjalanan</string>
     <string name="get_osmand_live">Dapatkan OsmAnd Live untuk membuka semua fitur: Pembaruan peta harian dengan unduhan tidak terbatas, semua plugin berbayar dan gratis, Wikivoyage, dan masih banyak lagi.</string>
     <string name="quick_action_edit_actions">Sunting tindakan</string>
-    <string name="error_notification_desc">Silakan kirim tangkapan layar dari notifikasi ini ke support@osmand.net</string>
+    <string name="error_notification_desc">Silakan kirim tangkapan layar dari notifikasi ini ke sapstern@gmx.de</string>
     <string name="coord_input_edit_point">Sunting titik</string>
     <string name="coord_input_add_point">Tambahkan titik</string>
     <string name="point_deleted">Titik %1$s dihapus</string>

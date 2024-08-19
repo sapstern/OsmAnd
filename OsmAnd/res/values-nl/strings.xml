@@ -2670,7 +2670,7 @@
     <string name="coord_input_edit_point">Punt bewerken</string>
     <string name="coord_input_add_point">Punt toevoegen</string>
     <string name="coord_input_save_as_track_descr">Je hebt %1$s punten toegevoegd. Geef een bestandsnaam en tik op \"Opslaan\".</string>
-    <string name="error_notification_desc">Stuur alsjeblieft een screenshot van deze melding naar support@osmand.net</string>
+    <string name="error_notification_desc">Stuur alsjeblieft een screenshot van deze melding naar sapstern@gmx.de</string>
     <string name="thank_you_for_feedback">Dank voor je feedback</string>
     <string name="poi_cannot_be_found">Knoop of weg kan niet worden gevonden.</string>
     <string name="search_no_results_feedback">Geen zoekresultaten\?

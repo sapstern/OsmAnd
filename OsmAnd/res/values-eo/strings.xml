@@ -2621,7 +2621,7 @@
     <string name="unirs_render_descr">Modifo de la norma stilo por pliigi kontraston de piediradaj kaj biciklaj vojoj. Uzas malnovan kolor-skemon de Mapnik.</string>
     <string name="get_osmand_live">Akiru OsmAnd-Live por malŝlosi ĉiujn eblaĵojn: ĉiutagajn map-ĝisdatigojn, senlimigitajn elŝutojn, ĉiujn pagendajn kaj senpagajn kromprogramojn, Vikipedion, Vikivojaĝon kaj pli.</string>
     <string name="quick_action_edit_actions">Redakti agojn</string>
-    <string name="error_notification_desc">Bonvolu sendi ekrankopion de tiu ĉi averto al support@osmand.net</string>
+    <string name="error_notification_desc">Bonvolu sendi ekrankopion de tiu ĉi averto al sapstern@gmx.de</string>
     <string name="coord_input_edit_point">Redakti punkton</string>
     <string name="coord_input_add_point">Aldoni punkton</string>
     <string name="coord_input_save_as_track">Konservi kiel spuron</string>

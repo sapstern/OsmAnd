@@ -2622,7 +2622,7 @@
     <string name="unirs_render_descr">Änderung des Standardstils, um den Kontrast von Fußgänger- und Fahrradwegen zu erhöhen. Verwendet alte Mapnik-Farben.</string>
     <string name="get_osmand_live">Holen Sie sich OsmAnd Live, um alle Funktionen freizuschalten: tägliche Karten-Updates mit unbegrenzten Downloads, alle kostenpflichtigen und kostenlosen Plugins, Wikipedia, Wikivoyage und vieles mehr.</string>
     <string name="quick_action_edit_actions">Aktionen bearbeiten</string>
-    <string name="error_notification_desc">Bitte senden Sie einen Screenshot dieser Meldung an support@osmand.net</string>
+    <string name="error_notification_desc">Bitte senden Sie einen Screenshot dieser Meldung an sapstern@gmx.de</string>
     <string name="coord_input_edit_point">Punkt bearbeiten</string>
     <string name="coord_input_add_point">Punkt hinzufügen</string>
     <string name="coord_input_save_as_track">Als Track speichern</string>

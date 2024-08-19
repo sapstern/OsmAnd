@@ -695,7 +695,7 @@
     <string name="osm_live_payment_contribute_descr">Les donaciones ayuden a financiar la cartografía d\'OSM.</string>
     <string name="markers_remove_dialog_msg">Delete map marker \'%s\'\?</string>
     <string name="third_party_application">Aplicación de terceros</string>
-    <string name="error_notification_desc">Please send a screenshot of this notification to support@osmand.net</string>
+    <string name="error_notification_desc">Please send a screenshot of this notification to sapstern@gmx.de</string>
     <string name="show_full_description">Amosar la descripción completa</string>
     <string name="open_wikipedia_link_online_description">L\'enllaz va abrise nun restolador web.</string>
     <string name="how_to_open_link">¿Cómo abrir l\'enllaz\?</string>

@@ -197,7 +197,7 @@
     <string name="coord_input_add_point">Ajustar un ponch</string>
     <string name="coord_input_save_as_track">Sauvagardar coma traça</string>
     <string name="coord_input_save_as_track_descr">Avètz ajustat %1$s ponchs. Indicatz un nom de fichier e quichatz sus \"Sauvagardar\".</string>
-    <string name="error_notification_desc">Saretz brave d\'enviar una captura d\'escran d\'aquesta notificacion a support@osmand.net</string>
+    <string name="error_notification_desc">Saretz brave d\'enviar una captura d\'escran d\'aquesta notificacion a sapstern@gmx.de</string>
     <string name="quick_action_edit_actions">Editar e modificar leis accions</string>
     <string name="get_osmand_live">Obtenètz OsmAnd per dispausar de totei leis foncionalitats: Actualizacions quotidianas de mapas e teledescargagament illimitats, activacion a gratis de totei lei ajusts, Wikipèdia, Wikiviatge e mai mai.</string>
     <string name="shared_string_bookmark">Marcapagina</string>

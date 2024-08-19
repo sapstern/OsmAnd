@@ -2616,7 +2616,7 @@
     <string name="map_widget_intermediate_time">Prechodný čas</string>
     <string name="get_osmand_live">Získajte OsmAnd Live pre odomknutie všetkých funkcií: Denné aktualizácie máp s neobmedzeným počtom stiahnutí, všetky platené moduly, Wikipedia, Wikivoyage a mnoho ďalšieho.</string>
     <string name="quick_action_edit_actions">Upraviť akcie</string>
-    <string name="error_notification_desc">Prosím pošlite snímku obrazovky s týmto oznamom na support@osmand.net</string>
+    <string name="error_notification_desc">Prosím pošlite snímku obrazovky s týmto oznamom na sapstern@gmx.de</string>
     <string name="coord_input_edit_point">Upraviť bod</string>
     <string name="coord_input_add_point">Pridať bod</string>
     <string name="coord_input_save_as_track">Uložiť ako stopu</string>

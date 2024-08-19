@@ -2645,7 +2645,7 @@
     <string name="open_wikipedia_link_online">Abrir link da Wikipédia online</string>
     <string name="read_wikipedia_offline_description">Assine OsmAnd Live para ler artigos da Wikipédia e Wikivoyage offline.</string>
     <string name="ski_map_render_descr">Para esquiar. Possui pistas, teleféricos, pistas de esqui, pistas de cross country, etc. Escurece objetos secundários do mapa.</string>
-    <string name="error_notification_desc">Favor enviar uma captura de tela desta notificação para support@osmand.net</string>
+    <string name="error_notification_desc">Favor enviar uma captura de tela desta notificação para sapstern@gmx.de</string>
     <string name="quick_action_edit_actions">Editar ações</string>
     <string name="start_editing_card_description">Você pode e é convidado a editar qualquer artigo do Wikivoyage. Compartilhe conhecimento, experiência, talento e sua atenção.</string>
     <string name="coord_input_edit_point">Editar ponto</string>

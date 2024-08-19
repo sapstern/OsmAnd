@@ -2682,7 +2682,7 @@
     <string name="coord_input_add_point">إضافة نقطة</string>
     <string name="coord_input_save_as_track">حفظ كمسار</string>
     <string name="coord_input_save_as_track_descr">أنت بحاجة %1$s نقاط. اكتب اسم ملف واضغط \"حفظ\".</string>
-    <string name="error_notification_desc">يرجى إرسال لقطة شاشة من هذا الإشعار إلى support@osmand.net</string>
+    <string name="error_notification_desc">يرجى إرسال لقطة شاشة من هذا الإشعار إلى sapstern@gmx.de</string>
     <string name="quick_action_edit_actions">تعديل الإجراء</string>
     <string name="get_osmand_live">احصل على OsmAnd Live لتفعيل جميع الميزات: تحديثات خرائط يومية مع تنزيلات غير محدودة، جميع الإضافات المدفوعة والمجانية ، ويكيبيديا، ويكي للرحلات وأكثر.</string>
     <string name="osm_live_subscriptions">الاشتراكات</string>

@@ -2612,7 +2612,7 @@
     <string name="map_widget_intermediate_time">Orario intermedio</string>
     <string name="get_osmand_live">Acquista OsmAnd Live per sbloccare tutte le funzionalità: aggiornamenti quotidiani delle mappe con download illimitati, tutti i componenti aggiuntivi gratuiti e a pagamento, Wikipedia, Wikivoyage e molto altro.</string>
     <string name="quick_action_edit_actions">Modifica le azioni</string>
-    <string name="error_notification_desc">Per favore invia una schermata di questa notifica a support@osmand.net</string>
+    <string name="error_notification_desc">Per favore invia una schermata di questa notifica a sapstern@gmx.de</string>
     <string name="poi_cannot_be_found">Non è possibile trovare il nodo o il percorso.</string>
     <string name="search_no_results_feedback">Nessun risultato\? 
 \nInvia un feedback</string>

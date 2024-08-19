@@ -2719,7 +2719,7 @@
     <string name="unirs_render_descr">اصلاح‌یافتهٔ سبک پیشفرض برای ایجاد پادنمایی بیشتر در راه‌های پیاده و دوچرخه. از رنگ‌بندی مپنیک استفاده می‌کند.</string>
     <string name="get_osmand_live">‏‏OsmAnd Live را تهیه کنید تا همهٔ این قابلیت‌ها باز شود: روزآمدسازی روزانهٔ نقشه با بارگیری‌های نامحدود، همهٔ افزونه‌های رایگان و پولی، ویکی‌پدیا، ویکی‌سفر و چیزهای دیگر.</string>
     <string name="quick_action_edit_actions">ویرایش کنش‌ها</string>
-    <string name="error_notification_desc">لطفاً یک نماگرفت از این اعلان به support@osmand.net بفرستید</string>
+    <string name="error_notification_desc">لطفاً یک نماگرفت از این اعلان به sapstern@gmx.de بفرستید</string>
     <string name="coord_input_edit_point">اصلاح نقطه</string>
     <string name="coord_input_add_point">افزودن نقطه</string>
     <string name="coord_input_save_as_track">ذخیره به‌عنوان رد</string>

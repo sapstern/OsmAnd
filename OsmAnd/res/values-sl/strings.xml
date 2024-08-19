@@ -2702,7 +2702,7 @@
     <string name="poi_cannot_be_found">Vozlišča ali poti ni bilo mogoče najti.</string>
     <string name="increase_search_radius_to">Povečaj območje iskanja na %1$s</string>
     <string name="coord_input_save_as_track_descr">Dodanih je %1$s točk. Vpisati je treba še ime datoteke in potrditi shranjevanje.</string>
-    <string name="error_notification_desc">Pošljite zaslonsko sliko obvestila na elektronski naslov support@osmand.net</string>
+    <string name="error_notification_desc">Pošljite zaslonsko sliko obvestila na elektronski naslov sapstern@gmx.de</string>
     <string name="how_to_open_link">Kako odpreti povezavo\?</string>
     <string name="read_wikipedia_offline">Pregled Wikipedije brez povezave</string>
     <string name="shared_string_restart">Ponovni zagon programa</string>
