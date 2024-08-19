@@ -3083,16 +3083,26 @@
     <string name="get_osmand_live">Nabavi OsmAnd Live radi korišćenja ovih mogućnosti: dnevna ažuriranja mapa sa neograničenim brojem preuzimanja, svi plaćeni i besplatni dodaci, Wikipedia, Wikivoyage i još mnogo toga.</string>
     <string name="quick_action_edit_actions">Izmeni akcije</string>
 <<<<<<< HEAD
+<<<<<<< HEAD
     <string name="error_notification_desc">Pošalji snimak ekrana ovog obaveštenja na sapstern@gmx.de</string>
     <string name="coord_input_save_as_track_descr">Dodao si %1$s tačke(i). Unesi ime fajla i tapni „Snimi“.</string>
 =======
+=======
+>>>>>>> 078a62592f (2024_08_19)
     <string name="error_notification_desc">Pošalji snimak ekrana ovog obaveštenja na support@osmand.net</string>
 <<<<<<< HEAD
     <string name="coord_input_save_as_track_descr">Dodao si %1$s tačke(i). Unesi ime fajla i tapni Snimi</string>
 >>>>>>> 3c79810ad4 (Translated using Weblate (Serbian (Latin script)))
 =======
     <string name="coord_input_save_as_track_descr">Dodao si %1$s tačke(i). Unesi ime fajla i tapni \"Snimi\".</string>
+<<<<<<< HEAD
 >>>>>>> ed4acbc06f (Translated using Weblate (Serbian (Latin script)))
+=======
+=======
+    <string name="error_notification_desc">Pošalji snimak ekrana ovog obaveštenja na sapstern@gmx.de</string>
+    <string name="coord_input_save_as_track_descr">Dodao si %1$s tačke(i). Unesi ime fajla i tapni „Snimi“.</string>
+>>>>>>> 6cdfe6f96e (2024_08_19)
+>>>>>>> 078a62592f (2024_08_19)
     <string name="coord_input_save_as_track">Snimi kao putanju</string>
     <string name="coord_input_add_point">Dodaj tačku</string>
     <string name="coord_input_edit_point">Izmeni tačku</string>
