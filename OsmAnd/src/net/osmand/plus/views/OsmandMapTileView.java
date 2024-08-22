@@ -2527,9 +2527,9 @@ public class OsmandMapTileView implements IMapDownloaderCallback {
 
 	public void applyBatterySavingModeSetting(MapRendererView mapRenderer) {
 		if (settings.BATTERY_SAVING_MODE.get()) {
-			//mapRenderer.enableBatterySavingMode();
+			mapRenderer.enableBatterySavingMode();
 		} else {
-			//mapRenderer.disableBatterySavingMode();
+			mapRenderer.disableBatterySavingMode();
 		}
 	}
 
