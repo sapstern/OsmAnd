@@ -98,7 +98,7 @@ public class OsmEditsLayer extends OsmandMapLayer implements IContextMenuProvide
 
 	@Override
 	public void onDraw(Canvas canvas, RotatedTileBox tileBox, DrawSettings settings) {
-		if (contextMenuLayer.getMoveableObject() instanceof OsmPoint) {
+		if (contextMenuLayer != null && contextMenuLayer.getMoveableObject() instanceof OsmPoint) { //MFRI avoid nullpointer exception
 			OsmPoint movablePoint = (OsmPoint) contextMenuLayer.getMoveableObject();
 			PointF pf = contextMenuLayer.getMovableCenterPoint(tileBox);
 			drawPoint(canvas, movablePoint, pf.x, pf.y);
