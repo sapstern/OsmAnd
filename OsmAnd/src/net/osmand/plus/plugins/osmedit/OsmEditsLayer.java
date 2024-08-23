@@ -105,6 +105,7 @@ public class OsmEditsLayer extends OsmandMapLayer implements IContextMenuProvide
 	@Override
 	public void onDraw(Canvas canvas, RotatedTileBox tileBox, DrawSettings settings) {
 <<<<<<< HEAD
+<<<<<<< HEAD
 		if (contextMenuLayer != null && contextMenuLayer.getMoveableObject() instanceof OsmPoint) { //MFRI avoid nullpointer exception
 			OsmPoint movablePoint = (OsmPoint) contextMenuLayer.getMoveableObject();
 			PointF pf = contextMenuLayer.getMovableCenterPoint(tileBox);
@@ -114,6 +115,8 @@ public class OsmEditsLayer extends OsmandMapLayer implements IContextMenuProvide
 		if (movableObject != null && !contextMenuLayer.isInChangeMarkerPositionMode()) {
 			cancelMovableObject();
 =======
+=======
+>>>>>>> 03975e301d (2024_08_23)
 		if (contextMenuLayer != null) {
 			if (contextMenuLayer.getMoveableObject() instanceof OsmPoint point) {
 				PointF pf = contextMenuLayer.getMovableCenterPoint(tileBox);
@@ -123,7 +126,20 @@ public class OsmEditsLayer extends OsmandMapLayer implements IContextMenuProvide
 			if (movableObject != null && !contextMenuLayer.isInChangeMarkerPositionMode()) {
 				cancelMovableObject();
 			}
+<<<<<<< HEAD
 >>>>>>> 745788a485 (Try to fix possible npe & IllegalStateException)
+=======
+=======
+		if (contextMenuLayer != null && contextMenuLayer.getMoveableObject() instanceof OsmPoint) { //MFRI avoid nullpointer exception
+			OsmPoint movablePoint = (OsmPoint) contextMenuLayer.getMoveableObject();
+			PointF pf = contextMenuLayer.getMovableCenterPoint(tileBox);
+			drawPoint(canvas, movablePoint, pf.x, pf.y);
+			setMovableObject(movablePoint.getLatitude(), movablePoint.getLongitude());
+		}
+		if (movableObject != null && !contextMenuLayer.isInChangeMarkerPositionMode()) {
+			cancelMovableObject();
+>>>>>>> 63276fa851 (2024_08_23)
+>>>>>>> 03975e301d (2024_08_23)
 		}
 	}
 
