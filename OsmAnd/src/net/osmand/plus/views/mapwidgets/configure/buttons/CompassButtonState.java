@@ -23,6 +23,7 @@ import net.osmand.plus.settings.backend.preferences.EnumStringPreference;
 import net.osmand.plus.settings.enums.CompassMode;
 import net.osmand.plus.settings.enums.CompassVisibility;
 import net.osmand.plus.utils.AndroidUtils;
+import net.osmand.plus.views.controls.maphudbuttons.ButtonPositionSize;
 import net.osmand.plus.views.controls.maphudbuttons.CompassDrawable;
 import net.osmand.util.Algorithms;
 
@@ -53,6 +54,11 @@ public class CompassButtonState extends MapButtonState {
 	}
 
 	@Override
+	public int getDefaultSize() {
+		return SMALL_SIZE_DP;
+	}
+
+	@Override
 	public boolean isEnabled() {
 		return getVisibility() != ALWAYS_HIDDEN;
 	}
@@ -80,14 +86,14 @@ public class CompassButtonState extends MapButtonState {
 	private CommonPreference<CompassVisibility> createVisibilityPref() {
 		CommonPreference<CompassVisibility> preference = (CommonPreference<CompassVisibility>) settings.getPreference("compass_visibility");
 		if (preference == null) {
-			preference = new EnumStringPreference<>(settings, "compass_visibility", ALWAYS_VISIBLE, CompassVisibility.values()) {
+			preference = addPreference(new EnumStringPreference<>(settings, "compass_visibility", ALWAYS_VISIBLE, CompassVisibility.values()) {
 
 				@Override
 				public CompassVisibility getModeValue(ApplicationMode mode) {
 					CompassVisibility customizationValue = CompassVisibility.getFromCustomization(app, mode);
 					return isSetForMode(mode) || customizationValue == null ? super.getModeValue(mode) : customizationValue;
 				}
-			}.makeProfile().cache();
+			}).makeProfile().cache();
 		}
 		return preference;
 	}
@@ -123,7 +129,7 @@ public class CompassButtonState extends MapButtonState {
 		CompassMode compassMode = settings.getCompassMode();
 		boolean nightMode = app.getDaynightHelper().isNightMode();
 		String iconName = app.getResources().getResourceEntryName(compassMode.getIconId().getIconId(nightMode));
-		return new ButtonAppearanceParams(iconName, SMALL_SIZE_DP, TRANSPARENT_ALPHA, ROUND_RADIUS_DP);
+		return new ButtonAppearanceParams(iconName, getDefaultSize(), TRANSPARENT_ALPHA, ROUND_RADIUS_DP);
 	}
 
 	@Nullable
@@ -134,5 +140,11 @@ public class CompassButtonState extends MapButtonState {
 			return new CompassDrawable(drawable);
 		}
 		return drawable;
+	}
+
+	@NonNull
+	@Override
+	protected ButtonPositionSize setupButtonPosition(@NonNull ButtonPositionSize position) {
+		return setupButtonPosition(position, true, true, false, true, false);
 	}
 }

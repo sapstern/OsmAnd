@@ -1,23 +1,33 @@
-package net.osmand.util;
+package net.osmand.binary;
 
 import static net.osmand.data.MapObject.AMENITY_ID_RIGHT_SHIFT;
 import static net.osmand.router.RouteResultPreparation.SHIFT_ID;
+
+import java.util.Locale;
+import java.util.Map;
 
 import net.osmand.NativeLibrary.RenderedObject;
 import net.osmand.data.Amenity;
 import net.osmand.data.MapObject;
 import net.osmand.osm.edit.Entity.EntityType;
+import net.osmand.util.Algorithms;
 
-import java.util.Locale;
-import java.util.Map;
-
-public class OsmUtils {
+public class ObfConstants {
 
 	public static final int SHIFT_MULTIPOLYGON_IDS = 43;
 	public static final int SHIFT_NON_SPLIT_EXISTING_IDS = 41;
-	public static final long RELATION_BIT = 1L << SHIFT_MULTIPOLYGON_IDS - 1; //According IndexPoiCreator SHIFT_MULTIPOLYGON_IDS
-	public static final long SPLIT_BIT = 1L << SHIFT_NON_SPLIT_EXISTING_IDS - 1; //According IndexVectorMapCreator
+
+	public static final int SHIFT_PROPAGATED_NODE_IDS = 50;
+	public static final int SHIFT_PROPAGATED_NODES_BITS = 11;
+	public static final long MAX_ID_PROPAGATED_NODES = (1L << SHIFT_PROPAGATED_NODES_BITS) - 1;//2047
+	
+	
+	public static final long RELATION_BIT = 1L << (ObfConstants.SHIFT_MULTIPOLYGON_IDS - 1); // 1L << 42
+	public static final long PROPAGATE_NODE_BIT = 1L << (ObfConstants.SHIFT_PROPAGATED_NODE_IDS  - 1); // 1L << 41
+	public static final long SPLIT_BIT = 1L << (ObfConstants.SHIFT_NON_SPLIT_EXISTING_IDS - 1); // 1L << 40
+
 	public static final int DUPLICATE_SPLIT = 5; //According IndexPoiCreator DUPLICATE_SPLIT
+
 
 	public static String getOsmUrlForId(MapObject mapObject) {
 		EntityType type = getOsmEntityType(mapObject);
@@ -35,11 +45,16 @@ public class OsmUtils {
 			if (object instanceof RenderedObject) {
 				id >>= 1;
 			}
-			if (isShiftedID(id)) {
-				originalId = getOsmId(id);
+			if (isIdFromPropagatedNode(id)) {
+				long shifted = id & ~PROPAGATE_NODE_BIT;
+				originalId = shifted >> ObfConstants.SHIFT_PROPAGATED_NODES_BITS;
 			} else {
-				int shift = object instanceof Amenity ? AMENITY_ID_RIGHT_SHIFT : SHIFT_ID;
-				originalId = id >> shift;
+				if (isShiftedID(id)) {
+					originalId = getOsmId(id);
+				} else {
+					int shift = object instanceof Amenity ? AMENITY_ID_RIGHT_SHIFT : SHIFT_ID;
+					originalId = id >> shift;
+				}
 			}
 		}
 		return originalId;
@@ -49,6 +64,12 @@ public class OsmUtils {
 		if (isOsmUrlAvailable(object)) {
 			Long id = object.getId();
 			long originalId = id >> 1;
+			if (object instanceof RenderedObject && isIdFromPropagatedNode(originalId)) {
+				return EntityType.WAY;
+			}
+			if (isIdFromPropagatedNode(id)) {
+				return EntityType.WAY;
+			}
 			long relationShift = 1L << 41;
 			if (originalId > relationShift) {
 				return EntityType.RELATION;
@@ -102,6 +123,10 @@ public class OsmUtils {
 
 	public static boolean isIdFromRelation(long id) {
 		return id > 0 && (id & RELATION_BIT) == RELATION_BIT;
+	}
+
+	public static boolean isIdFromPropagatedNode(long id) {
+		return id > 0 && (id & PROPAGATE_NODE_BIT) == PROPAGATE_NODE_BIT;
 	}
 
 	public static boolean isIdFromSplit(long id) {

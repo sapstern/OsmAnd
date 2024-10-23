@@ -1,5 +1,7 @@
 package net.osmand.plus.views.mapwidgets.configure.buttons;
 
+import static net.osmand.plus.quickaction.ButtonAppearanceParams.BIG_SIZE_DP;
+
 import android.graphics.drawable.Drawable;
 
 import androidx.annotation.ColorInt;
@@ -8,16 +10,20 @@ import androidx.annotation.LayoutRes;
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 
+import net.osmand.StateChangedListener;
 import net.osmand.plus.OsmandApplication;
 import net.osmand.plus.quickaction.ButtonAppearanceParams;
 import net.osmand.plus.render.RenderingIcons;
 import net.osmand.plus.settings.backend.ApplicationMode;
 import net.osmand.plus.settings.backend.OsmandSettings;
 import net.osmand.plus.settings.backend.preferences.CommonPreference;
-import net.osmand.plus.settings.backend.preferences.FabMarginPreference;
 import net.osmand.plus.utils.AndroidUtils;
 import net.osmand.plus.utils.UiUtilities;
+import net.osmand.plus.views.controls.maphudbuttons.ButtonPositionSize;
 import net.osmand.util.Algorithms;
+
+import java.util.ArrayList;
+import java.util.List;
 
 public abstract class MapButtonState {
 
@@ -26,21 +32,38 @@ public abstract class MapButtonState {
 	protected final UiUtilities uiUtilities;
 
 	protected final String id;
+
+	protected final List<CommonPreference<?>> allPreferences;
 	protected final CommonPreference<String> iconPref;
 	protected final CommonPreference<Integer> sizePref;
 	protected final CommonPreference<Float> opacityPref;
 	protected final CommonPreference<Integer> cornerRadiusPref;
+	protected final CommonPreference<Long> positionPref;
+	protected final ButtonPositionSize positionSize;
+	protected final ButtonPositionSize defaultPositionSize;
+
+	private final StateChangedListener<Integer> sizeListener;
 
 	public MapButtonState(@NonNull OsmandApplication app, @NonNull String id) {
 		this.id = id;
 		this.app = app;
 		this.settings = app.getSettings();
 		this.uiUtilities = app.getUIUtilities();
+		this.allPreferences = new ArrayList<>();
 
-		this.iconPref = settings.registerStringPreference(id + "_icon", null).makeProfile().cache();
-		this.sizePref = settings.registerIntPreference(id + "_size", -1).makeProfile().cache();
-		this.opacityPref = settings.registerFloatPreference(id + "_opacity", -1).makeProfile().cache();
-		this.cornerRadiusPref = settings.registerIntPreference(id + "_corner_radius", -1).makeProfile().cache();
+		this.iconPref = addPreference(settings.registerStringPreference(id + "_icon", null)).makeProfile().cache();
+		this.sizePref = addPreference(settings.registerIntPreference(id + "_size", -1)).makeProfile().cache();
+		this.opacityPref = addPreference(settings.registerFloatPreference(id + "_opacity", -1)).makeProfile().cache();
+		this.cornerRadiusPref = addPreference(settings.registerIntPreference(id + "_corner_radius", -1)).makeProfile().cache();
+		this.positionPref = addPreference(settings.registerLongPreference(id + "_position", -1)).makeProfile().cache();
+		this.positionSize = createButtonPosition();
+		this.defaultPositionSize = createButtonPosition();
+
+		sizeListener = change -> {
+			updatePositionSize(positionSize);
+			updatePositionSize(defaultPositionSize);
+		};
+		sizePref.addListener(sizeListener);
 	}
 
 	@NonNull
@@ -58,6 +81,10 @@ public abstract class MapButtonState {
 
 	@LayoutRes
 	public abstract int getDefaultLayoutId();
+
+	public int getDefaultSize() {
+		return BIG_SIZE_DP;
+	}
 
 	@NonNull
 	public abstract ButtonAppearanceParams createDefaultAppearanceParams();
@@ -85,9 +112,19 @@ public abstract class MapButtonState {
 	@NonNull
 	public abstract CommonPreference getVisibilityPref();
 
-	@Nullable
-	public FabMarginPreference getFabMarginPref() {
-		return null;
+	@NonNull
+	public CommonPreference<Long> getPositionPref() {
+		return positionPref;
+	}
+
+	@NonNull
+	public ButtonPositionSize getPositionSize() {
+		return positionSize;
+	}
+
+	@NonNull
+	public ButtonPositionSize getDefaultPositionSize() {
+		return setupButtonPosition(defaultPositionSize);
 	}
 
 	@NonNull
@@ -113,6 +150,46 @@ public abstract class MapButtonState {
 		return new ButtonAppearanceParams(iconName, size, opacity, cornerRadius);
 	}
 
+	@NonNull
+	public ButtonPositionSize createButtonPosition() {
+		ButtonPositionSize position = new ButtonPositionSize(getId());
+		setupButtonPosition(position);
+
+		Long value = positionPref.get();
+		if (value != null && value > 0) {
+			position.fromLongValue(value);
+		}
+		updatePositionSize(position);
+
+		return position;
+	}
+
+	@NonNull
+	protected abstract ButtonPositionSize setupButtonPosition(@NonNull ButtonPositionSize position);
+
+	@NonNull
+	protected ButtonPositionSize setupButtonPosition(@NonNull ButtonPositionSize position, boolean left, boolean top,
+	                                                 boolean xMove, boolean yMove, boolean randomMove) {
+		position.left = left;
+		position.top = top;
+		position.xMove = xMove;
+		position.yMove = yMove;
+		position.randomMove = randomMove;
+		position.marginX = 0;
+		position.marginY = 0;
+
+		return position;
+	}
+
+	private void updatePositionSize(@NonNull ButtonPositionSize position) {
+		int size = sizePref.get();
+		if (size <= 0) {
+			size = getDefaultSize();
+		}
+		size = (size / 8) + 1;
+		position.setSize(size, size);
+	}
+
 	@Nullable
 	public Drawable getIcon(@ColorInt int color, boolean nightMode, boolean mapIcon) {
 		String iconName = createAppearanceParams().getIconName();
@@ -132,6 +209,7 @@ public abstract class MapButtonState {
 		iconPref.resetModeToDefault(appMode);
 		sizePref.resetModeToDefault(appMode);
 		opacityPref.resetModeToDefault(appMode);
+		positionPref.resetModeToDefault(appMode);
 		cornerRadiusPref.resetModeToDefault(appMode);
 		getVisibilityPref().resetModeToDefault(appMode);
 	}
@@ -142,6 +220,16 @@ public abstract class MapButtonState {
 		opacityPref.setModeValue(toMode, opacityPref.getModeValue(fromMode));
 		cornerRadiusPref.setModeValue(toMode, cornerRadiusPref.getModeValue(fromMode));
 		getVisibilityPref().setModeValue(toMode, getVisibilityPref().getModeValue(fromMode));
+	}
+
+	public void onButtonStateRemoved() {
+		settings.removePreferences(allPreferences);
+	}
+
+	@NonNull
+	protected <T> CommonPreference<T> addPreference(@NonNull CommonPreference<T> preference) {
+		allPreferences.add(preference);
+		return preference;
 	}
 
 	public boolean hasCustomAppearance() {
