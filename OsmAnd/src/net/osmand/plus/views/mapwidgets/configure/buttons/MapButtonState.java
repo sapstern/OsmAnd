@@ -26,6 +26,7 @@ import net.osmand.util.Algorithms;
 
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Objects;
 
 public abstract class MapButtonState {
 
@@ -169,11 +170,26 @@ public abstract class MapButtonState {
 	}
 
 	@NonNull
+<<<<<<< HEAD
 	public ButtonPositionSize createButtonPosition() {
 		ButtonPositionSize position = setupButtonPosition(new ButtonPositionSize(getId()));
 		updatePosition(position);
 		return position;
 	}
+=======
+	public String getPreferredIconName(@Nullable String originalName) {
+		return Objects.requireNonNull(getPreferredIconName(originalName, true));
+	}
+
+	@Nullable
+	public String getPreferredIconName(@Nullable String originalName, boolean overwriteEmpty) {
+		return Algorithms.isEmpty(originalName) && overwriteEmpty ? "" : originalName;
+	}
+
+	@NonNull
+	protected ButtonPositionSize createButtonPosition() {
+		ButtonPositionSize position = new ButtonPositionSize(getId());
+>>>>>>> c4d3402ee0 (Fix "Dynamic button icon" after Code Review)
 
 	@NonNull
 	protected abstract ButtonPositionSize setupButtonPosition(@NonNull ButtonPositionSize position);
