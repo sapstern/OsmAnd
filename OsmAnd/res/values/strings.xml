@@ -11,12 +11,25 @@
 	Thx - Hardy
 -->
 <<<<<<< HEAD
+<<<<<<< HEAD
 
 <<<<<<< HEAD
 <<<<<<< HEAD
 =======
 =======
 	<string name="release_5_0" translatable="false"></string>
+=======
+    <string name="fuel_tank_capacity_description">Enter your tank capacity to accurately track fuel levels and consumption</string>
+    <string name="fuel_tank_capacity">Fuel tank capacity</string>
+    <string name="shared_strings_dimensions">Dimensions</string>
+    <string name="litres">Litres</string>
+    <string name="imperial_gallons_unit">imp gal</string>
+    <string name="us_gallons_unit">gal</string>
+    <string name="imperial_gallons">Imperial gallons</string>
+    <string name="us_gallons">US gallons</string>
+    <string name="unit_of_volume_description">Selected units will be applied to all volume-related data in the current profile.</string>
+    <string name="unit_of_volume">Unit of volume</string>
+>>>>>>> f0e9de350f (ad fuel tank capacity)
     <string name="dynamic_icon_type_summary">Icon changes based on action state.</string>
     <string name="shared_string_dynamic">Dynamic</string>
 >>>>>>> 0b2e2a582d (Prepare for 5.0)
