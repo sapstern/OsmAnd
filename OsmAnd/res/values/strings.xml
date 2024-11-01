@@ -29,7 +29,11 @@
     <string name="us_gallons">US gallons</string>
     <string name="unit_of_volume_description">Selected units will be applied to all volume-related data in the current profile.</string>
     <string name="unit_of_volume">Unit of volume</string>
+<<<<<<< HEAD
 >>>>>>> f0e9de350f (ad fuel tank capacity)
+=======
+    <string name="record_obd_data">Record vehicle metrics</string>
+>>>>>>> fa5bd71e9b (Fix build)
     <string name="dynamic_icon_type_summary">Icon changes based on action state.</string>
     <string name="shared_string_dynamic">Dynamic</string>
 >>>>>>> 0b2e2a582d (Prepare for 5.0)
