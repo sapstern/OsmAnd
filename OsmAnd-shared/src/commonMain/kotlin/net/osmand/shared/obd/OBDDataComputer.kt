@@ -4,14 +4,19 @@ import net.osmand.shared.api.SettingsAPI
 import net.osmand.shared.data.KLatLon
 import net.osmand.shared.extensions.currentTimeMillis
 import net.osmand.shared.extensions.format
+import net.osmand.shared.obd.OBDCommand.*
 import net.osmand.shared.obd.OBDDataComputer.OBDTypeWidget.*
 import net.osmand.shared.util.KCollectionUtils
 import net.osmand.shared.util.KMapUtils
+import net.osmand.shared.util.Localization
 import net.osmand.shared.util.LoggerFactory
 import kotlin.math.max
+<<<<<<< HEAD
 import net.osmand.shared.obd.OBDCommand.*
 import net.osmand.shared.util.Localization
 import net.osmand.shared.util.PlatformUtil
+=======
+>>>>>>> 15958bdc26 (add average mode to obd widgets)
 
 object OBDDataComputer {
 
@@ -270,6 +275,9 @@ object OBDDataComputer {
 				BATTERY_VOLTAGE,
 				FUEL_CONSUMPTION_RATE_SENSOR,
 				FUEL_PRESSURE,
+				THROTTLE_POSITION,
+				CALCULATED_ENGINE_LOAD,
+
 				RPM -> {
 					if (averageTimeSeconds == 0 && locValues.size > 0) {
 						locValues[locValues.size - 1].value
@@ -330,8 +338,6 @@ object OBDDataComputer {
 					null
 				}
 
-				THROTTLE_POSITION,
-				CALCULATED_ENGINE_LOAD,
 				FUEL_LEFT_PERCENT -> {
 					if (locValues.size > 0) {
 						locValues[locValues.size - 1].value as Float
@@ -418,6 +424,10 @@ object OBDDataComputer {
 					}
 				}
 			}
+		}
+
+		fun resetLocations() {
+			values = ArrayList()
 		}
 
 		fun cleanup(now: Long) {
