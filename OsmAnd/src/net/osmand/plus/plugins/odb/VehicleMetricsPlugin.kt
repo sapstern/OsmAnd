@@ -77,7 +77,7 @@ class VehicleMetricsPlugin(app: OsmandApplication) : OsmandPlugin(app),
 		"").makeGlobal().cache();
 	val LAST_CONNECTED_OBD_DEVICE = registerStringPreference(
 		"last_connected_obd_device",
-		"").makeGlobal().cache();
+		"").makeGlobal().cache()
 
 	private val uuid =
 		UUID.fromString("00001101-0000-1000-8000-00805f9b34fb") // Standard UUID for SPP
@@ -510,10 +510,13 @@ class VehicleMetricsPlugin(app: OsmandApplication) : OsmandPlugin(app),
 		connectedDeviceInfo = btDeviceInfo
 		connectedDeviceInfo?.let {
 <<<<<<< HEAD
+<<<<<<< HEAD
 			OBDDataComputer.fuelTank = settings.FUEL_TANK_CAPACITY.get()
 =======
 			OBDDataComputer.fuelTank = DEFAULT_FUEL_TANK_VOLUME
 >>>>>>> 3daa2eecdc (Fixes after review)
+=======
+>>>>>>> 7de2b56905 (Fix fuel tank default (#21232))
 			saveDeviceToUsedOBDDevicesList(it)
 			setLastConnectedDevice(it)
 		}
