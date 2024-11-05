@@ -21,7 +21,7 @@ import net.osmand.shared.obd.OBDDataComputer.OBDComputerWidget
 import net.osmand.shared.obd.OBDDataComputer.OBDTypeWidget
 import net.osmand.util.Algorithms
 
-class OBDTextWidget(
+open class OBDTextWidget(
 	mapActivity: MapActivity,
 	widgetType: WidgetType,
 	private val fieldType: OBDTypeWidget,
@@ -30,7 +30,7 @@ class OBDTextWidget(
 ) :
 	SimpleWidget(mapActivity, widgetType, customId, widgetsPanel) {
 	private val plugin = PluginsHelper.getPlugin(VehicleMetricsPlugin::class.java)
-	private val widgetComputer: OBDComputerWidget
+	protected var widgetComputer: OBDComputerWidget
 	private var cacheTextData: String? = null
 	private var cacheSubTextData: String? = null
 
@@ -73,7 +73,7 @@ class OBDTextWidget(
 			OBDDataComputer.registerWidget(fieldType, averageTimeSeconds)
 	}
 
-	fun updatePrefs() {
+	open fun updatePrefs() {
 		if (supportsAverageMode()) {
 			if (averageModePref!!.get()) {
 				widgetComputer.averageTimeSeconds = (measuredIntervalPref!!.get() / 1000).toInt()
