@@ -101,7 +101,7 @@ open class OBDTextWidget(
 	}
 
 	override fun getWidgetActions(): MutableList<PopUpMenuItem>? {
-		if (supportsAverageMode()) {
+		if (supportsAverageMode() && averageModePref?.get() == true) {
 			val actions: MutableList<PopUpMenuItem> = ArrayList()
 			val uiUtilities = app.uiUtilities
 			val iconColor = ColorUtilities.getDefaultIconColor(app, nightMode)
