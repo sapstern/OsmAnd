@@ -13,6 +13,7 @@
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -21,6 +22,10 @@
 	<string name="release_5_0" translatable="false"></string>
 =======
 =======
+=======
+    <string name="show_minor_turns_descr">Lanes will be displayed on all passing intersections regardless voice instructions</string>
+    <string name="show_minor_turns">Display on minor intersections when navigating straight</string>
+>>>>>>> 03b02746cd (Fix #19065)
     <string name="wunderlinq_datagrid">WunderLINQ Datagrid</string>
 >>>>>>> 7f03eabab1 (Make "Open WunderLINQ Datagrid" action visible and possible to add)
     <string name="fuel_tank_capacity_description">Enter your tank capacity to accurately track fuel levels and consumption</string>
