@@ -6018,6 +6018,10 @@
     <string name="us_gallons">Galon AS</string>
     <string name="unit_of_volume_description">Satuan yang dipilih akan diterapkan ke semua data berkaitan dengan volume dalam profil saat ini.</string>
     <string name="unit_of_volume">Satuan volume</string>
+<<<<<<< HEAD
 =======
 >>>>>>> 7eabbd6b34 (new strings)
+=======
+    <string name="wunderlinq_datagrid">WunderLINQ Datagrid</string>
+>>>>>>> d2bbbca010 (Translated using Weblate (Indonesian))
 </resources>
