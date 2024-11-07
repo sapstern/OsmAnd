@@ -12,11 +12,15 @@ import net.osmand.shared.util.Localization
 import net.osmand.shared.util.LoggerFactory
 import kotlin.math.max
 <<<<<<< HEAD
+<<<<<<< HEAD
 import net.osmand.shared.obd.OBDCommand.*
+=======
+>>>>>>> 7c0bcc70eb (Added ignoring fuel level change peaks)
 import net.osmand.shared.util.Localization
 import net.osmand.shared.util.PlatformUtil
 =======
 >>>>>>> 15958bdc26 (add average mode to obd widgets)
+
 
 object OBDDataComputer {
 
@@ -24,6 +28,7 @@ object OBDDataComputer {
 
 	private val osmAndSettings: SettingsAPI = PlatformUtil.getOsmAndContext().getSettings()
 	const val DEFAULT_FUEL_TANK_CAPACITY = 52f
+	private const val SAME_FUEL_LVL_SEQUENCE_LENGTH = 5
 	private const val FUEL_TANK_CAPACITY_SETTING_ID = "fuel_tank_capacity"
 	var locations = listOf<OBDLocation>()
 	var widgets: List<OBDComputerWidget> = ArrayList()
@@ -241,6 +246,7 @@ object OBDDataComputer {
 		val type: OBDTypeWidget,
 		var averageTimeSeconds: Int) {
 		private var values: List<OBDDataField<Any>> = ArrayList()
+		private var tmpValues: List<OBDDataField<Any>> = ArrayList()
 		private var value: Any? = null
 		private var cachedVersion = 0
 		private var version = 0
@@ -365,16 +371,17 @@ object OBDDataComputer {
 		}
 
 		private fun getDistanceForTimePeriod(startTime: Long, endTime: Long): Double {
+			val localLocations = locations
 			var start = 0
-			var end = locations.size - 1
-			while (start < locations.size) {
-				if (locations[start].time > startTime) {
+			var end = localLocations.size - 1
+			while (start < localLocations.size) {
+				if (localLocations[start].time > startTime) {
 					break
 				}
 				start++
 			}
 			while (end >= 0) {
-				if (locations[end].time < endTime) {
+				if (localLocations[end].time < endTime) {
 					break
 				}
 				end--
@@ -383,8 +390,8 @@ object OBDDataComputer {
 			if (start < end) {
 				for (k in start until end) {
 					dist += KMapUtils.getDistance(
-						locations[k].latLon,
-						locations[k + 1].latLon)
+						localLocations[k].latLon,
+						localLocations[k + 1].latLon)
 				}
 			}
 			return dist
@@ -411,9 +418,32 @@ object OBDDataComputer {
 						FUEL_CONSUMPTION_RATE_LITER_KM,
 						FUEL_CONSUMPTION_RATE_PERCENT_HOUR,
 						FUEL_CONSUMPTION_RATE_LITER_HOUR -> {
-							if (values.isEmpty() || values[values.size - 1].value != it.value) {
-								version++
-								values = KCollectionUtils.addToList(values, it)
+							val lastLvl =
+								if (values.isNotEmpty()) (values[values.size - 1].value as Number).toFloat() else 0f
+							val newlvl = (it.value as Number).toFloat()
+							if (values.isEmpty() || lastLvl != newlvl) {
+								var valueToAdd: OBDDataField<Any>? = it
+								if (tmpValues.isEmpty() || tmpValues.last().value == newlvl) {
+									log.debug("Fuel level increase found. last $lastLvl; new $newlvl tmpValues.size=${tmpValues.size}")
+									tmpValues = KCollectionUtils.addToList(
+										tmpValues,
+										OBDDataField(newlvl))
+									if (tmpValues.size >= SAME_FUEL_LVL_SEQUENCE_LENGTH) {
+										log.debug("New fuel level accepted")
+										valueToAdd = tmpValues[0]
+										tmpValues = emptyList()
+									} else {
+										valueToAdd = null
+									}
+								} else if (tmpValues.isNotEmpty() && tmpValues.last().value != newlvl) {
+									log.debug("Last fuel level increase changed. last $lastLvl; last change ${tmpValues.last().value} new $newlvl")
+									tmpValues = arrayListOf(OBDDataField(newlvl))
+									valueToAdd = null
+								}
+								valueToAdd?.let { newData ->
+									version++
+									values = KCollectionUtils.addToList(values, newData)
+								}
 							}
 						}
 
