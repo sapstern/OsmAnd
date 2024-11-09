@@ -35,8 +35,12 @@ open class OBDTextWidget(
 =======
 	widgetsPanel: WidgetsPanel?) :
 	SimpleWidget(mapActivity, widgetType, customId, widgetsPanel), OBDWidgetOptions {
+<<<<<<< HEAD
 >>>>>>> 27aacc073a (add temperature units to obd widgets)
 	private val plugin = PluginsHelper.getPlugin(VehicleMetricsPlugin::class.java)
+=======
+	private val plugin = PluginsHelper.requirePlugin(VehicleMetricsPlugin::class.java)
+>>>>>>> b290181565 (Code review fix)
 	protected var widgetComputer: OBDComputerWidget
 	private var cacheTextData: String? = null
 	private var cacheSubTextData: String? = null
