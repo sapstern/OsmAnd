@@ -109,14 +109,6 @@ class VehicleMetricsPlugin(app: OsmandApplication) : OsmandPlugin(app), OBDReadS
 		fun onStateChanged(state: OBDConnectionState, deviceInfo: BTDeviceInfo)
 	}
 
-	private fun BluetoothSocket?.safeClose() {
-		try {
-			this?.close()
-		} catch (e: IOException) {
-			LOG.error(e.message, e)
-		}
-	}
-
 	override fun createWidgets(
 		mapActivity: MapActivity, widgetsInfos: MutableList<MapWidgetInfo?>,
 		appMode: ApplicationMode) {
@@ -453,8 +445,11 @@ class VehicleMetricsPlugin(app: OsmandApplication) : OsmandPlugin(app), OBDReadS
 			}
 
 			override fun disconnect() {
-				socket?.apply {
-					safeClose()
+				try {
+					socket?.close()
+				} catch (e: IOException) {
+					LOG.error(e.message, e)
+				} finally {
 					socket = null
 				}
 			}
