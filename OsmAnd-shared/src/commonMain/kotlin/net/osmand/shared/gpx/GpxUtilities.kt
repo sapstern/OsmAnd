@@ -98,6 +98,7 @@ object GpxUtilities {
 			}
 		}
 	}
+<<<<<<< HEAD
 =======
 	// Main format with UTC timezone (Z suffix)
 =======
@@ -128,6 +129,8 @@ object GpxUtilities {
 	private const val GPX_TIME_PATTERN_NO_SECONDS_NO_TZ = "yyyy-MM-dd'T'HH:mm"
 	private const val GPX_TIME_PATTERN_TZ_EXTRA_Z = "yyyy-MM-dd'T'HH:mm:ssXXX'Z'"
 >>>>>>> 3005c0ed12 (Refactor and test Kotlin GpxUtilities.parseTime())
+=======
+>>>>>>> a86409aed2 (Refactor Kotlin parseTime() with great speedup)
 
 	private val SUPPORTED_EXTENSION_TAGS = mapOf(
 		"heartrate" to PointAttributes.SENSOR_TAG_HEART_RATE,
@@ -940,6 +943,7 @@ object GpxUtilities {
 		var milliseconds = 0.0
 		var noFractionalSeconds = iso8601text;
 		val isIndex = noFractionalSeconds.indexOf('.')
+<<<<<<< HEAD
 
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -966,20 +970,34 @@ object GpxUtilities {
 			getTimeFormatterNoSecondsNoTZ()
 		)
 		for (fmt in formats) {
+=======
+
+		if (isIndex > 0) {
+			var esIndex = isIndex + 1
+			while (esIndex < noFractionalSeconds.length && noFractionalSeconds[esIndex].isDigit()) {
+				esIndex++
+			}
+			milliseconds = ("0" + noFractionalSeconds.substring(isIndex, esIndex)).toDouble()
+			noFractionalSeconds = noFractionalSeconds.substring(0, isIndex) + noFractionalSeconds.substring(esIndex)
+		}
+
+		val rfc3339 = noFractionalSeconds.replaceFirst(' ', 'T'); // RFC 3339 profile of ISO 8601 allows spaces
+
+		for (fmt in TimePatterns.formats) {
+>>>>>>> a86409aed2 (Refactor Kotlin parseTime() with great speedup)
 			try {
-				val ms = flexibleMillisecondsTimeParser(text, fmt)
-				if (ms > 0) {
-					return ms;
-				}
+				return fmt.parse(rfc3339).toInstantUsingOffset()
+					.toEpochMilliseconds() + (milliseconds * 1000).toLong()
 			} catch (e: Exception) {
 				// Continue to the next format
 			}
 		}
-		val errorMessage = "Failed to parse date: $text"
+		val errorMessage = "Failed to parse date: $iso8601text"
 		log.error(errorMessage)
 		return 0
 	}
 
+<<<<<<< HEAD
 	@Throws(Exception::class)
 	private fun flexibleMillisecondsTimeParser(
 		timeStr: String,
@@ -1031,6 +1049,8 @@ object GpxUtilities {
 >>>>>>> f258622efb (fix patterns)
 	}
 
+=======
+>>>>>>> a86409aed2 (Refactor Kotlin parseTime() with great speedup)
 	fun getCreationTime(gpxFile: GpxFile?): Long {
 		var time: Long = 0
 		if (gpxFile != null) {
@@ -1058,6 +1078,7 @@ object GpxUtilities {
 		}
 	}
 
+<<<<<<< HEAD
 	@OptIn(FormatStringsInDatetimeFormats::class)
 	private fun getTimeFormatterNoTZ(): DateTimeFormat<DateTimeComponents> {
 		return DateTimeComponents.Format {
@@ -1094,6 +1115,8 @@ object GpxUtilities {
 		}
 	}
 
+=======
+>>>>>>> a86409aed2 (Refactor Kotlin parseTime() with great speedup)
 	fun loadGpxFile(file: KFile): GpxFile {
 		return loadGpxFile(file, null, true)
 	}
