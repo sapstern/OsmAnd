@@ -22,6 +22,7 @@
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
 =======
 	<string name="release_5_0" translatable="false"></string>
@@ -61,6 +62,9 @@
 <<<<<<< HEAD
 =======
 
+=======
+    <string name="auto_zoom_3d_angle">Auto zoom 3D angle</string>
+>>>>>>> 1b62d99294 (Added auto zoom 3d angle setting)
     <string name="av_audio_sample_rate">Audio sample rate</string>
     <string name="av_audio_sample_rate_descr">Select audio sample rate.</string>
     <string name="connect_new_scanner">Connect new scanner</string>
