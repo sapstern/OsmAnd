@@ -994,7 +994,7 @@ object GpxUtilities {
 				// Continue to the next format
 			}
 		}
-		val errorMessage = "Failed to parse date: $iso8601text"
+		val errorMessage = "Failed to parse date: '$iso8601text'"
 		log.error(errorMessage)
 		return 0
 	}
