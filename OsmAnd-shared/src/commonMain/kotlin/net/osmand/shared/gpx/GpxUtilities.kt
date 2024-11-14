@@ -76,8 +76,11 @@ object GpxUtilities {
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
+=======
+	private var oneOffLogParseTimeErrors = true
+>>>>>>> a573e3595d (Add oneOffLogParseTimeErrors for parseTime())
 	private const val GPX_TIME_FORMATTER = "yyyy-MM-dd'T'HH:mm:ss'Z'"
-
 
 	class TimePatterns {
 		companion object {
@@ -994,8 +997,11 @@ object GpxUtilities {
 				// Continue to the next format
 			}
 		}
-		val errorMessage = "Failed to parse date: '$iso8601text'"
-		log.error(errorMessage)
+
+		if (oneOffLogParseTimeErrors) {
+			oneOffLogParseTimeErrors = false
+			log.error("Failed to parse date: '$iso8601text'")
+		}
 		return 0
 	}
 
@@ -1156,6 +1162,7 @@ object GpxUtilities {
 		extensionsReader: GpxExtensionsReader?,
 		addGeneralTrack: Boolean
 	): GpxFile {
+		oneOffLogParseTimeErrors = true
 		val gpxFile = GpxFile(null)
 		gpxFile.metadata.time = 0
 		var parser: XmlPullParser? = null
