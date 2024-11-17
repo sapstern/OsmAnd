@@ -169,10 +169,14 @@ class OBDMainFragment : OBDDevicesBaseFragment(), VehicleMetricsPlugin.Connectio
 				pairBtnTextId = R.string.external_device_details_disconnect
 				pairButton.setOnClickListener {
 <<<<<<< HEAD
+<<<<<<< HEAD
 					vehicleMetricsPlugin?.disconnect(true)
 =======
 					vehicleMetricsPlugin.disconnect()
 >>>>>>> c4192f99de (Fixes after review)
+=======
+					vehicleMetricsPlugin.disconnect(true)
+>>>>>>> 967a62a28d (Fix reconnect on aa connection; implemented subsequent reconnect (#21359))
 				}
 			}
 

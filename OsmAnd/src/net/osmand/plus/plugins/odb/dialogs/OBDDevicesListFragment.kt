@@ -199,10 +199,14 @@ class OBDDevicesListFragment : OBDDevicesBaseFragment(),
 
 	override fun onDisconnect(device: BTDeviceInfo) {
 <<<<<<< HEAD
+<<<<<<< HEAD
 		vehicleMetricsPlugin?.disconnect(true)
 =======
 		vehicleMetricsPlugin.disconnect()
 >>>>>>> c4192f99de (Fixes after review)
+=======
+		vehicleMetricsPlugin.disconnect(true)
+>>>>>>> 967a62a28d (Fix reconnect on aa connection; implemented subsequent reconnect (#21359))
 	}
 
 	override fun onConnect(device: BTDeviceInfo) {
