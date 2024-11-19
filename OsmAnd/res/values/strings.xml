@@ -19,6 +19,7 @@
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -67,6 +68,9 @@
     <string name="auto_zoom_3d_angle">Auto zoom 3D angle</string>
 >>>>>>> 1b62d99294 (Added auto zoom 3d angle setting)
 =======
+=======
+    <string name="selected_delayed_profile">Selected profile \"%s\"</string>
+>>>>>>> 9694df8b59 (delayed switch app profile)
     <string name="shared_string_engine">Engine</string>
     <string name="vehicle_metrics_recording_description">Select the parameters to be recorded in the GPX file.</string>
 >>>>>>> 7e0d49c79c (add trip recording vehicle metrics fragment)
