@@ -6072,5 +6072,10 @@
     <string name="av_audio_sample_rate_descr">Pilih laju sampel audio.</string>
     <string name="auto_zoom_3d_angle">Perbesar sudut 3D otomatis</string>
     <string name="connect_new_scanner">Hubungkan pemindai baru</string>
+<<<<<<< HEAD
 >>>>>>> 9455ecc34d (Translated using Weblate (Indonesian))
+=======
+    <string name="vehicle_metrics_recording_description">Pilih parameter untuk direkam dalam berkas GPX.</string>
+    <string name="shared_string_engine">Mesin</string>
+>>>>>>> d80e352745 (Translated using Weblate (Indonesian))
 </resources>
