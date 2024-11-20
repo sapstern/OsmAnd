@@ -371,10 +371,6 @@ public abstract class BaseTrackFolderFragment extends BaseOsmAndFragment impleme
 		}
 	}
 
-	private void removeSurplusSortModes() {
-		settings.getTrackSortModes().askSyncWithUpgrade(app, rootFolder);
-	}
-
 	@Override
 	public void importTracks() {
 		Intent intent = ImportHelper.getImportFileIntent();
@@ -486,13 +482,11 @@ public abstract class BaseTrackFolderFragment extends BaseOsmAndFragment impleme
 	@Override
 	public void onFolderRenamed(@NonNull File newDir) {
 		updateContent();
-		removeSurplusSortModes();
 	}
 
 	@Override
 	public void onFolderDeleted() {
 		reloadTracks();
-		removeSurplusSortModes();
 	}
 
 	@Override
