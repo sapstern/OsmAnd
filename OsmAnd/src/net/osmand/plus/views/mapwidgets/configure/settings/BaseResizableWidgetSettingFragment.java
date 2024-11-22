@@ -106,7 +106,6 @@ public class BaseResizableWidgetSettingFragment extends WidgetSettingsBaseFragme
 			updateRowWidgets(widgetInfo);
 		}
 
-		widgetSizePref.set(selectedWidgetSize);
 		if (widgetInfo != null) {
 			if (widgetInfo.widget instanceof ISupportWidgetResizing widgetResizing) {
 				widgetResizing.recreateView();
