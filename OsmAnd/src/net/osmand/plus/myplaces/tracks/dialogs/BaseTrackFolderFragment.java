@@ -33,11 +33,15 @@ import androidx.recyclerview.widget.RecyclerView.ViewHolder;
 
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 import net.osmand.IndexConstants;
 <<<<<<< HEAD
 =======
 import net.osmand.plus.configmap.tracks.TrackSortModesCollection;
 >>>>>>> b55917b996 (Small fixes after merge r4.9)
+=======
+import net.osmand.plus.configmap.tracks.TrackSortModesHelper;
+>>>>>>> adb6990a9b (Fixes after Code Review)
 import net.osmand.plus.myplaces.tracks.DialogClosedListener;
 =======
 =======
@@ -338,8 +342,8 @@ public abstract class BaseTrackFolderFragment extends BaseOsmAndFragment impleme
 	@NonNull
 	@Override
 	public TracksSortMode getTracksSortMode() {
-		TrackSortModesCollection sortModes = settings.getTrackSortModes(rootFolder);
-		return sortModes.requireSortMode(getSortEntryId());
+		TrackSortModesHelper sortModesHelper = app.getTrackSortModesHelper();
+		return sortModesHelper.requireSortMode(getSortEntryId());
 	}
 
 	@Nullable
@@ -354,26 +358,26 @@ public abstract class BaseTrackFolderFragment extends BaseOsmAndFragment impleme
 			sortSubFolder(sortMode);
 		} else {
 			TracksGroup folder = smartFolder != null ? smartFolder : selectedFolder;
-			TrackSortModesCollection sortModes = settings.getTrackSortModes(rootFolder);
-			sortModes.setSortMode(folder.getId(), sortMode);
-			sortModes.syncSettings();
+			TrackSortModesHelper sortModesHelper = app.getTrackSortModesHelper();
+			sortModesHelper.setSortMode(folder.getId(), sortMode);
+			sortModesHelper.syncSettings();
 			updateContent();
 		}
 	}
 
 	private void sortSubFolder(@NonNull TracksSortMode sortMode) {
-		TrackSortModesCollection sortModes = settings.getTrackSortModes(rootFolder);
-		sortFolders(selectedFolder, sortModes, sortMode);
-		sortModes.syncSettings();
+		TrackSortModesHelper sortModesHelper = app.getTrackSortModesHelper();
+		sortFolders(selectedFolder, sortModesHelper, sortMode);
+		sortModesHelper.syncSettings();
 
 		app.showToastMessage(app.getString(R.string.sorted_sufolders_toast, selectedFolder.getName(), app.getString(sortMode.getNameId())));
 	}
 
 	private void sortFolders(@NonNull TrackFolder trackFolder,
-	                         @NonNull TrackSortModesCollection sortModes,
+	                         @NonNull TrackSortModesHelper sortModesHelper,
 	                         @NonNull TracksSortMode sortMode) {
 		for (TrackFolder folder : trackFolder.getFlattenedSubFolders()) {
-			sortModes.setSortMode(folder.getId(), sortMode);
+			sortModesHelper.setSortMode(folder.getId(), sortMode);
 		}
 	}
 
