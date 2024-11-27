@@ -5552,8 +5552,11 @@
     <string name="obd_rpm">O/M</string>
 =======
     <string name="obd_rpm_desc">Viser køretøjets omdrejningstæller RPM via OBD-sensor</string>
+<<<<<<< HEAD
     <string name="obd_rpm">RPM (Omdrejninger pr. minut)</string>
 >>>>>>> 7eabbd6b34 (new strings)
+=======
+>>>>>>> 56f541d97d (Fixed obd strings usage; OBD simulation changes)
     <string name="rpm_unit">rpm</string>
     <string name="obd_fuel_level_desc">Viser køretøjets brændstofniveau via OBD-sensor</string>
     <string name="obd_fuel_left_distance_desc">Viser, hvor langt køretøjet kan køre på det resterende brændstofniveau via OBD-sensor</string>
@@ -5569,7 +5572,6 @@
     <string name="obd_engine_coolant_temp">Kølevæsketemperatur</string>
     <string name="obd_fuel_level">Brændstoføkonomi (%)</string>
     <string name="obd_fuel_consumption_rate">Brændstofforbrug</string>
-    <string name="obd_fuel_left_distance">Brændstof tilbage (afstand)</string>
     <string name="obd_fuel_type">Brændstoftype</string>
     <string name="obd_plugin_description">Overvåg vigtige køretøjsmålinger ved hjælp af OBD-II-protokollen. Få adgang til data, herunder:\n • Motoromdrejningshastighed, motorens driftstid, beregnet motorbelastning \n • Brændstofforbrug, brændstoftryk, resterende brændstof\n • Indtagstemperatur, omgivelsestemperatur, kølevæskes temperatur, motoroliens temperatur\n • Køretøjets hastighed, gasspjældets position, batterispænding\n</string>
     <string name="obd_plugin_name">Målinger af køretøj</string>
@@ -5632,8 +5634,6 @@
     <string name="obd_fuel_consumption_rate_sensor_desc">Viser køretøjets brændstofforbrug baseret på sensor (L/t)</string>
     <string name="obd_fuel_level_liter">Brændstofniveau (l)</string>
     <string name="obd_fuel_level_percent">Brændstofniveau (%)</string>
-    <string name="obd_fuel_left_percent">Brændstof tilbage (%)</string>
-    <string name="obd_fuel_left_liter">Brændstof tilbage (l)</string>
     <string name="obd_fuel_left_km">Brændstof tilbage (km)</string>
     <string name="obd_fuel_consumption_rate_scanner">Brændstofforbrug (obd)</string>
     <string name="obd_fuel_consumption_rate_liter_hour">Brændstofforbrug L/t</string>
