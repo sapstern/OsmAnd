@@ -71,9 +71,12 @@ public class RouteLayer extends BaseRouteLayer implements IContextMenuProvider {
 	private final RoutingHelper helper;
 	private final TransportRoutingHelper transportHelper;
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
 	private float lastRouteBearing;
 >>>>>>> 7c99cfc924 (Drop currentAnimatedRoute)
+=======
+>>>>>>> d7c8708c2c (Prepare bearing changes (#21486))
 	private Location lastRouteProjection;
 
 	private final ChartPointsHelper chartPointsHelper;
@@ -533,21 +536,25 @@ public class RouteLayer extends BaseRouteLayer implements IContextMenuProvider {
 					lastProjection = null;
 =======
 					}
-					lastProjection = RoutingHelperUtils.getProject(
-							currentLocation, previousRouteLocation, currentRouteLocation);
-					lastBearing = lastProjection.getBearing();
-					if (!MapUtils.areLatLonEqual(previousRouteLocation, currentRouteLocation)) {
-						lastBearing = MapUtils.normalizeDegrees360(previousRouteLocation.bearingTo(currentRouteLocation));
-					}
-					if (app.getSettings().SNAP_TO_ROAD.get() && currentRoute + 1 < locations.size()) {
-						Location nextRouteLocation = locations.get(currentRoute + 1);
-						RoutingHelperUtils.approximateBearingIfNeeded(helper, lastProjection, currentLocation,
-								previousRouteLocation, currentRouteLocation, nextRouteLocation, true);
+					lastProjection = RoutingHelperUtils.getProject(currentLocation, previousRouteLocation, currentRouteLocation);
+					float calcbearing = !MapUtils.areLatLonEqual(previousRouteLocation, currentRouteLocation) ? previousRouteLocation.bearingTo(currentRouteLocation) :
+							previousRouteLocation.bearingTo(currentLocation);
+					lastProjection.setBearing(MapUtils.normalizeDegrees360(calcbearing));
+					if (currentLocation.distanceTo(lastProjection) > helper.getMaxAllowedProjectDist(currentLocation)) {
+						lastProjection = null;
+					} else if (app.getSettings().SNAP_TO_ROAD.get() && currentRoute + 1 < locations.size()) {
+						// Not needed here as this code for preview turns
+//						Location nextRouteLocation = locations.get(currentRoute + 1);
+//						RoutingHelperUtils.approximateBearingIfNeeded(helper, lastProjection, currentLocation,
+//								previousRouteLocation, currentRouteLocation, nextRouteLocation, true);
 					}
 				} else {
 					lastProjection = null;
+<<<<<<< HEAD
 					lastBearing = 0.0f;
 >>>>>>> 7c99cfc924 (Drop currentAnimatedRoute)
+=======
+>>>>>>> d7c8708c2c (Prepare bearing changes (#21486))
 				}
 				startLocationIndex = currentRoute;
 			} else {
