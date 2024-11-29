@@ -5480,10 +5480,15 @@
     <string name="connect_obd_instructions_step">1. Conectá el escáner al puerto OBD-II del vehículo.\n\n2. Encendé el motor del vehículo\n\n3. Activá el Bluetooth del dispositivo\n\n4. Pulsá «%1$s» y elegí el escáner de la lista.</string>
     <string name="obd_fuel_consumption_rate_sensor">Tasa de consumo del combustible (sensor)</string>
 <<<<<<< HEAD
+<<<<<<< HEAD
     <string name="obd_fuel_consumption_rate_sensor_desc">Muestra la tasa de consumo del combustible del vehículo según el sensor (L/h)</string>
     <string name="obd_fuel_left_percent">Combustible restante (%)</string>
     <string name="obd_fuel_left_liter">Combustible restante (l)</string>
     <string name="obd_fuel_consumption_rate_liter_hour">Tasa de consumo del combustible (L/h)</string>
+=======
+    <string name="obd_fuel_consumption_rate_sensor_desc">Muestra la tasa de consumo del combustible del vehículo según el sensor (l/h)</string>
+    <string name="obd_fuel_consumption_rate_liter_hour">Tasa de consumo del combustible</string>
+>>>>>>> 2186a9f263 (Translated using Weblate (Spanish (Argentina)))
     <string name="obd_fuel_consumption_rate_l_h">Tasa de consumo del combustible (L/h)</string>
     <string name="obd_fuel_consumption_rate_l_h_desc">Muestra la tasa de consumo del combustible del vehículo según los cálculos (L/h)</string>
 =======
