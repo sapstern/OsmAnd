@@ -34,8 +34,8 @@ public class PicassoUtils {
 	private final LruCache memoryCache;
 
 	private final Map<String, Boolean> cached = new HashMap<>();
-	
-	private PicassoUtils(OsmandApplication app){
+
+	private PicassoUtils(@NonNull OsmandApplication app) {
 		File cacheDir = createDefaultCacheDir(app);
 
 		diskCache = new Cache(cacheDir, calculateDiskCacheSize(cacheDir));
@@ -46,11 +46,18 @@ public class PicassoUtils {
 				.memoryCache(memoryCache)
 				.build();
 
-		Picasso.setSingletonInstance(picasso);
-
+		try {
+			Picasso.setSingletonInstance(picasso);
+		} catch (IllegalStateException e) {
+			LOG.error(e);
+		}
 	}
 
+<<<<<<< HEAD
 	public synchronized static PicassoUtils getPicasso(@NonNull OsmandApplication app) {
+=======
+	public static PicassoUtils getPicasso(@NonNull OsmandApplication app) {
+>>>>>>> da067dcafa (Try to fix possible crashes (#21488))
 		if (INSTANCE == null) {
 			INSTANCE = new PicassoUtils(app);
 		}
