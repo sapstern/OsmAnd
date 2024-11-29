@@ -54,10 +54,14 @@ public class PicassoUtils {
 	}
 
 <<<<<<< HEAD
+<<<<<<< HEAD
 	public synchronized static PicassoUtils getPicasso(@NonNull OsmandApplication app) {
 =======
 	public static PicassoUtils getPicasso(@NonNull OsmandApplication app) {
 >>>>>>> da067dcafa (Try to fix possible crashes (#21488))
+=======
+	public synchronized static PicassoUtils getPicasso(@NonNull OsmandApplication app) {
+>>>>>>> 06261971b1 (Fix typo)
 		if (INSTANCE == null) {
 			INSTANCE = new PicassoUtils(app);
 		}
