@@ -553,6 +553,28 @@ public class PointLocationLayer extends OsmandMapLayer
 		return location != null ? location : locationProvider.getLastStaleKnownLocation();
 	}
 
+<<<<<<< HEAD
+=======
+	public float getPointBearing() {
+		float result = 0.0f;
+		Location location = null;
+		OsmandApplication app = getApplication();
+		if (app.getRoutingHelper().isFollowingMode() && app.getSettings().SNAP_TO_ROAD.get()) {
+			RouteLayer routeLayer = app.getOsmandMap().getMapLayers().getRouteLayer();
+			location = routeLayer.getLastRouteProjection();
+			if (location != null) {
+				result = routeLayer.getLastRouteBearing();
+			}
+		}
+		if (location == null || result == 0) {
+			location = locationProvider.getLastStaleKnownLocation();
+			if (location != null && location.hasBearing()) {
+				result = location.getBearing();
+			}
+		}
+		return result;
+	}
+>>>>>>> 7c99cfc924 (Drop currentAnimatedRoute)
 
 	private boolean isLocationVisible(@NonNull RotatedTileBox tb, @NonNull Location l) {
 		return tb.containsLatLon(l.getLatitude(), l.getLongitude());

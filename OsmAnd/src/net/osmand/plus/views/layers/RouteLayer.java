@@ -70,6 +70,10 @@ public class RouteLayer extends BaseRouteLayer implements IContextMenuProvider {
 
 	private final RoutingHelper helper;
 	private final TransportRoutingHelper transportHelper;
+<<<<<<< HEAD
+=======
+	private float lastRouteBearing;
+>>>>>>> 7c99cfc924 (Drop currentAnimatedRoute)
 	private Location lastRouteProjection;
 
 	private final ChartPointsHelper chartPointsHelper;
@@ -511,6 +515,7 @@ public class RouteLayer extends BaseRouteLayer implements IContextMenuProvider {
 						currentRoute--;
 						previousRouteLocation = locations.get(currentRoute - 1);
 						currentRouteLocation = locations.get(currentRoute);
+<<<<<<< HEAD
 					}
 					lastProjection = RoutingHelperUtils.getProject(currentLocation, previousRouteLocation, currentRouteLocation);
 					float calcbearing = !MapUtils.areLatLonEqual(previousRouteLocation, currentRouteLocation) ? previousRouteLocation.bearingTo(currentRouteLocation) :
@@ -526,6 +531,23 @@ public class RouteLayer extends BaseRouteLayer implements IContextMenuProvider {
 					}
 				} else {
 					lastProjection = null;
+=======
+					}
+					lastProjection = RoutingHelperUtils.getProject(
+							currentLocation, previousRouteLocation, currentRouteLocation);
+					lastBearing = lastProjection.getBearing();
+					if (!MapUtils.areLatLonEqual(previousRouteLocation, currentRouteLocation)) {
+						lastBearing = MapUtils.normalizeDegrees360(previousRouteLocation.bearingTo(currentRouteLocation));
+					}
+					if (app.getSettings().SNAP_TO_ROAD.get() && currentRoute + 1 < locations.size()) {
+						Location nextRouteLocation = locations.get(currentRoute + 1);
+						RoutingHelperUtils.approximateBearingIfNeeded(helper, lastProjection, currentLocation,
+								previousRouteLocation, currentRouteLocation, nextRouteLocation, true);
+					}
+				} else {
+					lastProjection = null;
+					lastBearing = 0.0f;
+>>>>>>> 7c99cfc924 (Drop currentAnimatedRoute)
 				}
 				startLocationIndex = currentRoute;
 			} else {
