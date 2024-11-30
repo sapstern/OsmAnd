@@ -5641,10 +5641,17 @@
     <string name="speedometer_maximum">Maksimum</string>
     <string name="percent_hour">%/h</string>
     <string name="obd_fuel_consumption_rate_percent_hour_desc">Prikazuje potrošnju goriva vozila na osnovu proračuna (%/h)</string>
+<<<<<<< HEAD
     <string name="l_100km">L/100km</string>
     <string name="obd_fuel_consumption_rate_l_km">Potrošnja goriva (L/km)</string>
     <string name="obd_fuel_consumption_rate_l_km_desc">Prikazuje potrošnju goriva vozila na osnovu proračuna (L/km)</string>
     <string name="simulate_obd">Simulira OBD podatke</string>
+=======
+    <string name="l_100km">l/100km</string>
+    <string name="obd_fuel_consumption_rate_l_km">Potrošnja goriva (l/100 km)</string>
+    <string name="obd_fuel_consumption_rate_l_km_desc">Prikazuje potrošnju goriva vozila na osnovu proračuna (l/100 km)</string>
+    <string name="simulate_obd">Simulira obd podatke</string>
+>>>>>>> 5c43437eb1 (Fixed fuel consumption widget (#21495))
     <string name="kpa_unit">kPa</string>
     <string name="obd_fuel_pressure">Pritisak goriva</string>
     <string name="bt_start_pair_failed">Nije moguće pokrenuti uparivanje s uređajem</string>
