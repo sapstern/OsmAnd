@@ -3,6 +3,7 @@ package net.osmand.shared.util
 <<<<<<< HEAD
 import co.touchlab.stately.collections.ConcurrentMutableMap
 import net.osmand.shared.data.KLatLon
+<<<<<<< HEAD
 import kotlin.math.*
 =======
 import kotlinx.coroutines.runBlocking
@@ -10,6 +11,8 @@ import kotlinx.coroutines.sync.Mutex
 import kotlinx.coroutines.sync.withLock
 import net.osmand.shared.data.KLatLon
 >>>>>>> 3615e4d3a4 (Add decodeShortLinkString to KMapUtils)
+=======
+>>>>>>> e4d3bc9a90 (Added location interpolation feature)
 import net.osmand.shared.data.KQuadRect
 import net.osmand.shared.extensions.toDegrees
 import net.osmand.shared.extensions.toRadians
@@ -866,4 +869,7 @@ object KMapUtils {
 		return KGeoParsedPoint(lat, lon, z)
 >>>>>>> 3615e4d3a4 (Add decodeShortLinkString to KMapUtils)
 	}
+
+	fun interpolateLatLon(lat1: Double, lon1: Double, lat2: Double, lon2: Double, fraction: Double) =
+		KLatLon(lat1 + (lat2 - lat1) * fraction, lon1 + (lon2 - lon1) * fraction)
 }

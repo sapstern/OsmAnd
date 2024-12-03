@@ -504,10 +504,11 @@ public class RouteLayer extends BaseRouteLayer implements IContextMenuProvider {
 					currentLocation.setLongitude(tb.getLongitude());
 				}
 				List<Location> locations = route.getImmutableAllLocations();
-				int currentRoute = route.getCurrentRoute();
+				int currentRoute = route.getCurrentRouteForLocation(currentLocation);
 				if (currentRoute > 0) {
 					Location previousRouteLocation = locations.get(currentRoute - 1);
 					Location currentRouteLocation = locations.get(currentRoute);
+<<<<<<< HEAD
 					while (currentRoute > 1) {
 						double projCoeff = MapUtils.getProjectionCoeff(currentLocation.getLatitude(), currentLocation.getLongitude(),
 								previousRouteLocation.getLatitude(), previousRouteLocation.getLongitude(),
@@ -520,6 +521,8 @@ public class RouteLayer extends BaseRouteLayer implements IContextMenuProvider {
 						currentRouteLocation = locations.get(currentRoute);
 <<<<<<< HEAD
 					}
+=======
+>>>>>>> e4d3bc9a90 (Added location interpolation feature)
 					lastProjection = RoutingHelperUtils.getProject(currentLocation, previousRouteLocation, currentRouteLocation);
 					float calcbearing = !MapUtils.areLatLonEqual(previousRouteLocation, currentRouteLocation) ? previousRouteLocation.bearingTo(currentRouteLocation) :
 							previousRouteLocation.bearingTo(currentLocation);
