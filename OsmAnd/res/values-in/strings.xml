@@ -6082,5 +6082,11 @@
 =======
     <string name="vehicle_metrics_recording_description">Pilih parameter untuk direkam dalam berkas GPX.</string>
     <string name="shared_string_engine">Mesin</string>
+<<<<<<< HEAD
 >>>>>>> d80e352745 (Translated using Weblate (Indonesian))
+=======
+    <string name="location_interpolation_percent">Persentase interpolasi lokasi</string>
+    <string name="shared_string_interpolation">Interpolasi</string>
+    <string name="location_interpolation_percent_desc">Tetapkan presentasi interpolasi lokasi saat navigasi rute. Parameter ini mengurangi kelambatan posisi lokasi di peta saat ada animasi.</string>
+>>>>>>> 1400785399 (Translated using Weblate (Indonesian))
 </resources>
