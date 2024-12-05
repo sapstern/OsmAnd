@@ -496,7 +496,7 @@ public abstract class BaseTrackFolderFragment extends BaseOsmAndFragment impleme
 
 	@Override
 	public void onFolderDeleted() {
-		reloadTracks();
+		reloadTracks(true);
 	}
 
 	@Override
