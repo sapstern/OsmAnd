@@ -27,6 +27,7 @@
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
 =======
 	<string name="release_5_0" translatable="false"></string>
@@ -71,6 +72,11 @@
 >>>>>>> 1b62d99294 (Added auto zoom 3d angle setting)
 =======
 =======
+=======
+    <string name="default_buttons_size_original_description">Each button would keep its own size.</string>
+    <string name="default_buttons_corners_original_description">Each button would keep its own corner radius.</string>
+    <string name="default_buttons_opacity_original_description">Each button would keep its own background opacity.</string>
+>>>>>>> bd3e864b59 (Add DefaultButtonsAppearanceFragment for #18357)
     <string name="selected_delayed_profile">Selected profile \"%s\"</string>
 >>>>>>> 9694df8b59 (delayed switch app profile)
 =======
