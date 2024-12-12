@@ -1586,9 +1586,10 @@ public class ResourceManager {
 		if (file != null && file.isDirectory()) {
 			File[] lf = file.listFiles();
 			if (lf != null) {
+				DateFormat dateFormat = getDateFormat();
 				for (File f : lf) {
 					if (f != null && f.getName().endsWith(IndexConstants.BINARY_MAP_INDEX_EXT)) {
-						map.put(f.getName(), getDateFormat().format(f.lastModified()));
+						map.put(f.getName(), dateFormat.format(f.lastModified()));
 					}
 				}
 			}
