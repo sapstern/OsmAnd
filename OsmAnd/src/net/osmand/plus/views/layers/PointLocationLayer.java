@@ -320,6 +320,10 @@ public class PointLocationLayer extends OsmandMapLayer
 		switch (currentMarkerState) {
 			case MOVE -> {
 				navigationMarker.setVisibility(!showHeading);
+<<<<<<< HEAD
+=======
+				locationMarker.setVisibility(false);
+>>>>>>> 255e3ac123 (Fix double location markers)
 				navigationMarkerWithHeading.setVisibility(showHeading);
 				locationMarkerWithHeading.setVisibility(false);
 				circleColor = showHeading
