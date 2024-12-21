@@ -6092,5 +6092,10 @@
 >>>>>>> 1400785399 (Translated using Weblate (Indonesian))
 =======
     <string name="selected_delayed_profile">Profil \"%s\" terpilih</string>
+<<<<<<< HEAD
 >>>>>>> e0b5705c34 (Translated using Weblate (Indonesian))
+=======
+    <string name="default_buttons_corners_original_description">Setiap tombol tetap memiliki radius bulatnya sendiri.</string>
+    <string name="default_buttons_size_original_description">Setiap tombol tetap memiliki ukurannya sendiri.</string>
+>>>>>>> c1a5e8e40a (Translated using Weblate (Indonesian))
 </resources>
