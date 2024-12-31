@@ -1128,8 +1128,55 @@ public class TravelObfHelper implements TravelHelper {
 				BinaryMapIndexReader.SearchRequest<Amenity> pointRequest = BinaryMapIndexReader.buildSearchPoiRequest(
 						0, 0, Algorithms.emptyIfNull(article.title), 0, Integer.MAX_VALUE, 0, Integer.MAX_VALUE,
 						getSearchFilter(article.getMainFilterString(), article.getPointFilterString()),
+<<<<<<< HEAD
 						matchPointsAndTags(article, pointList, gpxFileExtensions, pgNames, pgIcons, pgColors, pgBackgrounds),
 						null);
+=======
+						new ResultMatcher<Amenity>() {
+							@Override
+							public boolean publish(Amenity amenity) {
+								if (amenity.getRouteId().equals(article.getRouteId())) {
+									if (ROUTE_TRACK.equals(amenity.getSubType())) {
+										for (String key : amenity.getAdditionalInfoKeys()) {
+											if (key.startsWith(OBF_GPX_EXTENSION_TAG_PREFIX)) {
+												String tag = key.replaceFirst(OBF_GPX_EXTENSION_TAG_PREFIX, "");
+												String val = amenity.getAdditionalInfo(key);
+												if (val != null) {
+													gpxFileExtensions.put(tag, val);
+												}
+											} else if (key.startsWith(OBF_POINTS_GROUPS_PREFIX)) {
+												final String delimiter = OBF_POINTS_GROUPS_DELIMITER;
+												String joinedValues = amenity.getAdditionalInfo(key);
+												List<String> values = Arrays.asList(joinedValues.split(delimiter));
+												if (OBF_POINTS_GROUPS_NAMES.equals(key)) {
+													pgNames.addAll(values);
+												} else if (OBF_POINTS_GROUPS_ICONS.equals(key)) {
+													pgIcons.addAll(values);
+												} else if (OBF_POINTS_GROUPS_COLORS.equals(key)) {
+													pgColors.addAll(values);
+												} else if (OBF_POINTS_GROUPS_BACKGROUNDS.equals(key)) {
+													pgBackgrounds.addAll(values);
+												}
+											}
+										}
+									} else if (ROUTE_TRACK_POINT.equals(amenity.getSubType())) {
+										pointList.add(amenity);
+									} else {
+										String amenityLang = amenity.getTagSuffix(Amenity.LANG_YES + ":");
+										if (Algorithms.stringsEqual(article.lang, amenityLang)) {
+											pointList.add(amenity);
+										}
+									}
+								}
+								return false;
+							}
+
+							@Override
+							public boolean isCancelled() {
+								return false;
+							}
+						}, null);
+>>>>>>> 24ab8635e3 (Fix possible null values in gpx extensions)
 				if (article.routeRadius >= 0) {
 					pointRequest.setBBoxRadius(article.lat, article.lon, article.routeRadius);
 				}
