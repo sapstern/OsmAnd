@@ -6108,5 +6108,9 @@
     <string name="rendering_attr_showClimbingRoutes_description">Tampilkan rute pendakian</string>
     <string name="calculating_indication_message">Menghitung…</string>
     <string name="calculate_size">Hitung ukuran</string>
+<<<<<<< HEAD
 >>>>>>> 4399567130 (Translated using Weblate (Indonesian))
+=======
+    <string name="display_distance_to_first_intermediate">Tampilkan waktu dan jarak ke perantara pertama jika diatur</string>
+>>>>>>> 580923e145 (Translated using Weblate (Indonesian))
 </resources>
