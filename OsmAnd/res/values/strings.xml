@@ -23,7 +23,13 @@
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
+=======
+    <string name="display_distance_to_first_intermediate">Show route details for the next stop</string>
+    <string name="display_distance_to_first_intermediate_summary">Shows time and distance for the next stop first. Turn off to always show details for the destination.</string>
+
+>>>>>>> 961ced0da9 (Update preference name and summary resources)
     <string name="rendering_attr_showClimbingRoutes_name">Climbing routes</string>
     <string name="rendering_attr_showClimbingRoutes_description">Show climbing routes</string>
 >>>>>>> 1443991a87 (Add phrases (https://github.com/osmandapp/OsmAnd/issues/21248))
@@ -6090,5 +6096,4 @@ Download tile maps directly, or copy them as SQLite database files to OsmAnd\'s 
     <string name="routing_attr_freeride_policy_name">Off-piste</string>
     <string name="routing_attr_freeride_policy_description">\'Freeride\' and \'Off-piste\' are unofficial routes and passages. Typically ungroomed, unmaintained and not checked in the evening. Enter at your own risk.</string>
     <string name="voice_prompts_timetable">Voice prompts times</string>
-    <string name="display_distance_to_first_intermediate">Display time and distance to first intermediate if it\'s set</string>
 </resources>
