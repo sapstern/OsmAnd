@@ -5681,4 +5681,8 @@
     <string name="default_buttons_opacity_original_description">Jede Schaltfläche würde ihre eigene Transparenz behalten.</string>
     <string name="rendering_attr_showClimbingRoutes_name">Kletterrouten</string>
     <string name="rendering_attr_showClimbingRoutes_description">Kletterrouten anzeigen</string>
+<<<<<<< HEAD
+=======
+    <string name="display_distance_to_first_intermediate">Zeit und Entfernung bis zum ersten Zwischenziel anzeigen, falls eines angegeben ist</string>
+>>>>>>> 715b364a7b (Translated using Weblate (German))
 </resources>
