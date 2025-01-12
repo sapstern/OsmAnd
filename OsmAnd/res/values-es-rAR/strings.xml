@@ -2547,16 +2547,22 @@
     <string name="quick_action_edit_actions">Editar acciones</string>
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
     <string name="error_notification_desc">Por favor, envía una captura de pantalla de esta notificación a sapstern@gmx.de</string>
 =======
     <string name="error_notification_desc">Por favor, enviá una captura de pantalla de esta notificación a support@osmand.net</string>
 >>>>>>> 2f1f8e7b34 (Translated using Weblate (Spanish (Argentina)))
 =======
+=======
+>>>>>>> osmandapp-android-master
     <string name="error_notification_desc">Por favor, enviá una captura de pantalla de esta notificación a support@osmand.net</string>
 =======
     <string name="error_notification_desc">Por favor, envía una captura de pantalla de esta notificación a sapstern@gmx.de</string>
 >>>>>>> 6cdfe6f96e (2024_08_19)
+<<<<<<< HEAD
 >>>>>>> 078a62592f (2024_08_19)
+=======
+>>>>>>> osmandapp-android-master
     <string name="coord_input_edit_point">Editar punto</string>
     <string name="coord_input_add_point">Agregar punto</string>
     <string name="coord_input_save_as_track">Guardar como traza</string>
@@ -5442,6 +5448,7 @@
     <string name="connect_obd_instructions_title">OsmAnd admite conexiones Bluetooth a escáneres OBD-II.</string>
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
     <string name="connect_obd_instructions_step4">4. Pulsá «Conectar» y elegí tu escáner en la lista.</string>
     <string name="obd_vehicle_info">Datos del vehículo</string>
     <string name="obd_how_to_connect">Cómo conectarse:</string>
@@ -5465,6 +5472,15 @@
 =======
     <string name="learn_more_about_obd_sensors">Aprendé más sobre los sensores.</string>
 >>>>>>> 27702d5f60 (Translated using Weblate (Spanish (Argentina)))
+=======
+    <string name="connect_obd_instructions_step4">Pulsá «%1$s» y elegí el escáner del listado.</string>
+    <string name="obd_vehicle_info">Datos del vehículo</string>
+    <string name="obd_how_to_connect">Cómo conectarse:</string>
+    <string name="connect_obd_instructions_step1">Conecta el escáner al puerto OBD-II del vehículo.</string>
+    <string name="connect_obd_instructions_step2">Enciende el motor del vehiculo</string>
+    <string name="connect_obd_instructions_step3">Activa el Bluetooth del dispositivo</string>
+    <string name="learn_more_about_obd_sensors">Aprendé más sobre los sensores.</string>
+>>>>>>> osmandapp-android-master
     <string name="obd_fuel_left_liters">Combustible restante (litros)</string>
     <string name="route_guidance_desc">Proporciona orientación sobre la ruta en tiempo real, incluida la distancia hasta el próximo giro, el nombre de la ruta, la calle actual e información sobre el carril. Los widgets se activan al navegar.</string>
     <string name="route_guidance">Guías de ruta</string>
@@ -5481,6 +5497,7 @@
     <string name="obd_fuel_consumption_rate_sensor">Tasa de consumo del combustible (sensor)</string>
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
     <string name="obd_fuel_consumption_rate_sensor_desc">Muestra la tasa de consumo del combustible del vehículo según el sensor (L/h)</string>
     <string name="obd_fuel_left_percent">Combustible restante (%)</string>
     <string name="obd_fuel_left_liter">Combustible restante (l)</string>
@@ -5495,6 +5512,11 @@
     <string name="obd_fuel_consumption_rate_sensor_desc">Muestra la tasa de consumo del combustible del vehículo según el sensor (l/h)</string>
     <string name="obd_fuel_consumption_rate_liter_hour">Tasa de consumo del combustible en l/h</string>
     <string name="obd_fuel_consumption_rate_l_h">Tasa de consumo del combustible (l/h)</string>
+=======
+    <string name="obd_fuel_consumption_rate_sensor_desc">Muestra la tasa de consumo del combustible del vehículo según el sensor (l/h)</string>
+    <string name="obd_fuel_consumption_rate_liter_hour">Tasa de consumo del combustible</string>
+    <string name="obd_fuel_consumption_rate_l_h">Tasa de consumo del combustible (L/h)</string>
+>>>>>>> osmandapp-android-master
     <string name="obd_fuel_consumption_rate_l_h_desc">Muestra la tasa de consumo del combustible del vehículo según los cálculos (l/h)</string>
 >>>>>>> 56f541d97d (Fixed obd strings usage; OBD simulation changes)
     <string name="obd_fuel_level_liter">Nivel de combustible (l)</string>
@@ -5507,6 +5529,7 @@
     <string name="percent_hour">%/h</string>
     <string name="obd_fuel_consumption_rate_percent_hour_desc">Muestra la tasa de consumo del combustible, según los cálculos (%/h)</string>
 <<<<<<< HEAD
+<<<<<<< HEAD
     <string name="l_100km">L/100km</string>
     <string name="obd_fuel_consumption_rate_l_km">Tasa de consumo del combustible (L/km)</string>
     <string name="obd_fuel_consumption_rate_l_km_desc">Muestra la tasa de consumo del combustible, según los cálculos (L/km)</string>
@@ -5515,6 +5538,11 @@
     <string name="obd_fuel_consumption_rate_l_km">Tasa de consumo del combustible (l/100 km)</string>
     <string name="obd_fuel_consumption_rate_l_km_desc">Muestra la tasa de consumo del combustible, según los cálculos (l/100 km)</string>
 >>>>>>> 5c43437eb1 (Fixed fuel consumption widget (#21495))
+=======
+    <string name="l_100km">L/100km</string>
+    <string name="obd_fuel_consumption_rate_l_km">Tasa de consumo del combustible (L/100 km)</string>
+    <string name="obd_fuel_consumption_rate_l_km_desc">Muestra la tasa de consumo del combustible, según los cálculos (L/100 km)</string>
+>>>>>>> osmandapp-android-master
     <string name="simulate_obd">Simular datos OBD</string>
     <string name="kpa_unit">kPa</string>
     <string name="obd_fuel_pressure">Presión del combustible</string>

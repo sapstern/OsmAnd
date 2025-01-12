@@ -62,6 +62,7 @@ public class PicassoUtils {
 
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 	public synchronized static PicassoUtils getPicasso(@NonNull OsmandApplication app) {
 =======
 	public static PicassoUtils getPicasso(@NonNull OsmandApplication app) {
@@ -69,6 +70,9 @@ public class PicassoUtils {
 =======
 	public synchronized static PicassoUtils getPicasso(@NonNull OsmandApplication app) {
 >>>>>>> 06261971b1 (Fix typo)
+=======
+	public synchronized static PicassoUtils getPicasso(@NonNull OsmandApplication app) {
+>>>>>>> osmandapp-android-master
 		if (INSTANCE == null) {
 			INSTANCE = new PicassoUtils(app);
 		}

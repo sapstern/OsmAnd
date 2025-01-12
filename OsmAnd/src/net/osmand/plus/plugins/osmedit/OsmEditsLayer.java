@@ -106,6 +106,19 @@ public class OsmEditsLayer extends OsmandMapLayer implements IContextMenuProvide
 	public void onDraw(Canvas canvas, RotatedTileBox tileBox, DrawSettings settings) {
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
+=======
+		if (contextMenuLayer != null) {
+			if (contextMenuLayer.getMoveableObject() instanceof OsmPoint point) {
+				PointF pf = contextMenuLayer.getMovableCenterPoint(tileBox);
+				drawPoint(canvas, point, pf.x, pf.y);
+				setMovableObject(point.getLatitude(), point.getLongitude());
+			}
+			if (movableObject != null && !contextMenuLayer.isInChangeMarkerPositionMode()) {
+				cancelMovableObject();
+			}
+=======
+>>>>>>> osmandapp-android-master
 		if (contextMenuLayer != null && contextMenuLayer.getMoveableObject() instanceof OsmPoint) { //MFRI avoid nullpointer exception
 			OsmPoint movablePoint = (OsmPoint) contextMenuLayer.getMoveableObject();
 			PointF pf = contextMenuLayer.getMovableCenterPoint(tileBox);
@@ -114,6 +127,7 @@ public class OsmEditsLayer extends OsmandMapLayer implements IContextMenuProvide
 		}
 		if (movableObject != null && !contextMenuLayer.isInChangeMarkerPositionMode()) {
 			cancelMovableObject();
+<<<<<<< HEAD
 =======
 =======
 >>>>>>> 03975e301d (2024_08_23)
@@ -140,6 +154,9 @@ public class OsmEditsLayer extends OsmandMapLayer implements IContextMenuProvide
 			cancelMovableObject();
 >>>>>>> 63276fa851 (2024_08_23)
 >>>>>>> 03975e301d (2024_08_23)
+=======
+>>>>>>> 63276fa851 (2024_08_23)
+>>>>>>> osmandapp-android-master
 		}
 	}
 

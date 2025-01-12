@@ -171,6 +171,7 @@ class OBDMainFragment : OBDDevicesBaseFragment(), VehicleMetricsPlugin.Connectio
 				pairButton.setOnClickListener {
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 					vehicleMetricsPlugin?.disconnect(true)
 =======
 					vehicleMetricsPlugin.disconnect()
@@ -178,6 +179,9 @@ class OBDMainFragment : OBDDevicesBaseFragment(), VehicleMetricsPlugin.Connectio
 =======
 					vehicleMetricsPlugin.disconnect(true)
 >>>>>>> 967a62a28d (Fix reconnect on aa connection; implemented subsequent reconnect (#21359))
+=======
+					vehicleMetricsPlugin.disconnect(true)
+>>>>>>> osmandapp-android-master
 				}
 			}
 
@@ -334,7 +338,14 @@ class OBDMainFragment : OBDDevicesBaseFragment(), VehicleMetricsPlugin.Connectio
 	}
 
 	override fun onForgetSensorConfirmed(deviceId: String) {
+<<<<<<< HEAD
 		vehicleMetricsPlugin.removeDeviceToUsedOBDDevicesList(deviceId)
 		view?.let { setupUI(it) }
 	}
 }
+=======
+		vehicleMetricsPlugin?.removeDeviceToUsedOBDDevicesList(deviceId)
+		view?.let { setupUI(it) }
+	}
+}
+>>>>>>> osmandapp-android-master

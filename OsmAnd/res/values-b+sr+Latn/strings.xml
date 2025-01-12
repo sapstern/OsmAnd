@@ -3084,6 +3084,7 @@
     <string name="quick_action_edit_actions">Izmeni akcije</string>
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
     <string name="error_notification_desc">Pošalji snimak ekrana ovog obaveštenja na sapstern@gmx.de</string>
     <string name="coord_input_save_as_track_descr">Dodao si %1$s tačke(i). Unesi ime fajla i tapni „Snimi“.</string>
 =======
@@ -3103,6 +3104,14 @@
     <string name="coord_input_save_as_track_descr">Dodao si %1$s tačke(i). Unesi ime fajla i tapni „Snimi“.</string>
 >>>>>>> 6cdfe6f96e (2024_08_19)
 >>>>>>> 078a62592f (2024_08_19)
+=======
+    <string name="error_notification_desc">Pošalji snimak ekrana ovog obaveštenja na support@osmand.net</string>
+    <string name="coord_input_save_as_track_descr">Dodao si %1$s tačke(i). Unesi ime fajla i tapni \"Snimi\".</string>
+=======
+    <string name="error_notification_desc">Pošalji snimak ekrana ovog obaveštenja na sapstern@gmx.de</string>
+    <string name="coord_input_save_as_track_descr">Dodao si %1$s tačke(i). Unesi ime fajla i tapni „Snimi“.</string>
+>>>>>>> 6cdfe6f96e (2024_08_19)
+>>>>>>> osmandapp-android-master
     <string name="coord_input_save_as_track">Snimi kao putanju</string>
     <string name="coord_input_add_point">Dodaj tačku</string>
     <string name="coord_input_edit_point">Izmeni tačku</string>
@@ -5573,6 +5582,7 @@
     <string name="obd_vehicle_info">Informacije o vozilu</string>
     <string name="connect_obd_instructions_title">OsmAnd podržava Bluetooth veze s OBD-II skenerima.</string>
 <<<<<<< HEAD
+<<<<<<< HEAD
     <string name="connect_obd_instructions_step2">2. Pokreni motor vozila</string>
     <string name="obd_how_to_connect">Kako se povezati:</string>
     <string name="connect_obd_instructions_step1">1. Spoj skener na OBD-II priključak u vozilu.</string>
@@ -5589,6 +5599,13 @@
 =======
     <string name="connect_obd_instructions_step4">Tapni \'%1$s\', i odaberi svoj skener s liste.</string>
 >>>>>>> 7d0ed90c19 (Translated using Weblate (Serbian (Latin script)))
+=======
+    <string name="connect_obd_instructions_step2">Pokreni motor vozila</string>
+    <string name="obd_how_to_connect">Kako se povezati:</string>
+    <string name="connect_obd_instructions_step1">Spoj skener na OBD-II priključak u vozilu.</string>
+    <string name="connect_obd_instructions_step3">Omogući Bluetooth na uređaju</string>
+    <string name="connect_obd_instructions_step4">Tapni \'%1$s\', i odaberi svoj skener s liste.</string>
+>>>>>>> osmandapp-android-master
     <string name="learn_more_about_obd_sensors">Saznaj više o senzorima.</string>
     <string name="route_guidance">Navođenje rutom</string>
     <string name="obd_widget_vehicle_speed">Brzina vozila</string>
@@ -5609,10 +5626,13 @@
     <string name="obd_fuel_consumption_rate_liter_hour">Brzina potrošnje goriva</string>
     <string name="obd_fuel_consumption_rate_percent_hour">Potrošnja goriva %/h</string>
 <<<<<<< HEAD
+<<<<<<< HEAD
     <string name="obd_fuel_consumption_rate_l_h">Potrošnja goriva (l/h)</string>
     <string name="obd_fuel_consumption_rate_sensor_desc">Prikazuje potrošnju goriva na temelju senzora (l/h)</string>
     <string name="obd_fuel_consumption_rate_l_h_desc">Prikazuje potrošnju goriva na temelju proračuna (l/h)</string>
 =======
+=======
+>>>>>>> osmandapp-android-master
     <string name="obd_fuel_consumption_rate_l_h">Potrošnja goriva (L/h)</string>
     <string name="obd_fuel_consumption_rate_sensor_desc">Prikazuje potrošnju goriva na temelju senzora (L/h)</string>
     <string name="obd_fuel_consumption_rate_l_h_desc">Prikazuje potrošnju goriva na temelju proračuna (L/h)</string>
@@ -5624,6 +5644,7 @@
     <string name="percent_hour">%/h</string>
     <string name="obd_fuel_consumption_rate_percent_hour_desc">Prikazuje potrošnju goriva vozila na osnovu proračuna (%/h)</string>
 <<<<<<< HEAD
+<<<<<<< HEAD
     <string name="l_100km">L/100km</string>
     <string name="obd_fuel_consumption_rate_l_km">Potrošnja goriva (L/km)</string>
     <string name="obd_fuel_consumption_rate_l_km_desc">Prikazuje potrošnju goriva vozila na osnovu proračuna (L/km)</string>
@@ -5634,6 +5655,12 @@
     <string name="obd_fuel_consumption_rate_l_km_desc">Prikazuje potrošnju goriva vozila na osnovu proračuna (l/100 km)</string>
     <string name="simulate_obd">Simulira obd podatke</string>
 >>>>>>> 5c43437eb1 (Fixed fuel consumption widget (#21495))
+=======
+    <string name="l_100km">L/100km</string>
+    <string name="obd_fuel_consumption_rate_l_km">Potrošnja goriva (L/100 km)</string>
+    <string name="obd_fuel_consumption_rate_l_km_desc">Prikazuje potrošnju goriva vozila na osnovu proračuna (L/100 km)</string>
+    <string name="simulate_obd">Simulira OBD podatke</string>
+>>>>>>> osmandapp-android-master
     <string name="kpa_unit">kPa</string>
     <string name="obd_fuel_pressure">Pritisak goriva</string>
     <string name="bt_start_pair_failed">Nije moguće pokrenuti uparivanje s uređajem</string>

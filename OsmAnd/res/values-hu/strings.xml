@@ -2580,6 +2580,7 @@
     <string name="point_deleted">%1$s pont törölve</string>
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
     <string name="coord_input_save_as_track_descr">Hozzáadott %1$s pontot. Adjon meg egy fájlnevet, és koppintson a „Mentés”-re.</string>
 <<<<<<< HEAD
     <string name="error_notification_desc">Kérjük, küldjön egy képernyőképet erről az értesítésről a sapstern@gmx.de címre</string>
@@ -2598,6 +2599,14 @@
     <string name="error_notification_desc">Kérjük, küldjön egy képernyőképet erről az értesítésről a sapstern@gmx.de címre</string>
 >>>>>>> 6cdfe6f96e (2024_08_19)
 >>>>>>> 078a62592f (2024_08_19)
+=======
+    <string name="coord_input_save_as_track_descr">Hozzáadott %1$s pontot. Adjon meg egy fájlnevet, és koppintson a Mentésre.</string>
+    <string name="error_notification_desc">Küldjön egy képernyőképet erről az értesítésről a support@osmand.net címre</string>
+=======
+    <string name="coord_input_save_as_track_descr">Hozzáadott %1$s pontot. Adjon meg egy fájlnevet, és koppintson a „Mentés”-re.</string>
+    <string name="error_notification_desc">Kérjük, küldjön egy képernyőképet erről az értesítésről a sapstern@gmx.de címre</string>
+>>>>>>> 6cdfe6f96e (2024_08_19)
+>>>>>>> osmandapp-android-master
     <string name="mapillary_menu_title_pano">Csak 360°-os képek megjelenítése</string>
     <string name="rendering_value_black_name">Fekete</string>
     <string name="test_voice_desrc">Koppintson egy gombra és hallgassa meg a megfelelő hangutasítást, hogy a hiányzó vagy hibás utasításokat meghallja</string>
@@ -5532,6 +5541,7 @@
     <string name="screen_is_locked_by_external_button">Az érintőképernyő le van zárva. A feloldáshoz nyomja meg a(z) %1$s gombot vagy koppintson a képernyőn megjelenő gombra.</string>
     <string name="connect_obd_instructions_title">Az OsmAnd támogatja a Bluetooth-kapcsolatot használó OBD-II eszközöket.</string>
 <<<<<<< HEAD
+<<<<<<< HEAD
     <string name="connect_obd_instructions_step2">2. Indítsa el a jármű motorját</string>
     <string name="connect_obd_instructions_step3">3. Engedélyezze a Bluetooth-t a telefonján</string>
     <string name="connect_obd_instructions_step4">4. Koppintson a „Kapcsolódásra” és válassza ki az OBD-olvasót a listából.</string>
@@ -5544,15 +5554,24 @@
 =======
     <string name="connect_obd_instructions_step4">Koppintson a „%1$s”-ra és válassza ki az OBD-olvasót a listáról.</string>
 >>>>>>> cd59ef2f27 (Translated using Weblate (Hungarian))
+=======
+    <string name="connect_obd_instructions_step2">Indítsa el a jármű motorját</string>
+    <string name="connect_obd_instructions_step3">Engedélyezze a Bluetooth-t a telefonján</string>
+    <string name="connect_obd_instructions_step4">Koppintson a „%1$s”-ra és válassza ki az OBD-olvasót a listáról.</string>
+>>>>>>> osmandapp-android-master
     <string name="learn_more_about_obd_sensors">Tudjon meg többet az érzékelőkről.</string>
     <string name="obd_fuel_left_liters">Maradék üzemanyag (liter)</string>
     <string name="obd_vehicle_info">Jármű információ</string>
     <string name="shared_string_bluetooth">Bluetooth</string>
 <<<<<<< HEAD
+<<<<<<< HEAD
     <string name="connect_obd_instructions_step1">1. Helyezze az olvasót a járműve OBD-II aljzatába.</string>
 =======
     <string name="connect_obd_instructions_step1">Helyezze az OBD-olvasó eszközt a járműve OBD-II aljzatába.</string>
 >>>>>>> ca41659c72 (UI fixes; Removed displaying unknown device when searching new obd; added connection to obd when AA connected)
+=======
+    <string name="connect_obd_instructions_step1">Helyezze az olvasót a járműve OBD-II aljzatába.</string>
+>>>>>>> osmandapp-android-master
     <string name="obd_how_to_connect">Hogyan működik:</string>
     <string name="route_guidance">Útvonalvezetés</string>
     <string name="obd_widget_vehicle_speed">Jármű sebessége</string>

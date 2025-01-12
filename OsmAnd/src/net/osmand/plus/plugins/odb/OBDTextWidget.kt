@@ -14,10 +14,15 @@ import net.osmand.plus.views.mapwidgets.WidgetType
 import net.osmand.plus.views.mapwidgets.WidgetsPanel
 import net.osmand.plus.views.mapwidgets.widgets.SimpleWidget
 <<<<<<< HEAD
+<<<<<<< HEAD
 import net.osmand.shared.obd.OBDCommand
 =======
 import net.osmand.plus.widgets.popup.PopUpMenuItem
 >>>>>>> 15958bdc26 (add average mode to obd widgets)
+=======
+import net.osmand.shared.obd.OBDCommand
+import net.osmand.plus.widgets.popup.PopUpMenuItem
+>>>>>>> osmandapp-android-master
 import net.osmand.shared.obd.OBDDataComputer
 import net.osmand.shared.obd.OBDDataComputer.OBDComputerWidget
 import net.osmand.shared.obd.OBDDataComputer.OBDTypeWidget
@@ -28,6 +33,7 @@ open class OBDTextWidget(
 	widgetType: WidgetType,
 	private val fieldType: OBDTypeWidget,
 	customId: String?,
+<<<<<<< HEAD
 <<<<<<< HEAD
 	widgetsPanel: WidgetsPanel?
 ) :
@@ -41,6 +47,11 @@ open class OBDTextWidget(
 =======
 	private val plugin = PluginsHelper.requirePlugin(VehicleMetricsPlugin::class.java)
 >>>>>>> b290181565 (Code review fix)
+=======
+	widgetsPanel: WidgetsPanel?) :
+	SimpleWidget(mapActivity, widgetType, customId, widgetsPanel), OBDWidgetOptions {
+	private val plugin = PluginsHelper.requirePlugin(VehicleMetricsPlugin::class.java)
+>>>>>>> osmandapp-android-master
 	protected var widgetComputer: OBDComputerWidget
 	private var cacheTextData: String? = null
 	private var cacheSubTextData: String? = null
@@ -187,9 +198,16 @@ open class OBDTextWidget(
 	}
 
 <<<<<<< HEAD
+<<<<<<< HEAD
 	fun getWidgetOBDCommand(): OBDCommand {
 		return  fieldType.requiredCommand
 =======
+=======
+	fun getWidgetOBDCommand(): OBDCommand {
+		return  fieldType.requiredCommand
+	}
+
+>>>>>>> osmandapp-android-master
 	private fun registerAverageModePref(customId: String?): CommonPreference<Boolean> {
 		val prefId = if (Algorithms.isEmpty(customId))
 			AVERAGE_MODE_PREF_ID
@@ -246,7 +264,10 @@ open class OBDTextWidget(
 
 			else -> false
 		}
+<<<<<<< HEAD
 >>>>>>> 15958bdc26 (add average mode to obd widgets)
+=======
+>>>>>>> osmandapp-android-master
 	}
 
 	override fun getTemperatureUnit(): TemperatureUnit {

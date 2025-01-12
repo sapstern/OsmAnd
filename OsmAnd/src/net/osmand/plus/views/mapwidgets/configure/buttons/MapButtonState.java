@@ -193,6 +193,7 @@ public abstract class MapButtonState {
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
 >>>>>>> ddc5ceb39b (Implement "Dynamic icon" support for default buttons)
 	public ButtonPositionSize createButtonPosition() {
@@ -221,6 +222,8 @@ public abstract class MapButtonState {
 	@NonNull
 =======
 >>>>>>> d3e8a36c96 (Fix buttons positions initialization)
+=======
+>>>>>>> osmandapp-android-master
 	protected abstract ButtonPositionSize setupButtonPosition(@NonNull ButtonPositionSize position);
 
 	@NonNull

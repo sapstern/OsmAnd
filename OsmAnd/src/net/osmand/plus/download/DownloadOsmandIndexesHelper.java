@@ -10,8 +10,11 @@ import android.annotation.SuppressLint;
 import android.content.pm.ApplicationInfo;
 import android.content.pm.PackageManager;
 import android.content.pm.PackageManager.NameNotFoundException;
+<<<<<<< HEAD
 
 import com.google.gson.Gson;
+=======
+>>>>>>> osmandapp-android-master
 
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
@@ -187,6 +190,7 @@ public class DownloadOsmandIndexesHelper {
 	}
 	@NonNull
 <<<<<<< HEAD
+<<<<<<< HEAD
 	public static List<AssetEntry> getBundledAssets(@NonNull AssetManager assetManager) throws XmlPullParserException, IOException {
 		SimpleDateFormat DATE_FORMAT = new SimpleDateFormat("dd.MM.yyyy", Locale.US);
 		InputStream isBundledAssetsXml = assetManager.open("bundled_assets.json");
@@ -210,11 +214,19 @@ public class DownloadOsmandIndexesHelper {
 	private static List<IndexItem> listDefaultTtsVoiceIndexes(@NonNull OsmandApplication app,
 	                                                          @NonNull AssetsCollection assetsCollection) {
 >>>>>>> e60fa21089 (Make assets cache to don't read them each time)
+=======
+	private static List<IndexItem> listDefaultTtsVoiceIndexes(@NonNull OsmandApplication app,
+	                                                          @NonNull AssetsCollection assetsCollection) {
+>>>>>>> osmandapp-android-master
 		List<IndexItem> defaultTTS = new ArrayList<>();
 		File voiceDirPath = app.getAppPath(VOICE_INDEX_DIR);
 		long installDate = getInstallDate(app);
 
+<<<<<<< HEAD
 		for (AssetEntry asset : assetsCollection.getEntrys()) {
+=======
+		for (AssetEntry asset : assetsCollection.getEntries()) {
+>>>>>>> osmandapp-android-master
 			String target = asset.destination;
 			boolean isTTS = target.endsWith(TTSVOICE_INDEX_EXT_JS)
 					&& target.startsWith(VOICE_INDEX_DIR)
@@ -418,7 +430,11 @@ public class DownloadOsmandIndexesHelper {
 
 		@Nullable
 		public Long getVersionTime() {
+<<<<<<< HEAD
 			return version != null ? version.getTime() : null;
+=======
+			return dateVersion != null ? dateVersion.getTime() : null;
+>>>>>>> osmandapp-android-master
 		}
 	}
 }

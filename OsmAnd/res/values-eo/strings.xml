@@ -5522,9 +5522,12 @@
     <string name="obd_fuel_consumption_rate">Konsum-rapido de brulaĵo</string>
     <string name="obd_fuel_consumption_rate_desc">Montras konsum-rapidon de brulaĵo raportatan de OBD-sentilo</string>
 <<<<<<< HEAD
+<<<<<<< HEAD
     <string name="obd_fuel_left_distance">Resta brulaĵo (distanco)</string>
 =======
 >>>>>>> 56f541d97d (Fixed obd strings usage; OBD simulation changes)
+=======
+>>>>>>> osmandapp-android-master
     <string name="obd_fuel_type">Speco de brulaĵo</string>
     <string name="obd_plugin_description">Ebligas kontroli parametrojn de aŭtomobilo per la protokolo OBD-II. Alireblaj datumoj:\n• rivolua rapido de motoro, ĝia labortempo, ĝia kalkulita ŝargo\n• konsumo de brulaĵo, premo de brula, resta brulaĵo\n• temperaturoj de: eniga aer-kolektilo, fono, malvarmiga likvaĵo, motoroleo\n• rapido de veturilo, pozicio de brulaĵ-valvo, tensio de baterio.\n</string>
     <string name="obd_support">Subteno por OBD</string>

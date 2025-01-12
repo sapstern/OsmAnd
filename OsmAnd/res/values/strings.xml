@@ -24,6 +24,7 @@
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
 =======
     <string name="display_distance_to_first_intermediate">Show route details for the next stop</string>
@@ -117,6 +118,31 @@
     <string name="connect_new_scanner">Connect new scanner</string>
     <string name="shared_string_pro">Pro</string>
 >>>>>>> ca41659c72 (UI fixes; Removed displaying unknown device when searching new obd; added connection to obd when AA connected)
+=======
+    <string name="display_distance_to_first_intermediate">Show route details for the next stop</string>
+    <string name="display_distance_to_first_intermediate_summary">Shows time and distance for the next stop first. Turn off to always show details for the destination.</string>
+
+    <string name="rendering_attr_showClimbingRoutes_name">Climbing routes</string>
+    <string name="rendering_attr_showClimbingRoutes_description">Show climbing routes</string>
+
+    <string name="calculating_indication_message">Calculating…</string>
+    <string name="calculate_size">Calculate size</string>
+    <string name="default_buttons_size_original_description">Each button would keep its own size.</string>
+    <string name="default_buttons_corners_original_description">Each button would keep its own corner radius.</string>
+    <string name="default_buttons_opacity_original_description">Each button would keep its own background opacity.</string>
+    <string name="selected_delayed_profile">Selected profile \"%s\"</string>
+    <string name="shared_string_interpolation">Interpolation</string>
+    <string name="location_interpolation_percent">Location interpolation percentage</string>
+    <string name="location_interpolation_percent_desc">Set the percentage of location interpolation during route navigation. This parameter reduces the lag of your location position on the map during animation.</string>
+    <string name="shared_string_engine">Engine</string>
+    <string name="vehicle_metrics_recording_description">Select the parameters to be recorded in the GPX file.</string>
+    <string name="auto_zoom_3d_angle">Auto zoom 3D angle</string>
+    <string name="av_audio_sample_rate">Audio sample rate</string>
+    <string name="av_audio_sample_rate_descr">Select audio sample rate.</string>
+    <string name="connect_new_scanner">Connect new scanner</string>
+    <string name="release_5_0" translatable="false"></string>
+    <string name="preview_next_turn">Preview next turn</string>
+>>>>>>> osmandapp-android-master
     <string name="purchase_feature_desc_vehicle_metrics_obd_ii">Track vital vehicle data using the OBD-II protocol. Monitor key metrics like speed, engine RPM, fuel consumption, and more.</string>
     <string name="vehicle_metrics_obd_ii">Vehicle Metrics (OBD-II)</string>
 	<string name="shared_string_hour">Hour</string>
@@ -141,16 +167,25 @@
 	<string name="remaining_fuel">Remaining fuel</string>
 	<string name="obd_fuel_consumption_desc">Shows the rate of fuel usage by the engine, calculated based on remaining fuel, tank size, and distance covered as determined by GPS.</string>
 	<string name="obd_fuel_consumption">Fuel consumption</string>
+<<<<<<< HEAD
 >>>>>>> 79a0af515a (Implement purchases for Vehicle Metrics (OBD-II))
+=======
+>>>>>>> osmandapp-android-master
 	<string name="reset_average_value">Reset average value</string>
 	<string name="average_value_slider_description">Select the time interval for measuring the average value.</string>
 	<string name="average_temperature_slider_description">Select the time interval for measuring the average temperature.</string>
 	<string name="shared_string_instant">Instant</string>
 	<string name="current_temperature">Current temperature</string>
 	<string name="average_temperature">Average temperature</string>
+<<<<<<< HEAD
 >>>>>>> 7eabbd6b34 (new strings)
     <string name="wunderlinq_datagrid">WunderLINQ Datagrid</string>
 >>>>>>> 7f03eabab1 (Make "Open WunderLINQ Datagrid" action visible and possible to add)
+=======
+    <string name="show_minor_turns_descr">Lanes will be displayed on all passing intersections regardless voice instructions</string>
+    <string name="show_minor_turns">Display on minor intersections when navigating straight</string>
+    <string name="wunderlinq_datagrid">WunderLINQ Datagrid</string>
+>>>>>>> osmandapp-android-master
     <string name="fuel_tank_capacity_description">Enter your tank capacity to accurately track fuel levels and consumption</string>
     <string name="fuel_tank_capacity">Fuel tank capacity</string>
     <string name="shared_strings_dimensions">Dimensions</string>
@@ -160,6 +195,7 @@
     <string name="us_gallons">US gallons</string>
     <string name="unit_of_volume_description">Selected units will be applied to all volume-related data in the current profile.</string>
     <string name="unit_of_volume">Unit of volume</string>
+<<<<<<< HEAD
 <<<<<<< HEAD
 >>>>>>> f0e9de350f (ad fuel tank capacity)
 =======
@@ -180,6 +216,14 @@
     <string name="obd_not_connected_to_device">Disconnected from %s</string>
     <string name="obd_connecting_to_device">Connecting to %s</string>
 >>>>>>> fe416a7340 (Moved connecting to separate thread; changed using simulation)
+=======
+    <string name="record_obd_data">Record vehicle metrics</string>
+    <string name="dynamic_icon_type_summary">Icon changes based on action state.</string>
+    <string name="shared_string_dynamic">Dynamic</string>
+    <string name="obd_connected_to_device">Connected to %s</string>
+    <string name="obd_not_connected_to_device">Disconnected from %s</string>
+    <string name="obd_connecting_to_device">Connecting to %s</string>
+>>>>>>> osmandapp-android-master
     <string name="bt_start_pair_failed">Can\'t initiate pairing with device</string>
 =======
     <string name="dynamic_icon_type_summary">Icon changes based on action state.</string>

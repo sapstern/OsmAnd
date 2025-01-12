@@ -13,6 +13,7 @@ import net.osmand.shared.util.LoggerFactory
 import kotlin.math.max
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 import net.osmand.shared.obd.OBDCommand.*
 =======
 >>>>>>> 7c0bcc70eb (Added ignoring fuel level change peaks)
@@ -20,6 +21,10 @@ import net.osmand.shared.util.Localization
 import net.osmand.shared.util.PlatformUtil
 =======
 >>>>>>> 15958bdc26 (add average mode to obd widgets)
+=======
+import net.osmand.shared.util.Localization
+import net.osmand.shared.util.PlatformUtil
+>>>>>>> osmandapp-android-master
 
 
 private const val FUEL_CONSUMPTION_DEFAULT_AVERAGE_TIME = 5 * 60

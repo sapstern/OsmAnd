@@ -70,12 +70,15 @@ import java.util.UUID
 class VehicleMetricsPlugin(app: OsmandApplication) : OsmandPlugin(app), OBDReadStatusListener {
 	private var mapActivity: MapActivity? = null
 <<<<<<< HEAD
+<<<<<<< HEAD
 	private val handler = Handler(Looper.myLooper()!!)
 	private val RECONNECT_DELAY = 5000L
 	private val DEFAULT_FUEL_TANK_VOLUME = 52f
 	private var currentConnectingState = OBDConnectionState.DISCONNECTED
 =======
 >>>>>>> 9643cb778a (Refactoring)
+=======
+>>>>>>> osmandapp-android-master
 
 	private val handler = Handler(Looper.getMainLooper())
 	private val RECONNECT_DELAY = 5000L
@@ -490,12 +493,15 @@ class VehicleMetricsPlugin(app: OsmandApplication) : OsmandPlugin(app), OBDReadS
 		connectedDeviceInfo?.let {
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 			OBDDataComputer.fuelTank = settings.FUEL_TANK_CAPACITY.get()
 =======
 			OBDDataComputer.fuelTank = DEFAULT_FUEL_TANK_VOLUME
 >>>>>>> 3daa2eecdc (Fixes after review)
 =======
 >>>>>>> 7de2b56905 (Fix fuel tank default (#21232))
+=======
+>>>>>>> osmandapp-android-master
 			saveDeviceToUsedOBDDevicesList(it)
 			setLastConnectedDevice(it)
 		}
@@ -764,6 +770,7 @@ class VehicleMetricsPlugin(app: OsmandApplication) : OsmandPlugin(app), OBDReadS
 			OBDDataComputer.OBDTypeWidget.TEMPERATURE_AMBIENT,
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 			OBDDataComputer.OBDTypeWidget.TEMPERATURE_COOLANT -> getConvertedTemperature(data as Number, obdWidgetOptions)
 =======
 			OBDDataComputer.OBDTypeWidget.TEMPERATURE_COOLANT -> getConvertedTemperature(data as Number)
@@ -772,12 +779,17 @@ class VehicleMetricsPlugin(app: OsmandApplication) : OsmandPlugin(app), OBDReadS
 			OBDDataComputer.OBDTypeWidget.FUEL_LEFT_LITER -> getFormattedVolume(data as Number)
 
 =======
+=======
+>>>>>>> osmandapp-android-master
 			OBDDataComputer.OBDTypeWidget.TEMPERATURE_COOLANT -> getConvertedTemperature(
 				data as Number,
 				obdWidgetOptions)
 
 			OBDDataComputer.OBDTypeWidget.FUEL_LEFT_LITER -> getFormattedVolume(data as Number)
+<<<<<<< HEAD
 >>>>>>> 653f6cfbec (Fixes after refactor)
+=======
+>>>>>>> osmandapp-android-master
 			OBDDataComputer.OBDTypeWidget.FUEL_CONSUMPTION_RATE_LITER_HOUR -> getFormatVolumePerHour(
 				data as Number)
 

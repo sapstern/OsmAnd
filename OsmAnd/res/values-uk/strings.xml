@@ -2542,6 +2542,7 @@
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
     <string name="coord_input_save_as_track_descr">Додано точок – %1$s. Введіть назву файлу та натисніть «Зберегти».</string>
     <string name="error_notification_desc">Надішліть знімок екрана з цим повідомленням на sapstern@gmx.de</string>
 =======
@@ -2556,10 +2557,17 @@
 >>>>>>> 8c21dc114a (Translated using Weblate (Ukrainian))
 =======
 =======
+    <string name="coord_input_save_as_track_descr">Ви додали %1$s балів. Введіть назву файлу та натисніть «Зберегти».</string>
+    <string name="error_notification_desc">Надішліть знімок екрана з цим повідомленням на support@osmand.net</string>
+>>>>>>> osmandapp-android-master
+=======
     <string name="coord_input_save_as_track_descr">Додано точок – %1$s. Введіть назву файлу та натисніть «Зберегти».</string>
     <string name="error_notification_desc">Надішліть знімок екрана з цим повідомленням на sapstern@gmx.de</string>
 >>>>>>> 6cdfe6f96e (2024_08_19)
+<<<<<<< HEAD
 >>>>>>> 078a62592f (2024_08_19)
+=======
+>>>>>>> osmandapp-android-master
     <string name="unirs_render_descr">Модифікація типового стилю з підвищеним контрастом пішохідних та велосипедних доріжок. Використовує кольори з застарілого стилю Mapnik.</string>
     <string name="paid_plugin">Платний плагін</string>
     <string name="point_deleted">Точку %1$s вилучено</string>

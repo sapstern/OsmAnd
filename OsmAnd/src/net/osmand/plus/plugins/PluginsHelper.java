@@ -21,6 +21,7 @@ import net.osmand.core.android.MapRendererContext;
 import net.osmand.data.Amenity;
 import net.osmand.data.MapObject;
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
 import net.osmand.plus.plugins.odb.VehicleMetricsPlugin;
 import net.osmand.plus.mapcontextmenu.gallery.ImageCardsHolder;
@@ -28,6 +29,8 @@ import net.osmand.plus.mapcontextmenu.gallery.tasks.GetImageCardsTask.GetImageCa
 import net.osmand.shared.gpx.GpxTrackAnalysis;
 import net.osmand.shared.gpx.GpxTrackAnalysis.TrackPointsAnalyser;
 >>>>>>> a86a84957d (Fix "Unable to turn on Wikipedia layer")
+=======
+>>>>>>> osmandapp-android-master
 import net.osmand.map.WorldRegion;
 import net.osmand.plus.AppInitializeListener;
 import net.osmand.plus.AppInitializer;
@@ -92,6 +95,7 @@ import org.json.JSONException;
 import org.json.JSONObject;
 
 <<<<<<< HEAD
+<<<<<<< HEAD
 import java.util.*;
 =======
 import java.util.ArrayList;
@@ -104,6 +108,9 @@ import java.util.Map;
 import java.util.Objects;
 import java.util.Set;
 >>>>>>> a86a84957d (Fix "Unable to turn on Wikipedia layer")
+=======
+import java.util.*;
+>>>>>>> osmandapp-android-master
 
 public class PluginsHelper {
 

@@ -200,6 +200,7 @@ class OBDDevicesListFragment : OBDDevicesBaseFragment(),
 	override fun onDisconnect(device: BTDeviceInfo) {
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 		vehicleMetricsPlugin?.disconnect(true)
 =======
 		vehicleMetricsPlugin.disconnect()
@@ -207,6 +208,9 @@ class OBDDevicesListFragment : OBDDevicesBaseFragment(),
 =======
 		vehicleMetricsPlugin.disconnect(true)
 >>>>>>> 967a62a28d (Fix reconnect on aa connection; implemented subsequent reconnect (#21359))
+=======
+		vehicleMetricsPlugin.disconnect(true)
+>>>>>>> osmandapp-android-master
 	}
 
 	override fun onConnect(device: BTDeviceInfo) {

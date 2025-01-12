@@ -79,9 +79,13 @@ object GpxUtilities {
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
 	private var oneOffLogParseTimeErrors = true
 >>>>>>> a573e3595d (Add oneOffLogParseTimeErrors for parseTime())
+=======
+	private var oneOffLogParseTimeErrors = true
+>>>>>>> osmandapp-android-master
 	private const val GPX_TIME_FORMATTER = "yyyy-MM-dd'T'HH:mm:ss'Z'"
 
 	class TimePatterns {
@@ -103,6 +107,7 @@ object GpxUtilities {
 			}
 		}
 	}
+<<<<<<< HEAD
 <<<<<<< HEAD
 =======
 	// Main format with UTC timezone (Z suffix)
@@ -136,6 +141,8 @@ object GpxUtilities {
 >>>>>>> 3005c0ed12 (Refactor and test Kotlin GpxUtilities.parseTime())
 =======
 >>>>>>> a86409aed2 (Refactor Kotlin parseTime() with great speedup)
+=======
+>>>>>>> osmandapp-android-master
 
 	private val SUPPORTED_EXTENSION_TAGS = mapOf(
 		"heartrate" to PointAttributes.SENSOR_TAG_HEART_RATE,
@@ -961,6 +968,7 @@ object GpxUtilities {
 		var noFractionalSeconds = iso8601text;
 		val isIndex = noFractionalSeconds.indexOf('.')
 <<<<<<< HEAD
+<<<<<<< HEAD
 
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -1036,6 +1044,9 @@ object GpxUtilities {
 >>>>>>> f258622efb (fix patterns)
 =======
 >>>>>>> 3005c0ed12 (Refactor and test Kotlin GpxUtilities.parseTime())
+=======
+
+>>>>>>> osmandapp-android-master
 		if (isIndex > 0) {
 			var esIndex = isIndex + 1
 			while (esIndex < noFractionalSeconds.length && noFractionalSeconds[esIndex].isDigit()) {
@@ -1046,8 +1057,15 @@ object GpxUtilities {
 		}
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 
 		val rfc3339 = noFractionalSeconds.replaceFirst(' ', 'T'); // RFC 3339 profile of ISO 8601 allows spaces
+=======
+
+		// Do trim ([ \t\r\n] etc) to avoid XML-tag parsing nuances.
+		// Replace Date-Time space-delimiter -> "T" (RFC3339 in ISO8601)
+		val rfc3339 = noFractionalSeconds.trim().replaceFirst(' ', 'T');
+>>>>>>> osmandapp-android-master
 
 		for (fmt in TimePatterns.formats) {
 			try {
@@ -1057,6 +1075,7 @@ object GpxUtilities {
 				// Continue to the next format
 			}
 		}
+<<<<<<< HEAD
 		val errorMessage = "Failed to parse date: '$iso8601text'"
 		log.error(errorMessage)
 		return 0
@@ -1069,6 +1088,14 @@ object GpxUtilities {
 		return parser.parse(text).toInstantUsingOffset()
 			.toEpochMilliseconds() + (ms * 1000).toLong()
 >>>>>>> f258622efb (fix patterns)
+=======
+
+		if (oneOffLogParseTimeErrors) {
+			oneOffLogParseTimeErrors = false
+			log.error("Failed to parse date: '$iso8601text'")
+		}
+		return 0
+>>>>>>> osmandapp-android-master
 	}
 
 =======
@@ -1096,6 +1123,7 @@ object GpxUtilities {
 		return LocalDateTime.Format {
 			byUnicodePattern(GPX_TIME_FORMATTER)
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
 		}
 	}
@@ -1113,6 +1141,8 @@ object GpxUtilities {
 		return DateTimeComponents.Format {
 			byUnicodePattern(GPX_TIME_PATTERN_TZ)
 >>>>>>> 3005c0ed12 (Refactor and test Kotlin GpxUtilities.parseTime())
+=======
+>>>>>>> osmandapp-android-master
 		}
 	}
 

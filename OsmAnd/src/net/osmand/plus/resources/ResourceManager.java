@@ -517,6 +517,7 @@ public class ResourceManager {
 	}
 
 <<<<<<< HEAD
+<<<<<<< HEAD
 	private static final String ASSET_INSTALL_MODE__alwaysCopyOnFirstInstall = "alwaysCopyOnFirstInstall";
 	private static final String ASSET_COPY_MODE__overwriteOnlyIfExists = "overwriteOnlyIfExists";
 	private static final String ASSET_COPY_MODE__alwaysOverwriteOrCopy = "alwaysOverwriteOrCopy";
@@ -635,6 +636,8 @@ public class ResourceManager {
 
 =======
 >>>>>>> 1873992309 (Move multiple inner classes & asyncTasks to separate files)
+=======
+>>>>>>> osmandapp-android-master
 	private void renameRoadsFiles(ArrayList<File> files, File roadsPath) {
 		Iterator<File> it = files.iterator();
 		while (it.hasNext()) {
@@ -1388,6 +1391,7 @@ public class ResourceManager {
 		SimpleDateFormat DATE_FORMAT = new SimpleDateFormat("dd.MM.yyyy", Locale.US);
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 		XmlPullParser xmlParser = XmlPullParserFactory.newInstance().newPullParser();
 		InputStream isBundledAssetsXml = assetManager.open("bundled_assets.xml");
 		xmlParser.setInput(isBundledAssetsXml, "UTF-8");
@@ -1411,6 +1415,9 @@ public class ResourceManager {
 =======
 		AssetManager assetManager = app.getAssets();
 >>>>>>> 1873992309 (Move multiple inner classes & asyncTasks to separate files)
+=======
+		AssetManager assetManager = app.getAssets();
+>>>>>>> osmandapp-android-master
 		InputStream isBundledAssetsXml = assetManager.open("bundled_assets.json");
 		AssetEntryList lst = new Gson().fromJson(new InputStreamReader(isBundledAssetsXml), AssetEntryList.class);
 		for (AssetEntry ae : lst.assets) {
@@ -1419,7 +1426,10 @@ public class ResourceManager {
 					ae.dateVersion = DATE_FORMAT.parse(ae.version);
 				} catch (ParseException e) {
 					log.error(e.getMessage(), e);
+<<<<<<< HEAD
 >>>>>>> cc983ebbb0 (Cloud backup: skip asset files without version or modified (+refactoring))
+=======
+>>>>>>> osmandapp-android-master
 				}
 			}
 		}

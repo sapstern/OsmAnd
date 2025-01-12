@@ -1,6 +1,7 @@
 package net.osmand.shared.util
 
 <<<<<<< HEAD
+<<<<<<< HEAD
 import co.touchlab.stately.collections.ConcurrentMutableMap
 import net.osmand.shared.data.KLatLon
 <<<<<<< HEAD
@@ -13,6 +14,10 @@ import net.osmand.shared.data.KLatLon
 >>>>>>> 3615e4d3a4 (Add decodeShortLinkString to KMapUtils)
 =======
 >>>>>>> e4d3bc9a90 (Added location interpolation feature)
+=======
+import co.touchlab.stately.collections.ConcurrentMutableMap
+import net.osmand.shared.data.KLatLon
+>>>>>>> osmandapp-android-master
 import net.osmand.shared.data.KQuadRect
 import net.osmand.shared.extensions.toDegrees
 import net.osmand.shared.extensions.toRadians
@@ -730,6 +735,9 @@ object KMapUtils {
 	}
 
 <<<<<<< HEAD
+<<<<<<< HEAD
+=======
+>>>>>>> osmandapp-android-master
 	fun getEllipsoidDistance(lat1: Double, lon1: Double, lat2: Double, lon2: Double): Double {
 		// Based on http://www.ngs.noaa.gov/PUBS_LIB/inverse.pdf
 		// using the "Inverse Formula" (section 4)
@@ -828,7 +836,12 @@ object KMapUtils {
 //		finalBearing *= (180.0 / PI).toDouble()
 
 		return (b * A * (sigma - deltaSigma)).toDouble()
+<<<<<<< HEAD
 =======
+=======
+	}
+
+>>>>>>> osmandapp-android-master
 	fun decodeShortLinkString(s: String): KGeoParsedPoint {
 		// convert old shortlink format to current one
 		var s = s
@@ -867,7 +880,10 @@ object KMapUtils {
 			if (i + 1 < s.length && s[i + 1] == '-') z++
 		}
 		return KGeoParsedPoint(lat, lon, z)
+<<<<<<< HEAD
 >>>>>>> 3615e4d3a4 (Add decodeShortLinkString to KMapUtils)
+=======
+>>>>>>> osmandapp-android-master
 	}
 
 	fun interpolateLatLon(lat1: Double, lon1: Double, lat2: Double, lon2: Double, fraction: Double) =

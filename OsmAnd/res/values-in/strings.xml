@@ -5989,16 +5989,22 @@
     <string name="bt_start_pair_failed">Tidak dapat memulai penyandingan dengan perangkat</string>
     <string name="obd_fuel_consumption_rate_percent_hour_desc">Menampilkan tingkat konsumsi bahan bakar kendaraan berdasarka perhitungan (%/j)</string>
 <<<<<<< HEAD
+<<<<<<< HEAD
     <string name="l_100km">L/100km</string>
     <string name="obd_fuel_consumption_rate_l_km">Tingkat konsumsi bahan bakar (L/km)</string>
 =======
     <string name="l_100km">l/100km</string>
     <string name="obd_fuel_consumption_rate_l_km">Tingkat konsumsi bahan bakar (l/100 km)</string>
 >>>>>>> 5c43437eb1 (Fixed fuel consumption widget (#21495))
+=======
+    <string name="l_100km">L/100km</string>
+    <string name="obd_fuel_consumption_rate_l_km">Tingkat konsumsi bahan bakar (L/100 km)</string>
+>>>>>>> osmandapp-android-master
     <string name="obd_not_connected_to_device">Terputus dari %s</string>
     <string name="obd_connected_to_device">Terhubung ke %s</string>
     <string name="shared_string_dynamic">Dinamis</string>
     <string name="obd_connecting_to_device">Menghubungkan ke %s</string>
+<<<<<<< HEAD
 <<<<<<< HEAD
     <string name="obd_fuel_consumption_rate_l_km_desc">Menampilkan tingkat konsumsi bahan bakar kendaraan berdasarkan perhitungan (L/km)</string>
 =======
@@ -6014,11 +6020,20 @@
     <string name="obd_engine_oil_temperature">Suhu minyak mesin</string>
     <string name="obd_engine_oil_temperature_desc">Menampilkan suhu minyak mesin kendaraan dari pemindai obd</string>
 =======
+=======
+    <string name="obd_fuel_consumption_rate_l_km_desc">Menampilkan tingkat konsumsi bahan bakar kendaraan berdasarkan perhitungan (L/100 km)</string>
+    <string name="simulate_obd">Simulasikan data obd</string>
+    <string name="kpa_unit">kPa</string>
+    <string name="obd_fuel_pressure">Tekanan bahan bakar</string>
+>>>>>>> osmandapp-android-master
     <string name="obd_fuel_pressure_desc">Menampilkan tekanan dalam sistem bahan bakar</string>
     <string name="obd_calculated_engine_load">Muatan Mesin Terhitung</string>
     <string name="obd_engine_oil_temperature">Suhu Minyak Mesin</string>
     <string name="obd_engine_oil_temperature_desc">Menampilkan suhu minyak mesin.</string>
+<<<<<<< HEAD
 >>>>>>> a4b927d86f (Translated using Weblate (Indonesian))
+=======
+>>>>>>> osmandapp-android-master
     <string name="record_obd_data">Rekam metrik kendaraan</string>
     <string name="fuel_tank_capacity_description">Masukkan kapasitas tangki Anda untuk melacak tingkat dan konsumsi bahan bakar secara akurat</string>
     <string name="fuel_tank_capacity">Kapasitas tangki bahan bakar</string>
@@ -6031,6 +6046,7 @@
     <string name="unit_of_volume_description">Satuan yang dipilih akan diterapkan ke semua data berkaitan dengan volume dalam profil saat ini.</string>
     <string name="unit_of_volume">Satuan volume</string>
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
 >>>>>>> 7eabbd6b34 (new strings)
 =======
@@ -6041,6 +6057,9 @@
 =======
 >>>>>>> bced2b90fe (Translated using Weblate (Indonesian))
 =======
+=======
+    <string name="wunderlinq_datagrid">WunderLINQ Datagrid</string>
+>>>>>>> osmandapp-android-master
     <string name="vehicle_metrics_obd_ii">Metrik Kendaraan (OBD-II)</string>
     <string name="ltr_or_rtl_combine_via_per">%1$s per %2$s</string>
     <string name="purchase_feature_desc_vehicle_metrics_obd_ii">Lacak data kendaraan vital menggunakan protokol OBD-II. Pantau metrik utama seperti kecepatan, RPM mesin, konsumsi bahan bakar, dan lebih banyak lagi.</string>
@@ -6071,12 +6090,16 @@
     <string name="obd_speed_desc">Menampilkan kecepatan dari Sensor Kecepatan Kendaraan (VSS).</string>
     <string name="obd_air_intake_temp_desc">Menunjukkan suhu udara yang masuk ke masukan manifold mesin.</string>
 <<<<<<< HEAD
+<<<<<<< HEAD
 >>>>>>> a4b927d86f (Translated using Weblate (Indonesian))
 =======
+=======
+>>>>>>> osmandapp-android-master
     <string name="av_audio_sample_rate">Laju sampel audio</string>
     <string name="av_audio_sample_rate_descr">Pilih laju sampel audio.</string>
     <string name="auto_zoom_3d_angle">Perbesar sudut 3D otomatis</string>
     <string name="connect_new_scanner">Hubungkan pemindai baru</string>
+<<<<<<< HEAD
 <<<<<<< HEAD
 >>>>>>> 9455ecc34d (Translated using Weblate (Indonesian))
 =======
@@ -6104,10 +6127,22 @@
 <<<<<<< HEAD
 >>>>>>> e1105d836f (Translated using Weblate (Indonesian))
 =======
+=======
+    <string name="vehicle_metrics_recording_description">Pilih parameter untuk direkam dalam berkas GPX.</string>
+    <string name="shared_string_engine">Mesin</string>
+    <string name="location_interpolation_percent">Persentase interpolasi lokasi</string>
+    <string name="shared_string_interpolation">Interpolasi</string>
+    <string name="location_interpolation_percent_desc">Tetapkan presentasi interpolasi lokasi saat navigasi rute. Parameter ini mengurangi kelambatan posisi lokasi di peta saat ada animasi.</string>
+    <string name="selected_delayed_profile">Profil \"%s\" terpilih</string>
+    <string name="default_buttons_corners_original_description">Setiap tombol tetap memiliki radius bulatnya sendiri.</string>
+    <string name="default_buttons_size_original_description">Setiap tombol tetap memiliki ukurannya sendiri.</string>
+    <string name="default_buttons_opacity_original_description">Setiap tombol tetap memiliki opasitas latar belakangnya sendiri.</string>
+>>>>>>> osmandapp-android-master
     <string name="rendering_attr_showClimbingRoutes_name">Rute pendakian</string>
     <string name="rendering_attr_showClimbingRoutes_description">Tampilkan rute pendakian</string>
     <string name="calculating_indication_message">Menghitung…</string>
     <string name="calculate_size">Hitung ukuran</string>
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 >>>>>>> 4399567130 (Translated using Weblate (Indonesian))
@@ -6116,4 +6151,6 @@
 >>>>>>> 580923e145 (Translated using Weblate (Indonesian))
 =======
 >>>>>>> f0283a2b8c (Remove outdated string resources)
+=======
+>>>>>>> osmandapp-android-master
 </resources>

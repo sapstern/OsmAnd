@@ -72,11 +72,14 @@ public class RouteLayer extends BaseRouteLayer implements IContextMenuProvider {
 	private final TransportRoutingHelper transportHelper;
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
 	private float lastRouteBearing;
 >>>>>>> 7c99cfc924 (Drop currentAnimatedRoute)
 =======
 >>>>>>> d7c8708c2c (Prepare bearing changes (#21486))
+=======
+>>>>>>> osmandapp-android-master
 	private Location lastRouteProjection;
 
 	private final ChartPointsHelper chartPointsHelper;
@@ -510,6 +513,7 @@ public class RouteLayer extends BaseRouteLayer implements IContextMenuProvider {
 					Location currentRouteLocation = locations.get(currentRoute);
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 					while (currentRoute > 1) {
 						double projCoeff = MapUtils.getProjectionCoeff(currentLocation.getLatitude(), currentLocation.getLongitude(),
 								previousRouteLocation.getLatitude(), previousRouteLocation.getLongitude(),
@@ -524,6 +528,8 @@ public class RouteLayer extends BaseRouteLayer implements IContextMenuProvider {
 					}
 =======
 >>>>>>> e4d3bc9a90 (Added location interpolation feature)
+=======
+>>>>>>> osmandapp-android-master
 					lastProjection = RoutingHelperUtils.getProject(currentLocation, previousRouteLocation, currentRouteLocation);
 					float calcbearing = !MapUtils.areLatLonEqual(previousRouteLocation, currentRouteLocation) ? previousRouteLocation.bearingTo(currentRouteLocation) :
 							previousRouteLocation.bearingTo(currentLocation);
@@ -538,6 +544,7 @@ public class RouteLayer extends BaseRouteLayer implements IContextMenuProvider {
 					}
 				} else {
 					lastProjection = null;
+<<<<<<< HEAD
 =======
 					}
 =======
@@ -561,6 +568,8 @@ public class RouteLayer extends BaseRouteLayer implements IContextMenuProvider {
 >>>>>>> 7c99cfc924 (Drop currentAnimatedRoute)
 =======
 >>>>>>> d7c8708c2c (Prepare bearing changes (#21486))
+=======
+>>>>>>> osmandapp-android-master
 				}
 				startLocationIndex = currentRoute;
 			} else {

@@ -34,6 +34,7 @@ import androidx.recyclerview.widget.RecyclerView.ViewHolder;
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 import net.osmand.IndexConstants;
 <<<<<<< HEAD
 =======
@@ -48,6 +49,10 @@ import net.osmand.plus.myplaces.tracks.DialogClosedListener;
 >>>>>>> 5e5d4cb2a4 (Upgrade sort mode keys on flight)
 import net.osmand.plus.configmap.tracks.TrackSortModesCollection;
 >>>>>>> b3d5c331c1 (Create wrapper class to simplify interaction with track sort modes)
+=======
+import net.osmand.plus.configmap.tracks.TrackSortModesHelper;
+import net.osmand.plus.myplaces.tracks.DialogClosedListener;
+>>>>>>> osmandapp-android-master
 import net.osmand.plus.shared.SharedUtil;
 import net.osmand.data.LatLon;
 import net.osmand.plus.R;

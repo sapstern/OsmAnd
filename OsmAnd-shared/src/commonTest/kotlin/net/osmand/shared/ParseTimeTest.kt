@@ -7,8 +7,11 @@ import kotlin.test.assertEquals
 class ParseTimeTest {
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
 >>>>>>> a86409aed2 (Refactor Kotlin parseTime() with great speedup)
+=======
+>>>>>>> osmandapp-android-master
     @Test
     fun testParseTime() {
         // GPX_TIME_PATTERN_TZ GPX_TIME_PATTERN_TZ_NO_SEPARATOR
@@ -21,6 +24,9 @@ class ParseTimeTest {
         assertEquals(1323778516000, GpxUtilities.parseTime("2011-12-13T14:15:16+02:00"));
         assertEquals(1323792916000, GpxUtilities.parseTime("2011-12-13T14:15:16-02:00"));
 <<<<<<< HEAD
+<<<<<<< HEAD
+=======
+>>>>>>> osmandapp-android-master
 
         // GPX_TIME_PATTERN_TZ with fractional seconds (flexibleMillisecondsTimeParser)
         assertEquals(1323785716100, GpxUtilities.parseTime("2011-12-13T14:15:16.1Z"));
@@ -63,6 +69,7 @@ class ParseTimeTest {
         assertEquals(1323785716000, GpxUtilities.parseTime("\r\n2011-12-13 14:15:16Z\r\n"));
         assertEquals(1323785716000, GpxUtilities.parseTime("\t\t  2011-12-13 14:15:16Z  \t\t"));
     }
+<<<<<<< HEAD
 =======
 	@Test
 	fun testParseTime() {
@@ -122,4 +129,6 @@ class ParseTimeTest {
         assertEquals(1323785716000, GpxUtilities.parseTime("\t\t  2011-12-13 14:15:16Z  \t\t"));
     }
 >>>>>>> a86409aed2 (Refactor Kotlin parseTime() with great speedup)
+=======
+>>>>>>> osmandapp-android-master
 }

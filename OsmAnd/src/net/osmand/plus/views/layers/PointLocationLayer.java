@@ -568,6 +568,7 @@ public class PointLocationLayer extends OsmandMapLayer
 
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
 	public float getPointBearing() {
 		float result = 0.0f;
@@ -591,6 +592,8 @@ public class PointLocationLayer extends OsmandMapLayer
 >>>>>>> 7c99cfc924 (Drop currentAnimatedRoute)
 =======
 >>>>>>> d7c8708c2c (Prepare bearing changes (#21486))
+=======
+>>>>>>> osmandapp-android-master
 
 	private boolean isLocationVisible(@NonNull RotatedTileBox tb, @NonNull Location l) {
 		return tb.containsLatLon(l.getLatitude(), l.getLongitude());

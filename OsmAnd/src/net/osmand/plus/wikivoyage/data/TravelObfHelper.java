@@ -1129,6 +1129,7 @@ public class TravelObfHelper implements TravelHelper {
 						0, 0, Algorithms.emptyIfNull(article.title), 0, Integer.MAX_VALUE, 0, Integer.MAX_VALUE,
 						getSearchFilter(article.getMainFilterString(), article.getPointFilterString()),
 <<<<<<< HEAD
+<<<<<<< HEAD
 						matchPointsAndTags(article, pointList, gpxFileExtensions, pgNames, pgIcons, pgColors, pgBackgrounds),
 						null);
 =======
@@ -1177,6 +1178,10 @@ public class TravelObfHelper implements TravelHelper {
 							}
 						}, null);
 >>>>>>> 24ab8635e3 (Fix possible null values in gpx extensions)
+=======
+						matchPointsAndTags(article, pointList, gpxFileExtensions, pgNames, pgIcons, pgColors, pgBackgrounds),
+						null);
+>>>>>>> osmandapp-android-master
 				if (article.routeRadius >= 0) {
 					pointRequest.setBBoxRadius(article.lat, article.lon, article.routeRadius);
 				}

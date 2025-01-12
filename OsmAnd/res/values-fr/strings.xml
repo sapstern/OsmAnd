@@ -5594,6 +5594,7 @@
     <string name="kpa_unit">kPa</string>
     <string name="simulate_obd">Simuler des données OBD</string>
 <<<<<<< HEAD
+<<<<<<< HEAD
     <string name="obd_fuel_consumption_rate_l_km">Consommation de carburant (l/km)</string>
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -5612,6 +5613,12 @@
 >>>>>>> 83de3764ad (Translated using Weblate (French))
     <string name="obd_throttle_position">Position de l\'accélérateur</string>
 >>>>>>> ee11326faf (Translated using Weblate (French))
+=======
+    <string name="obd_fuel_consumption_rate_l_km">Consommation de carburant (L/100 km)</string>
+    <string name="obd_engine_runtime_desc">Affiche la durée de fonctionnement du moteur du véhicule à partir du scanneur OBD.</string>
+    <string name="obd_throttle_position_desc">Affiche l\'angle du plateau de l\'accélérateur dans le corps de l\'accélérateur.</string>
+    <string name="obd_throttle_position">Position de l\'accélérateur</string>
+>>>>>>> osmandapp-android-master
     <string name="obd_fuel_pressure">Pression de carburant</string>
     <string name="bt_start_pair_failed">Impossible d\'amorcer l\'association avec l\'appareil</string>
     <string name="shared_string_dynamic">Dynamique</string>

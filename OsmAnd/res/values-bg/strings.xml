@@ -4375,6 +4375,7 @@
     <string name="obd_widget_group">Показатели превозно средство</string>
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
     <string name="obd_rpm">об/мин</string>
 <<<<<<< HEAD
     <string name="obd_ambient_air_temp_desc">Показва температурата на околната среда спрямо сензора на OBD</string>
@@ -4386,6 +4387,8 @@
 >>>>>>> 4cd8a48144 (Translated using Weblate (Bulgarian))
 =======
 >>>>>>> 56f541d97d (Fixed obd strings usage; OBD simulation changes)
+=======
+>>>>>>> osmandapp-android-master
     <string name="obd_rpm_desc">Показва оборотите на тахометъра спрямо сензора на OBD</string>
     <string name="obd_air_intake_temp">t⁰ на постъпващ въздух</string>
     <string name="obd_fuel_level_desc">Показва нивото на горивото спрямо сензора на OBD</string>
