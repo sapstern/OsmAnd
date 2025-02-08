@@ -327,9 +327,10 @@ public class InAppPurchaseHelperImpl extends InAppPurchaseHelper {
 					}
 
 					// Do we have the live updates?
-					boolean subscribedToLiveUpdates = false;
-					boolean subscribedToOsmAndPro = false;
-					boolean subscribedToMaps = false;
+					//MFRI
+					boolean subscribedToLiveUpdates = true;
+					boolean subscribedToOsmAndPro = true;
+					boolean subscribedToMaps = true;
 					Map<String, Receipt> subscriptionPurchases = new HashMap<>();
 					for (InAppSubscription s : getSubscriptions().getAllSubscriptions()) {
 						Receipt receipt = getReceipt(s.getSku());
@@ -337,35 +338,39 @@ public class InAppPurchaseHelperImpl extends InAppPurchaseHelper {
 							if (receipt != null) {
 								subscriptionPurchases.put(s.getSku(), receipt);
 							}
-							if (!subscribedToLiveUpdates && purchases.isLiveUpdatesSubscription(s)) {
-								subscribedToLiveUpdates = true;
-							}
-							if (!subscribedToOsmAndPro && purchases.isOsmAndProSubscription(s)) {
-								subscribedToOsmAndPro = true;
-							}
-							if (!subscribedToMaps && purchases.isMapsSubscription(s)) {
-								subscribedToMaps = true;
-							}
+//							if (!subscribedToLiveUpdates ) { //MFRI
+//								subscribedToLiveUpdates = true;
+//							}
+//							if (!subscribedToOsmAndPro && purchases.isOsmAndProSubscription(s)) {
+//								subscribedToOsmAndPro = true;
+//							}
+//							if (!subscribedToMaps && purchases.isMapsSubscription(s)) {
+//								subscribedToMaps = true;
+//							}
 						}
 					}
-					if (!subscribedToLiveUpdates && ctx.getSettings().LIVE_UPDATES_PURCHASED.get()) {
-						ctx.getSettings().LIVE_UPDATES_PURCHASED.set(false);
-					} else if (subscribedToLiveUpdates) {
-						ctx.getSettings().LIVE_UPDATES_PURCHASED.set(true);
-					}
-					if (!subscribedToOsmAndPro && ctx.getSettings().OSMAND_PRO_PURCHASED.get()) {
-						ctx.getSettings().OSMAND_PRO_PURCHASED.set(false);
-					} else if (subscribedToOsmAndPro) {
-						ctx.getSettings().OSMAND_PRO_PURCHASED.set(true);
-					}
-					if (!subscribedToMaps && ctx.getSettings().OSMAND_MAPS_PURCHASED.get()) {
-						ctx.getSettings().OSMAND_MAPS_PURCHASED.set(false);
-					} else if (subscribedToMaps) {
-						ctx.getSettings().OSMAND_MAPS_PURCHASED.set(true);
-					}
-					if (!subscribedToLiveUpdates && !subscribedToOsmAndPro && !subscribedToMaps) {
-						onSubscriptionExpired();
-					}
+					//MFRI
+					ctx.getSettings().LIVE_UPDATES_PURCHASED.set(true);
+					ctx.getSettings().OSMAND_PRO_PURCHASED.set(true);
+					ctx.getSettings().OSMAND_MAPS_PURCHASED.set(true);
+//					if (!subscribedToLiveUpdates && ctx.getSettings().LIVE_UPDATES_PURCHASED.get()) {
+//						ctx.getSettings().LIVE_UPDATES_PURCHASED.set(false);
+//					} else if (subscribedToLiveUpdates) {
+//						ctx.getSettings().LIVE_UPDATES_PURCHASED.set(true);
+//					}
+//					if (!subscribedToOsmAndPro && ctx.getSettings().OSMAND_PRO_PURCHASED.get()) {
+//						ctx.getSettings().OSMAND_PRO_PURCHASED.set(false);
+//					} else if (subscribedToOsmAndPro) {
+//						ctx.getSettings().OSMAND_PRO_PURCHASED.set(true);
+//					}
+//					if (!subscribedToMaps && ctx.getSettings().OSMAND_MAPS_PURCHASED.get()) {
+//						ctx.getSettings().OSMAND_MAPS_PURCHASED.set(false);
+//					} else if (subscribedToMaps) {
+//						ctx.getSettings().OSMAND_MAPS_PURCHASED.set(true);
+//					}
+//					if (!subscribedToLiveUpdates && !subscribedToOsmAndPro && !subscribedToMaps) {
+//						onSubscriptionExpired();
+//					}
 
 					lastValidationCheckTime = System.currentTimeMillis();
 					logDebug("User " + (subscribedToLiveUpdates ? "HAS" : "DOES NOT HAVE") + " live updates purchased.");

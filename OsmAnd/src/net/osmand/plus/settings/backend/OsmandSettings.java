@@ -1402,15 +1402,15 @@ public class OsmandSettings {
 	public final OsmandPreference<Boolean> BILLING_HIDE_USER_NAME = new BooleanPreference(this, "billing_hide_user_name", false).makeGlobal();
 	public final OsmandPreference<Boolean> BILLING_PURCHASE_TOKEN_SENT = new BooleanPreference(this, "billing_purchase_token_sent", false).makeGlobal();
 	public final OsmandPreference<String> BILLING_PURCHASE_TOKENS_SENT = new StringPreference(this, "billing_purchase_tokens_sent", "").makeGlobal();
-	public final OsmandPreference<Boolean> LIVE_UPDATES_PURCHASED = new BooleanPreference(this, "billing_live_updates_purchased", false).makeGlobal();
+	public final OsmandPreference<Boolean> LIVE_UPDATES_PURCHASED = new BooleanPreference(this, "billing_live_updates_purchased", true).makeGlobal(); //MFRI
 	public final OsmandPreference<Long> LIVE_UPDATES_EXPIRED_FIRST_DLG_SHOWN_TIME = new LongPreference(this, "live_updates_expired_first_dlg_shown_time", 0).makeGlobal();
 	public final OsmandPreference<Long> LIVE_UPDATES_EXPIRED_SECOND_DLG_SHOWN_TIME = new LongPreference(this, "live_updates_expired_second_dlg_shown_time", 0).makeGlobal();
-	public final OsmandPreference<Boolean> FULL_VERSION_PURCHASED = new BooleanPreference(this, "billing_full_version_purchased", false).makeGlobal();
-	public final OsmandPreference<Boolean> DEPTH_CONTOURS_PURCHASED = new BooleanPreference(this, "billing_sea_depth_purchased", false).makeGlobal();
-	public final OsmandPreference<Boolean> CONTOUR_LINES_PURCHASED = new BooleanPreference(this, "billing_srtm_purchased", false).makeGlobal();
+	public final OsmandPreference<Boolean> FULL_VERSION_PURCHASED = new BooleanPreference(this, "billing_full_version_purchased", true).makeGlobal();
+	public final OsmandPreference<Boolean> DEPTH_CONTOURS_PURCHASED = new BooleanPreference(this, "billing_sea_depth_purchased", true).makeGlobal();
+	public final OsmandPreference<Boolean> CONTOUR_LINES_PURCHASED = new BooleanPreference(this, "billing_srtm_purchased", true).makeGlobal(); //MFRI
 	public final OsmandPreference<Boolean> EMAIL_SUBSCRIBED = new BooleanPreference(this, "email_subscribed", false).makeGlobal();
-	public final OsmandPreference<Boolean> OSMAND_PRO_PURCHASED = new BooleanPreference(this, "billing_osmand_pro_purchased", false).makeGlobal();
-	public final OsmandPreference<Boolean> OSMAND_MAPS_PURCHASED = new BooleanPreference(this, "billing_osmand_maps_purchased", false).makeGlobal();
+	public final OsmandPreference<Boolean> OSMAND_PRO_PURCHASED = new BooleanPreference(this, "billing_osmand_pro_purchased", true).makeGlobal(); //MFRI
+	public final OsmandPreference<Boolean> OSMAND_MAPS_PURCHASED = new BooleanPreference(this, "billing_osmand_maps_purchased", true).makeGlobal(); //MFRI
 	public final OsmandPreference<Long> MAPPER_LIVE_UPDATES_EXPIRE_TIME = new LongPreference(this, "mapper_live_updates_expire_time", 0L).makeGlobal();
 
 	public final OsmandPreference<Integer> DISCOUNT_ID = new IntPreference(this, "discount_id", 0).makeGlobal();

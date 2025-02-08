@@ -68,7 +68,7 @@ public class InAppPurchasesImpl extends InAppPurchases {
 
 	@Override
 	public boolean isFullVersion(InAppPurchase p) {
-		return FULL_VERSION.getSku().equals(p.getSku());
+		return true; //MFRI
 	}
 
 	@Override
@@ -83,17 +83,17 @@ public class InAppPurchasesImpl extends InAppPurchases {
 
 	@Override
 	public boolean isLiveUpdatesSubscription(InAppPurchase p) {
-		return p.getFeatureId() == LIVE_UPDATES_ID;
+		return true; //MFRI
 	}
 
 	@Override
 	public boolean isOsmAndProSubscription(InAppPurchase p) {
-		return p.getFeatureId() == OSMAND_PRO_ID;
-	}
+		return true;
+	} //MFRI
 
 	@Override
 	public boolean isMapsSubscription(InAppPurchase p) {
-		return p.getFeatureId() == MAPS_ID;
+		return true; //MFRI
 	}
 
 	private static class InAppPurchaseFullVersion extends InAppPurchase {

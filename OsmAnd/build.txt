@@ -1,0 +1,139 @@
+
+> Configure project :OsmAnd
+WARNING: The option setting 'android.defaults.buildfeatures.buildconfig=true' is deprecated.
+The current default is 'false'.
+It will be removed in version 9.0 of the Android Gradle plugin.
+You can resolve this warning in Android Studio via `Refactor` > `Migrate BuildConfig to Gradle Build Files`
+
+> Configure project :OsmAnd-shared
+w: The following Kotlin/Native targets cannot be built on this machine and are disabled:
+iosArm64, iosSimulatorArm64, iosX64
+To hide this message, add 'kotlin.native.ignoreDisabledTargets=true' to the Gradle properties.
+
+mergeNightlyFreeLegacyFatDebugAssets merge assets
+Validating translations
+mapNightlyFreeLegacyFatDebugSourceSetPaths
+mergeNightlyFreeLegacyFatDebugResources merge resources
+
+> Task :OsmAnd:preBuild UP-TO-DATE
+> Task :OsmAnd:preNightlyFreeLegacyFatDebugBuild UP-TO-DATE
+> Task :OsmAnd:mergeNightlyFreeLegacyFatDebugNativeDebugMetadata NO-SOURCE
+> Task :OsmAnd-java:collectMiscResources UP-TO-DATE
+
+> Task :OsmAnd-java:collectRegionsInfoResources
+Download https://creator.osmand.net/basemap/regions.ocbf
+
+> Task :OsmAnd-java:collectRenderingStylesResources UP-TO-DATE
+> Task :OsmAnd-java:collectRoutingResources UP-TO-DATE
+> Task :OsmAnd-java:collectTestPhrasesResources UP-TO-DATE
+> Task :OsmAnd-java:collectTestResources UP-TO-DATE
+> Task :OsmAnd-java:collectExternalResources
+> Task :OsmAnd-shared:checkKotlinGradlePluginConfigurationErrors SKIPPED
+> Task :OsmAnd-shared:compileKotlinJvm UP-TO-DATE
+> Task :OsmAnd-shared:jvmProcessResources NO-SOURCE
+> Task :OsmAnd-shared:jvmMainClasses UP-TO-DATE
+> Task :OsmAnd-shared:jvmJar UP-TO-DATE
+> Task :OsmAnd-java:compileJava UP-TO-DATE
+> Task :OsmAnd-java:processResources
+> Task :OsmAnd-java:classes
+> Task :OsmAnd-java:jar
+> Task :OsmAnd-java:assemble
+> Task :OsmAnd-java:compileTestJava UP-TO-DATE
+> Task :OsmAnd-java:processTestResources UP-TO-DATE
+> Task :OsmAnd-java:testClasses UP-TO-DATE
+> Task :OsmAnd-java:test
+> Task :OsmAnd-java:check
+> Task :OsmAnd-java:build
+> Task :OsmAnd-java:androidJar
+
+> Task :OsmAnd:buildOsmAndCore
+Android NDK: WARNING: APP_PLATFORM android-21 is higher than android:minSdkVersion 1 in ./AndroidManifest.xml. NDK binaries will *not* be compatible with devices older than android-21. See https://android.googlesource.com/platform/ndk/+/master/docs/user/common_problems.md for more information.    
+OsmAnd root: jni/../../..
+OsmAnd makefiles:  jni/../../../core-legacy/targets/android/expat/Android.mk jni/../../../core-legacy/targets/android/freetype/Android.mk jni/../../../core-legacy/targets/android/giflib/Android.mk jni/../../../core-legacy/targets/android/harfbuzz/Android.mk jni/../../../core-legacy/targets/android/jpeg/Android.mk jni/../../../core-legacy/targets/android/libpng/Android.mk jni/../../../core-legacy/targets/android/lua/Android.mk jni/../../../core-legacy/targets/android/OsmAndCore/Android.mk jni/../../../core-legacy/targets/android/protobuf/Android.mk jni/../../../core-legacy/targets/android/skia/Android.mk
+OsmAnd root: jni/../../..
+OsmAnd makefiles:  jni/../../../core-legacy/targets/android/expat/Android.mk jni/../../../core-legacy/targets/android/freetype/Android.mk jni/../../../core-legacy/targets/android/giflib/Android.mk jni/../../../core-legacy/targets/android/harfbuzz/Android.mk jni/../../../core-legacy/targets/android/jpeg/Android.mk jni/../../../core-legacy/targets/android/libpng/Android.mk jni/../../../core-legacy/targets/android/lua/Android.mk jni/../../../core-legacy/targets/android/OsmAndCore/Android.mk jni/../../../core-legacy/targets/android/protobuf/Android.mk jni/../../../core-legacy/targets/android/skia/Android.mk
+OsmAnd root: jni/../../..
+OsmAnd makefiles:  jni/../../../core-legacy/targets/android/expat/Android.mk jni/../../../core-legacy/targets/android/freetype/Android.mk jni/../../../core-legacy/targets/android/giflib/Android.mk jni/../../../core-legacy/targets/android/harfbuzz/Android.mk jni/../../../core-legacy/targets/android/jpeg/Android.mk jni/../../../core-legacy/targets/android/libpng/Android.mk jni/../../../core-legacy/targets/android/lua/Android.mk jni/../../../core-legacy/targets/android/OsmAndCore/Android.mk jni/../../../core-legacy/targets/android/protobuf/Android.mk jni/../../../core-legacy/targets/android/skia/Android.mk
+OsmAnd root: jni/../../..
+OsmAnd makefiles:  jni/../../../core-legacy/targets/android/expat/Android.mk jni/../../../core-legacy/targets/android/freetype/Android.mk jni/../../../core-legacy/targets/android/giflib/Android.mk jni/../../../core-legacy/targets/android/harfbuzz/Android.mk jni/../../../core-legacy/targets/android/jpeg/Android.mk jni/../../../core-legacy/targets/android/libpng/Android.mk jni/../../../core-legacy/targets/android/lua/Android.mk jni/../../../core-legacy/targets/android/OsmAndCore/Android.mk jni/../../../core-legacy/targets/android/protobuf/Android.mk jni/../../../core-legacy/targets/android/skia/Android.mk
+[x86] Install libs/x86/libc++_shared.so:
+[armeabi-v7a] Install libs/armeabi-v7a/libc++_shared.so:
+[x86_64] Install libs/x86_64/libc++_shared.so:
+[arm64-v8a] Install libs/arm64-v8a/libc++_shared.so:
+[x86] Install        : libosmand.so => libs/x86/libosmand.so
+[armeabi-v7a] Install        : libosmand.so => libs/armeabi-v7a/libosmand.so
+[arm64-v8a] Install        : libosmand.so => libs/arm64-v8a/libosmand.so
+[x86_64] Install        : libosmand.so => libs/x86_64/libosmand.so
+
+> Task :OsmAnd:cleanupDuplicatesInCore
+> Task :OsmAnd:collectFonts UP-TO-DATE
+> Task :OsmAnd:collectHelpContentsStyle UP-TO-DATE
+> Task :OsmAnd:collectTestResources UP-TO-DATE
+> Task :OsmAnd:collectVoiceAssets UP-TO-DATE
+> Task :OsmAnd:copy3DModels UP-TO-DATE
+> Task :OsmAnd:copyColorPalettes UP-TO-DATE
+> Task :OsmAnd:copyLargePOIIcons UP-TO-DATE
+> Task :OsmAnd:copyMapPOIIcons UP-TO-DATE
+> Task :OsmAnd:copyMapShaderIcons UP-TO-DATE
+> Task :OsmAnd:copyPoiCategories UP-TO-DATE
+> Task :OsmAnd:copyProjDb UP-TO-DATE
+> Task :OsmAnd:copyRouteActivities UP-TO-DATE
+
+> Task :OsmAnd:downloadWorldMiniBasemap UP-TO-DATE
+Download https://creator.osmand.net/basemap/World_basemap_mini_2.obf
+
+> Task :OsmAnd:validateTranslate UP-TO-DATE
+> Task :OsmAnd:collectExternalResources UP-TO-DATE
+> Task :OsmAnd-api:preBuild UP-TO-DATE
+> Task :OsmAnd-api:preDebugBuild UP-TO-DATE
+> Task :OsmAnd-api:compileDebugAidl UP-TO-DATE
+> Task :OsmAnd:compileNightlyFreeLegacyFatDebugAidl UP-TO-DATE
+> Task :OsmAnd:checkKotlinGradlePluginConfigurationErrors SKIPPED
+> Task :OsmAnd:generateNightlyFreeLegacyFatDebugBuildConfig UP-TO-DATE
+> Task :OsmAnd-api:writeDebugAarMetadata UP-TO-DATE
+> Task :OsmAnd-shared:preBuild UP-TO-DATE
+> Task :OsmAnd-shared:preDebugBuild UP-TO-DATE
+> Task :OsmAnd-shared:writeDebugAarMetadata UP-TO-DATE
+> Task :OsmAnd:checkNightlyFreeLegacyFatDebugAarMetadata UP-TO-DATE
+> Task :OsmAnd:generateNightlyFreeLegacyFatDebugResValues UP-TO-DATE
+> Task :OsmAnd-api:generateDebugResValues UP-TO-DATE
+> Task :OsmAnd-api:generateDebugResources UP-TO-DATE
+> Task :OsmAnd-api:packageDebugResources UP-TO-DATE
+> Task :OsmAnd-shared:generateDebugResValues UP-TO-DATE
+> Task :OsmAnd-shared:generateDebugResources UP-TO-DATE
+> Task :OsmAnd-shared:packageDebugResources UP-TO-DATE
+> Task :OsmAnd:mapNightlyFreeLegacyFatDebugSourceSetPaths UP-TO-DATE
+> Task :OsmAnd:generateNightlyFreeLegacyFatDebugResources UP-TO-DATE
+> Task :OsmAnd:mergeNightlyFreeLegacyFatDebugResources UP-TO-DATE
+> Task :OsmAnd:createNightlyFreeLegacyFatDebugCompatibleScreenManifests UP-TO-DATE
+> Task :OsmAnd:extractDeepLinksNightlyFreeLegacyFatDebug UP-TO-DATE
+> Task :OsmAnd-api:extractDeepLinksDebug UP-TO-DATE
+> Task :OsmAnd-api:processDebugManifest UP-TO-DATE
+> Task :OsmAnd-shared:extractDeepLinksDebug UP-TO-DATE
+> Task :OsmAnd-shared:processDebugManifest UP-TO-DATE
+> Task :OsmAnd:processNightlyFreeLegacyFatDebugMainManifest UP-TO-DATE
+> Task :OsmAnd:processNightlyFreeLegacyFatDebugManifest UP-TO-DATE
+> Task :OsmAnd:processNightlyFreeLegacyFatDebugManifestForPackage UP-TO-DATE
+> Task :OsmAnd-api:compileDebugLibraryResources UP-TO-DATE
+> Task :OsmAnd-api:parseDebugLocalResources UP-TO-DATE
+> Task :OsmAnd-api:generateDebugRFile UP-TO-DATE
+> Task :OsmAnd-shared:compileDebugLibraryResources UP-TO-DATE
+> Task :OsmAnd-shared:parseDebugLocalResources UP-TO-DATE
+> Task :OsmAnd-shared:generateDebugRFile UP-TO-DATE
+> Task :OsmAnd:processNightlyFreeLegacyFatDebugResources UP-TO-DATE
+> Task :OsmAnd-api:generateDebugBuildConfig UP-TO-DATE
+> Task :OsmAnd-api:javaPreCompileDebug UP-TO-DATE
+> Task :OsmAnd-api:compileDebugJavaWithJavac UP-TO-DATE
+> Task :OsmAnd-api:bundleLibCompileToJarDebug UP-TO-DATE
+> Task :OsmAnd-shared:generateDebugBuildConfig UP-TO-DATE
+> Task :OsmAnd-shared:compileDebugKotlinAndroid UP-TO-DATE
+> Task :OsmAnd-shared:javaPreCompileDebug UP-TO-DATE
+> Task :OsmAnd-shared:compileDebugJavaWithJavac UP-TO-DATE
+> Task :OsmAnd-shared:bundleLibCompileToJarDebug UP-TO-DATE
+> Task :OsmAnd:compileNightlyFreeLegacyFatDebugKotlin UP-TO-DATE
+> Task :OsmAnd:javaPreCompileNightlyFreeLegacyFatDebug UP-TO-DATE
+
+> Task :OsmAnd:compileNightlyFreeLegacyFatDebugJavaWithJavac
+
+> Task :OsmAnd:compileNightlyFreeLegacyFatDebugJavaWithJavac FAILED
+71 actionable tasks: 8 executed, 63 up-to-date

@@ -34,14 +34,14 @@ public class FreeVersionBanner {
 
 	private final OnClickListener onCollapseListener = new OnClickListener() {
 		@Override
-		public void onClick(View v) {
-			if (freeVersionDescriptionTextView.getVisibility() == View.VISIBLE
-					&& DownloadActivity.isDownloadingPermitted(settings)) {
+		public void onClick(View v) {//MFRI
+			//if (freeVersionDescriptionTextView.getVisibility() == View.VISIBLE
+			//		&& DownloadActivity.isDownloadingPermitted(settings)) {
 				collapseBanner();
-			} else {
-				app.logEvent("click_free_dialog");
-				ChoosePlanFragment.showInstance(activity, UNLIMITED_MAP_DOWNLOADS);
-			}
+			//} else {
+			//	app.logEvent("click_free_dialog");
+			//	ChoosePlanFragment.showInstance(activity, UNLIMITED_MAP_DOWNLOADS);
+			//}
 		}
 	};
 
@@ -73,7 +73,8 @@ public class FreeVersionBanner {
 			return;
 		}
 		freeVersionBanner.setVisibility(View.VISIBLE);
-		downloadsLeftProgressBar.setMax(MAXIMUM_AVAILABLE_FREE_DOWNLOADS);
+		//downloadsLeftProgressBar.setMax(MAXIMUM_AVAILABLE_FREE_DOWNLOADS); //MFRI
+		downloadsLeftProgressBar.setMax(7777);
 		freeVersionDescriptionTextView.setText(DownloadValidationManager.getFreeVersionMessage(activity));
 
 		LinearLayout marksContainer = freeVersionBanner.findViewById(R.id.marksLinearLayout);
@@ -109,9 +110,11 @@ public class FreeVersionBanner {
 			return;
 		}
 		setMinimizedFreeVersionBanner(false);
-		int mapsDownloaded = settings.NUMBER_OF_FREE_DOWNLOADS.get();
+		//int mapsDownloaded = settings.NUMBER_OF_FREE_DOWNLOADS.get();//MFRI
+		int mapsDownloaded = 7777;
 		downloadsLeftProgressBar.setProgress(mapsDownloaded);
-		int downloadsLeft = MAXIMUM_AVAILABLE_FREE_DOWNLOADS - mapsDownloaded;
+		//int downloadsLeft = MAXIMUM_AVAILABLE_FREE_DOWNLOADS - mapsDownloaded;//MFRI
+		int downloadsLeft = 7777;//MFRI
 		downloadsLeft = Math.max(downloadsLeft, 0);
 		downloadsLeftTextView.setText(activity.getString(R.string.downloads_left_template, String.valueOf(downloadsLeft)));
 		freeVersionBanner.findViewById(R.id.bannerTopLayout).setOnClickListener(onCollapseListener);
@@ -128,7 +131,8 @@ public class FreeVersionBanner {
 
 	protected void updateAvailableDownloads() {
 		int activeTasks = activity.getDownloadThread().getCountedDownloads();
-		int mapsDownloaded = settings.NUMBER_OF_FREE_DOWNLOADS.get() + activeTasks;
+		//int mapsDownloaded = settings.NUMBER_OF_FREE_DOWNLOADS.get() + activeTasks;//MFRI
+		int mapsDownloaded = 7777;
 		downloadsLeftProgressBar.setProgress(mapsDownloaded);
 	}
 }

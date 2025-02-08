@@ -169,7 +169,7 @@ public class Version {
 	}
 
 	public static boolean isDeveloperBuild(@NonNull OsmandApplication app) {
-		return getAppName(app).contains("~");
+		return true; //MFRI
 	}
 
 	public static boolean isTripltekBuild() {

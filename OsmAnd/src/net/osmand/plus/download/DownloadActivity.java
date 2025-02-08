@@ -151,9 +151,9 @@ public class DownloadActivity extends AbstractDownloadActivity implements Downlo
 			}
 		});
 		visibleBanner = new BannerAndDownloadFreeVersion(findViewById(R.id.mainLayout), this, true);
-		if (shouldShowFreeVersionBanner(app)) {
+		/* if (shouldShowFreeVersionBanner(app)) {
 			visibleBanner.updateFreeVersionBanner();
-		}
+		} */
 		viewPager.setCurrentItem(loadCurrentTab());
 
 		Intent intent = getIntent();
@@ -206,18 +206,18 @@ public class DownloadActivity extends AbstractDownloadActivity implements Downlo
 
 	@Override
 	public void onInAppPurchaseError(InAppPurchaseTaskType taskType, String error) {
-		visibleBanner.updateFreeVersionBanner();
+		//visibleBanner.updateFreeVersionBanner();
 	}
 
 	@Override
 	public void onInAppPurchaseGetItems() {
-		visibleBanner.updateFreeVersionBanner();
+		//visibleBanner.updateFreeVersionBanner();
 		initAppStatusVariables();
 	}
 
 	@Override
 	public void onInAppPurchaseItemPurchased(String sku) {
-		visibleBanner.updateFreeVersionBanner();
+		//visibleBanner.updateFreeVersionBanner();
 		initAppStatusVariables();
 	}
 
@@ -323,9 +323,9 @@ public class DownloadActivity extends AbstractDownloadActivity implements Downlo
 
 	@Override
 	public void downloadingError(@NonNull String error) {
-		if (Algorithms.stringsEqual(error, DownloadValidationManager.getFreeVersionMessage(app))) {
+		/*if (Algorithms.stringsEqual(error, DownloadValidationManager.getFreeVersionMessage(app))) {
 			ChoosePlanFragment.showInstance(this, UNLIMITED_MAP_DOWNLOADS);
-		}
+		}*/ //MFRI
 	}
 
 	@Override
@@ -354,13 +354,15 @@ public class DownloadActivity extends AbstractDownloadActivity implements Downlo
 	}
 
 	public static boolean isDownloadingPermitted(@NonNull OsmandSettings settings) {
-		Integer mapsDownloaded = settings.NUMBER_OF_FREE_DOWNLOADS.get();
-		int downloadsLeft = DownloadValidationManager.MAXIMUM_AVAILABLE_FREE_DOWNLOADS - mapsDownloaded;
-		return Math.max(downloadsLeft, 0) > 0;
+		//Integer mapsDownloaded = settings.NUMBER_OF_FREE_DOWNLOADS.get();
+		//int downloadsLeft = DownloadValidationManager.MAXIMUM_AVAILABLE_FREE_DOWNLOADS - mapsDownloaded;
+		//return Math.max(downloadsLeft, 0) > 0;
+		return true; //MFRI			 
 	}
 
 	public static boolean shouldShowFreeVersionBanner(OsmandApplication application) {
-		return !Version.isPaidVersion(application) || application.getSettings().SHOULD_SHOW_FREE_VERSION_BANNER.get();
+		//return !Version.isPaidVersion(application) || application.getSettings().SHOULD_SHOW_FREE_VERSION_BANNER.get();
+		return false; //MFRI	   
 	}
 
 	public void reloadLocalIndexes() {
@@ -451,11 +453,17 @@ public class DownloadActivity extends AbstractDownloadActivity implements Downlo
 	}
 
 	public boolean isFreeVersion() {
-		return freeVersion;
+		//return freeVersion;
+		return false;   
 	}
 
 	public void initAppStatusVariables() {
-		srtmDisabled = !PluginsHelper.isActive(SRTMPlugin.class) && !InAppPurchaseUtils.isContourLinesAvailable(app);
+	//	srtmDisabled = !PluginsHelper.isActive(SRTMPlugin.class) && !InAppPurchaseUtils.isContourLinesAvailable(app);
+	//	nauticalPluginDisabled = !PluginsHelper.isActive(NauticalMapsPlugin.class);
+	//	freeVersion = Version.isFreeVersion(app);
+	//	SRTMPlugin srtmPlugin = PluginsHelper.getPlugin(SRTMPlugin.class);
+	//	srtmNeedsInstallation = srtmPlugin == null || srtmPlugin.needsInstallation();
+		srtmDisabled = !PluginsHelper.isActive(SRTMPlugin.class) ;
 		nauticalPluginDisabled = !PluginsHelper.isActive(NauticalMapsPlugin.class);
 		freeVersion = Version.isFreeVersion(app);
 		SRTMPlugin srtmPlugin = PluginsHelper.getPlugin(SRTMPlugin.class);

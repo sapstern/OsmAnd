@@ -538,7 +538,7 @@ public class RenderingRulesStorage {
 					String cv = vl.substring(1);
 					if (!renderingConstants.containsKey(cv) && !renderingAttributes.containsKey(cv)
 							&& !renderingClasses.containsKey(cv)) {
-						throw new IllegalStateException("Rendering constant, attribute or class '" + cv + "' was not specified.");
+						//throw new IllegalStateException("Rendering constant, attribute or class '" + cv + "' was not specified."); //MFRI
 					}
 					if (renderingConstants.containsKey(cv)) {
 						vl = renderingConstants.get(cv);
