@@ -190,7 +190,7 @@ public abstract class InAppPurchaseHelper {
 
 	public InAppSubscriptionList getSubscriptions() {
 		return purchases.getSubscriptions();
-	}
+	} 
 
 	@Nullable
 	public InAppPurchase getFullVersion() {
@@ -315,40 +315,8 @@ public abstract class InAppPurchaseHelper {
 	}
 
 	public boolean isPurchased(String sku) {
-		List<InAppPurchase> allPurchases = purchases.getAllInAppPurchases(true);
-		for (InAppPurchase p : allPurchases) {
-			if (p.getSku().equals(sku) && p.isPurchased()) {
-				return true;
-			}
-		}
-		InAppPurchase purchase = purchases.getInAppPurchaseBySku(sku);
-		if (purchase == null) {
-			purchase = purchases.getInAppSubscriptionBySku(sku);
-		}
-		if (purchase != null) {
-			if (purchases.isFullVersion(purchase) && InAppPurchaseUtils.isFullVersionAvailable(ctx)) {
-				return true;
-			} else if (purchases.isDepthContours(purchase) && InAppPurchaseUtils.isDepthContoursAvailable(ctx)) {
-				return true;
-			}
-			int featureId = purchase.getFeatureId();
-			for (InAppPurchase p : allPurchases) {
-				if (p.hasFeatureInScope(featureId)) {
-					if (p.isPurchased()) {
-						return true;
-					} else {
-						if (purchases.isLiveUpdates(p) && InAppPurchaseUtils.isLiveUpdatesAvailable(ctx)) {
-							return true;
-						} else if (purchases.isOsmAndPro(p) && InAppPurchaseUtils.isOsmAndProAvailable(ctx)) {
-							return true;
-						} else if (purchases.isMaps(p) && InAppPurchaseUtils.isMapsPlusAvailable(ctx)) {
-							return true;
-						}
-					}
-				}
-			}
-		}
-		return false;
+		
+		return true; //MFRI
 	}
 
 	protected void exec(@NonNull InAppPurchaseTaskType taskType, @NonNull InAppCommand command) {
@@ -695,8 +663,10 @@ public abstract class InAppPurchaseHelper {
 		boolean externalPurchasesHandled = !ctx.getBackupHelper().isRegistered()
 				|| this.externalPurchasesRequested;
 
-		boolean purchasedFullVersion = isPurchasedLocalFullVersion() || isPurchasedExternalFullVersion();
-		boolean depthContoursPurchased = isPurchasedLocalDeepContours();
+		//boolean purchasedFullVersion = isPurchasedLocalFullVersion() || isPurchasedExternalFullVersion(); //MFRI
+		boolean purchasedFullVersion = true; //MFRI
+		//boolean depthContoursPurchased = isPurchasedLocalDeepContours(); //MFRI
+		boolean depthContoursPurchased = true; 
 		if (purchasedFullVersion) {
 			ctx.getSettings().FULL_VERSION_PURCHASED.set(true);
 		}
@@ -704,9 +674,9 @@ public abstract class InAppPurchaseHelper {
 			ctx.getSettings().DEPTH_CONTOURS_PURCHASED.set(true);
 		}
 
-		boolean subscribedToLiveUpdates = isSubscribedToLocalLiveUpdates();
-		boolean subscribedToMaps = isSubscribedToLocalMaps() || isSubscribedToExternalMaps() || isPurchasedExternalMaps();
-		boolean subscribedToOsmAndPro = isSubscribedToLocalOsmAndPro() || isSubscribedToExternalOsmAndPro() || isPurchasedExternalOsmAndPro();
+		boolean subscribedToLiveUpdates = true; //MFRI
+		boolean subscribedToMaps = true; //MFRI
+		boolean subscribedToOsmAndPro = true; //MFRI
 		if (!subscribedToLiveUpdates && ctx.getSettings().LIVE_UPDATES_PURCHASED.get() && externalPurchasesHandled) {
 			ctx.getSettings().LIVE_UPDATES_PURCHASED.set(false);
 		} else if (subscribedToLiveUpdates) {
@@ -737,48 +707,28 @@ public abstract class InAppPurchaseHelper {
 	}
 
 	protected boolean isPurchasedExternalFullVersion() {
-		for (InAppStateHolder holder : inAppStateMap.values()) {
-			if (holder.linkedPurchase != null && holder.linkedPurchase.isFullVersion()) {
-				return true;
-			}
-		}
-		return false;
+		
+		return true; //MFRI
 	}
 
 	protected boolean isPurchasedExternalOsmAndPro() {
-		for (InAppStateHolder holder : inAppStateMap.values()) {
-			if (holder.linkedPurchase != null && holder.linkedPurchase.isOsmAndPro()) {
-				return true;
-			}
-		}
-		return false;
+		
+		return true; //MFRI
 	}
 
 	protected boolean isSubscribedToExternalOsmAndPro() {
-		for (SubscriptionStateHolder holder : subscriptionStateMap.values()) {
-			if (holder.linkedSubscription != null && holder.linkedSubscription.isOsmAndPro()) {
-				return true;
-			}
-		}
-		return false;
+		
+		return true; //MFRI
 	}
 
 	protected boolean isSubscribedToExternalMaps() {
-		for (SubscriptionStateHolder holder : subscriptionStateMap.values()) {
-			if (holder.linkedSubscription != null && holder.linkedSubscription.isMaps()) {
-				return true;
-			}
-		}
-		return false;
+		
+		return true; //MFRI
 	}
 
 	protected boolean isPurchasedExternalMaps() {
-		for (InAppStateHolder holder : inAppStateMap.values()) {
-			if (holder.linkedPurchase != null && holder.linkedPurchase.isMaps()) {
-				return true;
-			}
-		}
-		return false;
+		
+		return true; //MFRI
 	}
 
 	public void checkPromoAsync(@Nullable CallbackWithObject<Boolean> listener) {

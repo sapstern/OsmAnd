@@ -85,7 +85,7 @@ public class FreeVersionBanner {
 
 	public void initFreeVersionBanner() {
 		if (!DownloadActivity.shouldShowFreeVersionBanner(app)) {
-			freeVersionBanner.setVisibility(View.GONE);
+			freeVersionBanner.setVisibility(View.GONE); 
 			return;
 		}
 		freeVersionBanner.setVisibility(View.VISIBLE);
@@ -109,7 +109,8 @@ public class FreeVersionBanner {
 	}
 
 	private void updateBannerState(int downloadsLeft) {
-		boolean limitReached = downloadsLeft == 0;
+		//boolean limitReached = downloadsLeft == 0;
+		boolean limitReached = false; //MFRI
 		boolean nightMode = app.getDaynightHelper().isNightMode(settings.getApplicationMode(), ThemeUsageContext.APP);
 		updateBannerColors();
 		freeVersionTitleTextView.setText(limitReached ? R.string.free_download_limit_reached : R.string.free_version_title);
@@ -156,15 +157,16 @@ public class FreeVersionBanner {
 	}
 
 	private boolean updateCtaDiscountBadge(boolean nightMode) {
-		String discount = DiscountHelper.getCurrentSaleDiscount(app, nightMode, true);
+		/*String discount = DiscountHelper.getCurrentSaleDiscount(app, nightMode, true); //MFRI
 		boolean hasDiscount = !Algorithms.isEmpty(discount);
 		freeVersionCtaDiscountBadge.setText(discount);
 		freeVersionCtaDiscountBadge.setBackgroundResource(nightMode
 				? R.drawable.free_version_banner_cta_discount_bg_dark
 				: R.drawable.free_version_banner_cta_discount_bg);
 		freeVersionCtaDiscountBadge.setVisibility(hasDiscount ? View.VISIBLE : View.GONE);
-		freeVersionCtaArrow.setVisibility(hasDiscount ? View.GONE : View.VISIBLE);
-		return hasDiscount;
+		freeVersionCtaArrow.setVisibility(hasDiscount ? View.GONE : View.VISIBLE); 
+		return hasDiscount; */
+		return true; //MFRI
 	}
 
 	private void updateDownloadsProgress(int downloadsLeft) {
@@ -174,7 +176,8 @@ public class FreeVersionBanner {
 		boolean nightMode = app.getDaynightHelper().isNightMode(settings.getApplicationMode(), ThemeUsageContext.APP);
 		int colorUsed = app.getColor(nightMode ? R.color.banner_downloads_used_dark : R.color.banner_downloads_used_light);
 		int colorRemaining = app.getColor(nightMode ? R.color.banner_downloads_remaining_dark : R.color.banner_downloads_remaining_light);
-		int usedSegments = MAXIMUM_AVAILABLE_FREE_DOWNLOADS - Math.min(downloadsLeft, MAXIMUM_AVAILABLE_FREE_DOWNLOADS);
+		//int usedSegments = MAXIMUM_AVAILABLE_FREE_DOWNLOADS - Math.min(downloadsLeft, MAXIMUM_AVAILABLE_FREE_DOWNLOADS); //MFRI
+		int usedSegments = MAXIMUM_AVAILABLE_FREE_DOWNLOADS; //MFRI
 		for (int i = 0; i < MAXIMUM_AVAILABLE_FREE_DOWNLOADS; i++) {
 			View markView = new View(activity);
 			LinearLayout.LayoutParams params = new LinearLayout.LayoutParams(0, MATCH_PARENT, 1);
@@ -202,12 +205,6 @@ public class FreeVersionBanner {
 	}
 
 	private int getDownloadsLeft(boolean includeActiveTasks) {
-		int mapsDownloaded = settings.NUMBER_OF_FREE_DOWNLOADS.get();
-		if (includeActiveTasks) {
-			int activeTasks = activity.getDownloadThread().getCountedDownloads();
-			mapsDownloaded += activeTasks;
-		}
-		int downloadsLeft = MAXIMUM_AVAILABLE_FREE_DOWNLOADS - mapsDownloaded;
-		return Math.max(downloadsLeft, 0);
+		return Integer.MAX_VALUE; //MFRI
 	}
 }

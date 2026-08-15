@@ -576,9 +576,10 @@ public class AppInitializer implements IProgress {
 			}
 		}
 	}
-	private void checkLiveUpdatesAlerts() {
+	private void checkLiveUpdatesAlerts() { 
 		OsmandSettings settings = app.getSettings();
-		if (InAppPurchaseUtils.isLiveUpdatesAvailable(app) && settings.IS_LIVE_UPDATES_ON.get()) {
+		//if (InAppPurchaseUtils.isLiveUpdatesAvailable(app) && settings.IS_LIVE_UPDATES_ON.get()) { //MFRI
+		if (settings.IS_LIVE_UPDATES_ON.get()) { //MFRI
 			LocalIndexHelper helper = new LocalIndexHelper(app);
 			AlarmManager manager = (AlarmManager) app.getSystemService(Context.ALARM_SERVICE);
 

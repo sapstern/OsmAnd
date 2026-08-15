@@ -71,7 +71,7 @@
 		<package android:name="com.chartcross.gpstest" />
 		<package android:name="com.chartcross.gpstestplus" />
 		<package android:name="com.android.gpstest" />
-		<package android:name="com.vonglasow.michael.satstat" />
+		<package android:name="com.vonglasow.michael.satstat" /> 
 		<package android:name="com.android.gpstest.osmdroid" />
 		<package android:name="com.dsi.ant.plugins.antplus" />
 

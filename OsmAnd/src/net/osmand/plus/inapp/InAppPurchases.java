@@ -322,27 +322,27 @@ public abstract class InAppPurchases {
 		}
 
 		public boolean isFullVersion() {
-			return featureId == FULL_VERSION_ID;
+			return true;
 		}
 
 		public boolean isDepthContours() {
-			return featureId == DEPTH_CONTOURS_ID;
+			return true;
 		}
 
 		public boolean isContourLines() {
-			return featureId == CONTOUR_LINES_ID;
+			return true;
 		}
 
 		public boolean isLiveUpdates() {
-			return featureId == LIVE_UPDATES_ID;
+			return true;
 		}
 
 		public boolean isOsmAndPro() {
-			return featureId == OSMAND_PRO_ID;
+			return true;
 		}
 
 		public boolean isMaps() {
-			return featureId == MAPS_ID || featureId == FULL_VERSION_ID;
+			return true;
 		}
 
 		public int getFeatureId() {
@@ -353,12 +353,8 @@ public abstract class InAppPurchases {
 		public abstract int[] getScope();
 
 		public boolean hasFeatureInScope(int featureId) {
-			for (int id : getScope()) {
-				if (featureId == id) {
-					return true;
-				}
-			}
-			return false;
+			
+			return true;
 		}
 
 		@NonNull
@@ -1000,16 +996,8 @@ public abstract class InAppPurchases {
 		}
 
 		public boolean isAnyPurchased() {
-			if (isPurchased()) {
-				return true;
-			} else {
-				for (InAppSubscription s : getUpgrades()) {
-					if (s.isPurchased()) {
-						return true;
-					}
-				}
-			}
-			return false;
+			
+			return true;
 		}
 
 		public String getSkuNoVersion() {
@@ -1665,7 +1653,7 @@ public abstract class InAppPurchases {
 				this.purchaseToken = jsonObj.getString("purchaseToken");
 			}
 			if (jsonObj.has("purchaseTime")) {
-				this.purchaseTime = jsonObj.getLong("purchaseTime");
+				this.purchaseTime = jsonObj.getLong("purchaseTime"); 
 			}
 			if (jsonObj.has("purchaseState")) {
 				this.purchaseState = jsonObj.getInt("purchaseState");

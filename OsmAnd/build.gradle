@@ -51,9 +51,9 @@ android {
 
 	defaultConfig {
 		minSdkVersion osmand_minSdk
-		versionCode 5399
+		versionCode 53990
 		versionCode System.getenv("APK_NUMBER_VERSION") ? System.getenv("APK_NUMBER_VERSION").toInteger() : versionCode
-		versionName "5.4.0"
+		versionName "5.4.0~MFRI"
 		versionName System.getenv("APK_VERSION")? System.getenv("APK_VERSION").toString(): versionName
 		versionName System.getenv("APK_VERSION_SUFFIX")? versionName + System.getenv("APK_VERSION_SUFFIX").toString(): versionName
 	}
@@ -104,7 +104,7 @@ android {
 			manifest.srcFile "AndroidManifest-huawei.xml"
 		}
 
-		legacy {
+		legacy { 
 			jniLibs.srcDirs = ["libc++"]
 		}
 	}
